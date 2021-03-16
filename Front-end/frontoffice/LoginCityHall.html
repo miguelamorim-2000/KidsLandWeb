@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1,0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        
+        <title> KidsLand - Municipio</title>
+        <link rel="stylesheet" href="LoginCityHall.css" type="text/css">
+        
+        <link rel="stylesheet" href="headerfooter.css" type="text/css">
+        
+<!-- CSS only -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+<!-- JS, Popper.js, and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+<!-- Add icon library -->
+<script src="https://kit.fontawesome.com/2545434131.js" crossorigin="anonymous"></script>
+<script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+    <!-- tab icon -->
+    <link rel="icon" href="https://i.ibb.co/1QqKMf4/Sem-t-tulo-1.png" type="image/icon type">
+
+    
+        <!-- sweetalert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+    </head>
+    
+    <body>
+
+<!-- HEADER -->
+
+                  <!-- ======= Top Bar ======= -->
+        
+ 
+                  
+
+
+<!-- LOGIN -->
+	<div class="limiter">
+		<div id= "body1" class="container-login100">
+			<div class="wrap-login100">
+				<form class="login100-form validate-form" id="loginForm">
+					<span class="login100-form-title p-b-48">
+						<img src="https://i.ibb.co/KsgQr9H/logo.png" width="300" height="190">
+					</span>
+<hr id="separateLine" style="height:3px; width:100%; border-width:0; color:#052F83; background-color:#46D0D9">
+					<p id="titleCitizen"> Login - Câmara Municipal</p>
+
+					<div class="wrap-input100 validate-input" data-validate = "Valid email is: a@b.c">
+					  <br>
+						<input class="input100" type="text" name="email" id="email">
+						<span class="focus-input100" data-placeholder="Email"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate="Enter password">
+						<span class="btn-show-pass" onclick="showPassword()">
+							<i class="fas fa-eye"></i>
+						</span>
+						<br>
+						<input class="input100" type="password" name="pass" id="password">
+						<span class="focus-input100" data-placeholder="Password"></span>
+					</div>
+
+					<div class="container-loginButton">
+							<input id="loginBtn" type="submit" name="submit" class="btn btn-primary btn-md" value="Iniciar Sessão" >
+							</button>
+						</div>
+						                            <div id="register-link">
+                                <a href="RegisterCitizen.html" style="color:#143656;">Criar Conta</a>
+                            </div>
+                             <div id="recover-link">
+                                <a href="ForgotPassword.html" style="color: #143656;">Recuperar Password</a>
+                            </div>
+					</div>
+
+
+				</form>
+			</div>
+		</div>
+	</div>
+		<script>
+	  
+	   loginForm.addEventListener('submit', function(e){
+	     e.preventDefault();
+	          const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+	     
+	                      fetch('https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/signin', {
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded"
+                    },
+                    method: 'post',
+                    body: `email=${email}&password=${password}`
+                }).then(res => res.json())
+            .then((out) => {
+         console.log(out)
+            if (out.status == 200) {
+              
+              localStorage.setItem('id_denouncer', out.MSG.id_denouncer); 
+              localStorage.setItem('name', out.MSG.name); 
+              localStorage.setItem('address', out.MSG.address); 
+              localStorage.setItem('gender', out.MSG.gender); 
+              localStorage.setItem('cc_number', out.MSG.cc_number); 
+              localStorage.setItem('birth_date', out.MSG.birth_date); 
+              localStorage.setItem('cc_validity', out.MSG.cc_validity); 
+              localStorage.setItem('id_user', out.MSG.id_user);
+              localStorage.setItem('phone_number', out.MSG.phone_number); 
+              localStorage.setItem('post_code', out.MSG.post_code); 
+              localStorage.setItem('county', out.MSG.county); 
+              localStorage.setItem('district', out.MSG.district); 
+              localStorage.setItem('naturality', out.MSG.naturality); 
+              localStorage.setItem('email', out.MSG.email); 
+              localStorage.setItem('photo', out.MSG.photo);
+              
+              
+               window.location.replace(out.url2)
+ 
+
+            }else {
+              if (out.status == 400){
+                                    Swal.fire(
+                      '',
+                      'O email ou password não são válidos.',
+                      'error'
+                    )
+                    .then(function(){window.location.replace(out.url2)});
+                
+              }else {
+                    Swal.fire(
+      
+                      'Erro no Login',
+                      'Não foi possível efetuar Login. Tente novamente.',
+                      'error'
+                    )
+              }
+            }
+          })
+          .catch(error => {
+            ({
+  icon: 'error',
+  title: 'Erro',
+  text: `Pedido falhado: ${error}`
+})
+  
+          });
+	   });
+
+
+//Show password when clicking eye  icon
+function showPassword() {
+  var x = document.getElementById("password");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+	</script>
+	
+	
+</body>
+
+</html>
