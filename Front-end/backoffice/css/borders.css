@@ -1,5 +1,5 @@
 .cborder1 {
-    border: 2px solid #012B77;
+    border: 2px solid #1B4965;
     border-top-right-radius: 10px;
     border-bottom-right-radius:10px;
     border-bottom-left-radius:10px;
@@ -7,7 +7,7 @@
 }
 
 .cborder2 {
-    border: 2px solid #012B77;
+    border: 2px solid #1B4965;
     border-top-left-radius: 10px;
     border-bottom-left-radius:10px;
 }
@@ -41,13 +41,13 @@
 /*search icon*/
 .primary-color{
     color: white;
-    background-color: #012B77;
-    background-border: #012B77;
+    background-color: #1B4965;
+    background-border: #1B4965;
 }
 
 .primary-color2{
-    color: #012B77;
+    color: #1B4965;
     backgrounf-color: white;
-    background-border: #012B77;
+    background-border: #1B4965;
     
 }
