@@ -1,5 +1,5 @@
 <?php
 
-include_once("Front-end/frontoffice/LoginCityHall.html");
+include_once("LoginCityHall.html");
 
 ?>
