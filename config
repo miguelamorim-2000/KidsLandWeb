@@ -1,0 +1,16 @@
+[core]
+	repositoryformatversion = 0
+	filemode = false
+	bare = false
+	logallrefupdates = true
+	symlinks = false
+	ignorecase = true
+[remote "KidsLandWeb"]
+	url = https://github.com/miguelamorim-2000/KidsLandWeb
+	fetch = +refs/heads/*:refs/remotes/KidsLandWeb/*
+[remote "origin"]
+	url = https://github.com/miguelamorim-2000/KidsLandWeb
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "master"]
+	remote = KidsLandWeb
+	merge = refs/heads/master
