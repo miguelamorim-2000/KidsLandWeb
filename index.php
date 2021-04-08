@@ -1,5 +1,5 @@
 <?php
 
-include_once("LoginCityHall.html");
+include_once("RegisterCitizen.html");
 
 ?>
