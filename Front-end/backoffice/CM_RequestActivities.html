@@ -252,8 +252,11 @@
                                 </button>
                                     </div>
                                     <input id="filterInput" type="text" class="form-control bg-light border-0 small border-r-10" placeholder="Procurar por..." aria-label="Search" aria-describedby="basic-addon2">
+                                    
                                 </div>
                             </form>
+                            <button onclick="generateOccurrence()" class="btn primary-color"  type="button" style="float: right;">Gerar Ocorrência
+                            </button>
                             
                         </div>
                         <div class="card-body">
@@ -409,9 +412,13 @@
                 <label data-error="wrong" data-success="right" for="address_Location">Código-Postal</label>
                 <input type="text" id="post_code" class="form-control validate" >
               </div>
-              <div class="md-form pb-3 col-md-4">
-                <label data-error="wrong" data-success="right" for="address_Location">Coordenadas</label>
-                <input type="text" id="coordenates" class="form-control validate" >
+              <div class="md-form pb-3 col-md-2">
+                <label data-error="wrong" data-success="right" for="address_Location">Latitude</label>
+                <input type="text" id="latitude" class="form-control validate" >
+              </div>
+              <div class="md-form pb-3 col-md-2">
+                <label data-error="wrong" data-success="right" for="address_Location">Longitude</label>
+                <input type="text" id="longitude" class="form-control validate" >
               </div>
         </div>
 
@@ -426,7 +433,7 @@
 
         
         <div class="md-form pb-3 col-md-4">
-          <label class="label"for="state_Request">Estado da Ocorrência: </label>
+          <label class="label"for="state_Request">Estado do Pedido: </label>
                                 <select class="selectbtn custom-select" id="state" >
                                     <option value="Arquivada">Arquivada</option>
                                     <option value="Aguardar">Aguardar</option> 
@@ -623,7 +630,7 @@ function listRequests() {
                 $('#tableRequests tbody').empty();
                     for (let i = 0; i < resposta.length; i++){
                         nrRequests = nrRequests + 1;
-                    $('#tableRequests tbody').append('<tr><td>' + '<input name="checkbox1"  type="checkbox" value='+ resposta[i].id_request +'>' +'</td><td>'+ resposta[i].id_request +'</td><td>' + resposta[i].date  + '</td><td>'+ resposta[i].time + '</td><td>' + resposta[i].description + '</td><td>' + resposta[i].address + " , " + resposta[i].county+ " , "  + resposta[i].district + '</td><td>' + resposta[i].name +  (resposta[i].state == "Aguardar" ? '</td><td><p class="pendent">Aguardar</p>' : (resposta[i].state == "Aceite" ? '</td><td><p class="solved">Concluída</p>' : (resposta[i].state == "Arquivada" ? '</td><td><p class="unsolved">Arquivado</p>'  : '</td><td><p class="unknown">Indefinido</p>' ))) + '</td><td>'+ '<div class="dropdown keep-open show-dropdown"> <a href="#" data-toggle="dropdown" aria-expanded="false" > <i class="fas fa-ellipsis-v"> </i></a> <ul class="dropdown-menu "  >                                                <li class="header-title"> <i class="fas fa-cog"></i> Opções</li>     <!-- Division of page -->                                            <div style="height: 2px; background-color: #F7F7F7; margin-bottom: 5%;"></div> <li data-target="#InfoModal" data-toggle="modal"><a id="editar" onclick="editFunction('+ resposta[i].id_request +')"> <p  class="dropdownText">                             <i class="far fa-edit" style="padding-right: 4px !important"></i>   Editar</p> </a></li>                                               <li > <a id="apagar" onclick="deleteFunction('+ resposta[i].id_request +')"> <p href="#" class="dropdownText">                            <i class="fas fa-trash-alt" style="padding-right: 6px !important"></i>Arquivar</p></a></li> ' + '</td></tr>' )
+                    $('#tableRequests tbody').append('<tr><td>' + '<input name="checkbox1"  type="checkbox" value='+ resposta[i].id_request +'>' +'</td><td>'+ resposta[i].id_request +'</td><td>'  + resposta[i].description + '</td><td>'+ resposta[i].date  + '</td><td>'+ resposta[i].time + '</td><td>' + resposta[i].address + " , " + resposta[i].county+ " , "  + resposta[i].district + '</td><td>' + resposta[i].name +  (resposta[i].state == "Aguardar" ? '</td><td><p class="pendent">Aguardar</p>' : (resposta[i].state == "Aceite" ? '</td><td><p class="solved">Concluída</p>' : (resposta[i].state == "Arquivada" ? '</td><td><p class="unsolved">Arquivado</p>'  : '</td><td><p class="unknown">Indefinido</p>' ))) + '</td><td>'+ '<div class="dropdown keep-open show-dropdown"> <a href="#" data-toggle="dropdown" aria-expanded="false" > <i class="fas fa-ellipsis-v"> </i></a> <ul class="dropdown-menu "  >                                                <li class="header-title"> <i class="fas fa-cog"></i> Opções</li>     <!-- Division of page -->                                            <div style="height: 2px; background-color: #F7F7F7; margin-bottom: 5%;"></div> <li data-target="#InfoModal" data-toggle="modal"><a id="editar" onclick="editFunction('+ resposta[i].id_request +')"> <p  class="dropdownText">                             <i class="far fa-edit" style="padding-right: 4px !important"></i>   Editar</p> </a></li>          <li > <a id="apagar" onclick="archiveFunction('+ resposta[i].id_request +')"> <p href="#" class="dropdownText">                            <i class="fas fa-archive" style="padding-right: 6px !important"></i>Arquivar</p></a></li>                                      <li > <a id="apagar" onclick="deleteFunction('+ resposta[i].id_request +')"> <p href="#" class="dropdownText">                            <i class="fas fa-trash-alt" style="padding-right: 6px !important"></i>Eliminar</p></a></li> ' + '</td></tr>' )
                     numberRequests();
                     }
           
@@ -641,11 +648,11 @@ function listRequests() {
 
         }
 
-        //DELETE FUNCTION 
+// ARCHIVE REQUEST
 
         let statePUT = "Arquivada"
         
-       function deleteFunction(id){
+       function archiveFunction(id){
             fetch('http://188.82.156.135:8080/Back-end/ActivityRequestStatePut', {
                 headers: {
                                     "Content-Type": "application/x-www-form-urlencoded"
@@ -668,31 +675,36 @@ function listRequests() {
 
        }
 
+       // Delete REQUEST
 
-// ARCHIVE REQUEST
+        
+        function deleteFunction(id){
+            
+            fetch('http://188.82.156.135:8080/Back-end/RequestActivityDelete?id_request=' + id)
+            .then(res => res.json())
+            .then((out) => {
+                console.log(out);
+                
+            }
+            ).then(function (response) {Swal.fire(
+   '',
+   'Pedido de Atividade eliminado com sucesso',
+   'success'
+ ).then(  function(){ 
+                     
+      window.location.reload();
+    });
+             
+                     
+                 }).catch(function(err) {console.log(err);})
+        
 
-function archive(id){
-    let archiveRequest = "Arquivada"
+        }
+
+ 
 
 
-            fetch('https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/RequestsUpdateState/'+ id, {
-                headers: {
-                                    "Content-Type": "application/x-www-form-urlencoded"
-                                },
-                                method: 'PUT',
-                                body: `state=${archiveRequest}`
-                            }).then(function (response) {Swal.fire(
-              '',
-              'Alteração efetuada com sucesso!',
-              'success'
-            ).then(  function(){ 
-                  window.location.reload();
-               });
-                            }).catch(function(err) {console.log(err);})
-                        
-    
-    
-}
+
   
 
 
@@ -747,12 +759,17 @@ function editFunction(id){
                         document.getElementById("post_code").value = resposta.post_code; }
                         
                                      
-                    if (resposta.latitude !== null && resposta.longitude != null) { 
-                        document.getElementById("coordenates").value = resposta.latitude + " , " + resposta.longitude; }
+                    if (resposta.latitude !== null) { 
+                        document.getElementById("latitude").value = resposta.latitude; }
+
+                        if(resposta.longitude !== null){
+                            document.getElementById("longitude").value = resposta.longitude;
+                        }
                         
                         
 
                     if(resposta.photo != null){
+                        document.getElementById("requestIcon").value= resposta.photo;
                         document.getElementById("requestIcon").src = "http://188.82.156.135:8080/Back-end/IMAGES/" + resposta.photo;
                         console.log( "http://188.82.156.135:8080/Back-end/IMAGES/" + resposta.photo);
                     }
@@ -777,35 +794,32 @@ function editFunction(id){
                         editForm.addEventListener('submit', function(e){
                             e.preventDefault();
 
-            const date_Request = document.getElementById("date_Request").value
-            const designation_Location = document.getElementById("designation_Location").value
-            const address_Location  = document.getElementById("address_Location").value
-            const degree_of_emergency_Crime_Nature = document.getElementById("degree_of_emergency_Crime_Nature").value
-            const type_Request = document.getElementById("type_Request").value
-            const designation_Crime_Nature  = document.getElementById("designation_Crime_Nature").value
-            const state_Request = document.getElementById("state").value
-            const description_Request = document.getElementById("description_Request").value
-            let id_operations_manager
-            
-            if (document.getElementById("managers").value == 0){
-                id_operations_manager = null;
-            } else {id_operations_manager = document.getElementById("managers").value}
-            
-            document.getElementById("managers").addEventListener("change", function() {
-                if (document.getElementById("managers").value == 0){
-                    id_operations_manager = null
-                } else{
-                id_operations_manager = document.getElementById("managers").value}
+            const date= document.getElementById("date_Request").value
+          
 
-});
-            
+            const time = document.getElementById("time_Request").value
+
+            const name = document.getElementById("institution_name").value
+            const description = document.getElementById("name_Request").value
+            const type = document.getElementById("type_Request").value
+            const address = document.getElementById("address_Location").value
+            const county = document.getElementById("county").value
+            const district = document.getElementById("district").value
+            const post_code = document.getElementById("post_code").value
+            const photo = document.getElementById("requestIcon").value
+            const latitude = document.getElementById("latitude").value
+            const longitude = document.getElementById("longitude").value
+            const state = document.getElementById("state").value
+
+
+
     
-                            fetch('https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/Requests/'+ id, {
+                            fetch('http://188.82.156.135:8080/Back-end/ActivityRequestPut', {
                                 headers: {
                                     "Content-Type": "application/x-www-form-urlencoded"
                                 },
                                 method: 'PUT',
-                                body: `id_crime_nature=${designation_Crime_Nature}&degree_of_emergency=${degree_of_emergency_Crime_Nature}&type=${type_Request}&state=${state_Request}&description_Request=${description_Request}&id_operations_manager=${id_operations_manager}`
+                                body: `id_request=${id}&date=${date}&time=${time}&state=${state}&description=${description}&type=${type}&address=${address}&county=${county}&district=${district}&post_code=${post_code}&latitude=${latitude}&longitude=${longitude}`
                             }).then(function (response) {Swal.fire(
               '',
               'Alteração efetuada com sucesso!',
@@ -814,7 +828,13 @@ function editFunction(id){
                   window.location.reload();
                });
                             }).catch(function(err) {console.log(err);})
+
+
+ 
                         });
+
+
+                     
             
         
 
@@ -824,36 +844,40 @@ function editFunction(id){
     
 }
             
-//Transform to Occurrence selected checboxes
+//Transform to Activity selected checkboxes
 
             function generateOccurrence(){
-                $("#tableFacts input[type=checkbox]:checked").each(function () {
+                $("#tableRequests input[type=checkbox]:checked").each(function () {
                     var id = $(this).closest("tr")[0].cells[1].firstChild.nodeValue;
-            
-                fetch('https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/Occurrences', {
+                    const state = "Ativo";
+                    const id_reward = 1;
+                    const state2 = "Aceite"           
+                fetch('http://188.82.156.135:8080/Back-end/ActivityPost', {
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded"
                     },
                     method: 'post',
-                    body: `id_request=${id}&state=Pendente`
+                    body: `id_request=${id}&state=${state}&id_reward=${id_reward}`
                 })
                 
-                    fetch('https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/RequestsUpdateState/' + id, {
+                    fetch('http://188.82.156.135:8080/Back-end/ActivityRequestStatePut', {
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded"
                     },
                     method: 'PUT',
-                    body: `state=Aceite`
+                    body: `id_request=${id}&state=${state2}`
                 })
             })
             
             Swal.fire(
                       '',
-                      'Ocorrências geradas com sucesso!',
+                      'Atividades geradas com sucesso!',
                       'success').then(  function(){ 
                           window.location.reload();
                        });
             }
+            
+
             
              //Logout function 
     let logoutBtn = document.getElementById("logoutBtn")
