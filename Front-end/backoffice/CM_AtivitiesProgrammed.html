@@ -51,7 +51,7 @@
     <link href="css/buttons.css" rel="stylesheet" type="text/css" />
 
     <!-- tab icon -->
-    <link rel="icon" href="https://i.ibb.co/1QqKMf4/Sem-t-tulo-1.png" type="image/icon type">
+    <link rel="icon" href="https://i.ibb.co/g3PKBk7/logo-Kids-Landv23.png" type="image/icon type">
     
     <!-- sweetalert2 -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
@@ -68,7 +68,7 @@
 
             <!-- Sidebar - Brand -->
  <a class="navbar-brand" href="PaginaInicial.html">
-          <img src="https://i.ibb.co/Rhpc8XK/logo-Kids-Land2.png" style="width: 110%; padding-top: 10px; padding-bottom: 10px; padding-left: 5px !important;" alt="">
+          <img src="https://i.ibb.co/g3PKBk7/logo-Kids-Landv23.png" style="width: 110%; padding-top: 10px; padding-bottom: 10px; padding-left: 5px !important;" alt="">
         </a>
 
             <!-- Divider -->
@@ -348,124 +348,103 @@
       </div>
       
       <form id= "editForm" name="editionform">
-      <!--Body-->
-      <div class="modal-body mx-4">
         <!--Body-->
-        <div class="row row-space">
-        <div class="md-form pb-3 col-md-3">
-          <label data-error="wrong" data-success="right" for="date_Request">Data do Pedido</label>
-          <input type="date" id="date_Request" class="form-control validate" readonly>
-        </div>
-                <div class="md-form pb-3 col-md-9">
-          <label data-error="wrong" data-success="right" for="designation_Location">Entidade</label>
-          <input type="text" id="designation_Location" class="form-control validate" readonly>
-
-        </div> 
-        
-        </div>
-        
-
-     <div class="row row-space">   
-        <div class="md-form pb-8 col-md-8">
-          <label data-error="wrong" data-success="right" for="address_Location">Morada</label>
-          <input type="text" id="address_Location" class="form-control validate" readonly>
-        </div>
+        <div class="modal-body mx-4">
+          <!--Body-->
+          <div class="row row-space">
+          <div class="md-form pb-3 col-md-3">
+            <label data-error="wrong" data-success="right" for="date_Request">Data do Pedido</label>
+            <input type="date" id="date_Request" class="form-control validate" readonly >
+          </div>
+          <div class="md-form pb-3 col-md-2">
+              <label data-error="wrong" data-success="right" for="date_Request">Hora:</label>
+              <input style="padding-left: 10px;" type="time" id="time_Request" class="form-control validate" readonly>
+            </div>
+                  <div class="md-form pb-3 col-md-4">
+            <label data-error="wrong" data-success="right" for="designation_Location">Instituição</label>
+            <input type="text" id="institution_name" class="form-control validate" readonly>
+  
+          </div> 
+          <div class="md-form pb-3 col-md-2">
+              <label data-error="wrong" data-success="right" for="address_Location">Icon</label>
+              <br>
+              <img id="requestIcon" class="img-profile" src="" style="width: 100px ; height: 100px !important">
+  
+            </div>
+          
+          </div>
+          <div class="row row-space">
+              <div class="md-form pb-3 col-md-6">
+                  <label data-error="wrong" data-success="right" for="type_Request">Nome Atividade:</label>
+                  <input type="text" id="name_Request" class="form-control validate" readonly>
+                </div> 
+                      <div class="md-form pb-3 col-md-3">
+            <label data-error="wrong" data-success="right" for="type_Request">Tipo de Atividade</label>
+            <input type="text" id="type_Request" class="form-control validate" readonly>
+          </div> 
+  
+          
+  
+          
+          </div>
+          
+  
+       <div class="row row-space">   
+          <div class="md-form pb-8 col-md-8">
+            <label data-error="wrong" data-success="right" for="address_Location">Morada</label>
+            <input type="text" id="address_Location" class="form-control validate" readonly>
+          </div>
+                  <div class="md-form pb-3 col-md-4">
+            <label data-error="wrong" data-success="right" for="address_Location">Localidade</label>
+            <input type="text" id="county" class="form-control validate" readonly>
+          </div>
+          
+          </div>
+          
+           <div class="row row-space">       
+              <div class="md-form pb-3 col-md-4">
+                  <label data-error="wrong" data-success="right" for="address_Location">Distrito</label>
+                  <input type="text" id="district" class="form-control validate" readonly>
+                </div>
                 <div class="md-form pb-3 col-md-4">
-          <label data-error="wrong" data-success="right" for="address_Location">Localidade</label>
-          <input type="text" id="county" class="form-control validate" readonly>
-        </div>
-        
-        </div>
-        
-         <div class="row row-space">       
-                <div class="md-form pb-3 col-md-12">
-          <label data-error="wrong" data-success="right" for="designation_Crime_Nature">Natureza do Crime </label>
-          <select class="selectbtn custom-select" id="designation_Crime_Nature" name="designation_Crime_Nature">
-                                    <option value="0">Selecione a natureza do crime:</option>
-          </select>
-        </div>
-        </div>
-        
-        <div class="row row-space">
-                    <div class="md-form pb-3 col-md-4">
-          <label data-error="wrong" data-success="right" for="type_Request">Tipo de Pedido</label>
-          <input type="text" id="type_Request" class="form-control validate">
-        </div> 
-        
-       <div class="md-form pb-3 col-md-4">
-          <label class="label" >Gravidade: </label>
-                                <select class="selectbtn custom-select" id="degree_of_emergency_Crime_Nature">
-                                    <option value="Muito Grave">Muito Grave</option>
-                                    <option value="Grave">Grave</option>
-                                    <option value="Moderado">Moderado</option>
-                                    </select>
-                                </div>
-        
-        </div>
-        <div class="row row-space">
-                                <div class="col-8">
-                                <label class="label">Descrição: </label>
-                                <div class="col-md-14">
-                                    <textarea rows="5" class="form-control form-control-line" id="description_Request"></textarea>
-                                </div>
-                            </div>
-                            </div>
-                            
-            
-        
-              <br>          
-             <!-- Division of page -->
-             <br>
-                                <div style="height: 5px; background-color: #F7F7F7; margin-bottom: 5%;"></div> 
-                                
-            <!-- End of division of page -->  
-                <h4 class="modal-title w-100 dark-grey-text my-3 text-center" id="myModalLabel" style= "padding-left:30px !important;">Materiais</h4>
-         <table class="table table-bordered" id="data_table">
-            <thead>
-              <th>Categoria</th>
-              <th>Quantidade</th>
-            </thead>
-            <tbody>
-                            <tr>
-        <td><select class="selectbtn custom-select" id="material">
-            <option value="0"> Selecione Material: </option>
-         </select></td>
-         
-        <td><input type="number" id="material_quantity"></td>
-        <td> <button type="button" class="add btn btn-info add-new" id="addButton" onclick="add_row();"><i class="fa fa-plus"></i> </button></td>
-        </tr>
-        
-            
-            </tbody>
-          </table>
-            
-     <!-- Division of page -->
-     <br></br>
-        <div style="height: 5px; background-color: #F7F7F7; margin-bottom: 5%;"></div> 
-                        
-    <!-- End of division of page -->  
-    <div class="row row-space">
-                        <div class="md-form pb-3 col-md-4">
-          <label class="label"for="occurrence_manager">Gestor da Ocorrência: </label>
-                                <select class="selectbtn custom-select" id="managers" >
-                                    <option value="0">Selecione um Gestor:</option>
-                                 
-                                    </select>
-        </div>
-        
-        <div class="md-form pb-3 col-md-4">
-          <label class="label"for="state_Request">Estado da Ocorrência: </label>
-                                <select class="selectbtn custom-select" id="state" >
-                                    <option value="Arquivado">Arquivado</option>
-                                    <option value="Aguardar">Aguardar</option> 
-                                    </select>
-        </div>
-        </div>
-        
-        <div class="text-center mb-5 mt-3">
-          <button type="submit" class="rounded-b button-color textb1" >Guardar Dados</button>
-        </div>
-        </form>
+                  <label data-error="wrong" data-success="right" for="address_Location">Código-Postal</label>
+                  <input type="text" id="post_code" class="form-control validate" readonly>
+                </div>
+                <div class="md-form pb-3 col-md-2">
+                  <label data-error="wrong" data-success="right" for="address_Location">Latitude</label>
+                  <input type="text" id="latitude" class="form-control validate" readonly>
+                </div>
+                <div class="md-form pb-3 col-md-2">
+                  <label data-error="wrong" data-success="right" for="address_Location">Longitude</label>
+                  <input type="text" id="longitude" class="form-control validate" readonly>
+                </div>
+          </div>
+  
+       
+  
+       <!-- Division of page -->
+       <br></br>
+          <div style="height: 5px; background-color: #F7F7F7; margin-bottom: 5%;"></div> 
+                          
+      <!-- End of division of page -->  
+      <div class="row row-space">
+  
+          
+          <div class="md-form pb-3 col-md-4">
+            <label class="label"for="state_Request">Estado do Pedido: </label>
+                                  <select class="selectbtn custom-select" id="state" >
+                                      <option value="Arquivado">Arquivado</option>
+                                      <option value="Ativo">Ativo</option> 
+                                      <option value="Concluído">Concluído</option> 
+
+                                      </select>
+          </div>
+          </div>
+          
+          <div class="text-center mb-5 mt-3">
+            <button type="submit" class="rounded-b button-color textb1" >Guardar Dados</button>
+          </div>
+          </form>
       </div>
     </div>
     <!--/.Content-->
@@ -691,7 +670,7 @@ function listActivities() {
                 $('#tableActivities tbody').empty();
                     for (let i = 0; i < resposta.length; i++){
                         nrActivities = nrActivities + 1;
-                    $('#tableActivities tbody').append('<tr><td>' + '<input name="checkbox1"  type="checkbox" value='+resposta[i].id_activity+'>' +'</td><td>'+ resposta[i].id_activity +  '</td><td>'+ resposta[i].description +'</td><td>' + resposta[i].date  + " "+  resposta[i].time + '</td><td>'+ resposta[i].type + '</td><td>' + resposta[i].name + '</td><td>' + resposta[i].address + " , " + resposta[i].county+ " , "  + resposta[i].district +  (resposta[i].state == "active" ? '</td><td><p class="ongoing">Ativa</p>' : (resposta[i].state == "closed" ? '</td><td><p class="solved">Concluída</p>' : (resposta[i].state == "archived" ? '</td><td><p class="unsolved">Arquivado</p>'  : '</td><td><p class="unknown">Indefinido</p>' ))) + '</td><td>'+ '<div class="dropdown keep-open show-dropdown"> <a href="#" data-toggle="dropdown" aria-expanded="false" > <i class="fas fa-ellipsis-v"> </i></a> <ul class="dropdown-menu "  >                                                <li class="header-title"> <i class="fas fa-cog"></i> Opções</li>     <!-- Division of page -->                                            <div style="height: 2px; background-color: #F7F7F7; margin-bottom: 5%;"></div> <li data-target="#InfoModal" data-toggle="modal"><a id="editar" onclick="editFunction()"> <p  class="dropdownText">                             <i class="far fa-edit" style="padding-right: 4px !important"></i>   Editar</p> </a></li>                                               <li > <a id="apagar" onclick="deleteFunction()"> <p href="#" class="dropdownText">                            <i class="fas fa-trash-alt" style="padding-right: 6px !important"></i>Eliminar</p></a></li> ' + '</td></tr>' )
+                    $('#tableActivities tbody').append('<tr><td>' + '<input name="checkbox1"  type="checkbox" value='+resposta[i].id_activity+'>' +'</td><td>'+ resposta[i].id_activity +  '</td><td>'+ resposta[i].description +'</td><td>' + resposta[i].date  + " "+  resposta[i].time + '</td><td>'+ resposta[i].type + '</td><td>' + resposta[i].name + '</td><td>' + resposta[i].address + " , " + resposta[i].county+ " , "  + resposta[i].district +  (resposta[i].state == "Ativo" ? '</td><td><p class="ongoing">Ativo</p>' : (resposta[i].state == "Concluído" ? '</td><td><p class="solved">Concluído</p>' : (resposta[i].state == "Arquivado" ? '</td><td><p class="unsolved">Arquivado</p>'  : '</td><td><p class="unknown">Indefinido</p>' ))) + '</td><td>'+ '<div class="dropdown keep-open show-dropdown"> <a href="#" data-toggle="dropdown" aria-expanded="false" > <i class="fas fa-ellipsis-v"> </i></a> <ul class="dropdown-menu "  >                                                <li class="header-title"> <i class="fas fa-cog"></i> Opções</li>     <!-- Division of page -->                                            <div style="height: 2px; background-color: #F7F7F7; margin-bottom: 5%;"></div> <li data-target="#InfoModal" data-toggle="modal"><a id="editar" onclick="editFunction('+resposta[i].id_activity+')"> <p  class="dropdownText">                             <i class="far fa-edit" style="padding-right: 4px !important"></i>   Editar</p> </a></li>                                               <li > <a id="apagar" onclick="deleteFunction('+ resposta[i].id_activity+')"> <p href="#" class="dropdownText">                            <i class="fas fa-trash-alt" style="padding-right: 6px !important"></i>Eliminar</p></a></li> ' + '</td></tr>' )
                     numberActivities();
                     }
           
@@ -711,38 +690,80 @@ function listActivities() {
 
         //DELETE FUNCTION 
         
-       function deleteFunction(id){
-            fetch('https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/Requests/'+ id, {
-                method: 'delete',
+        function deleteFunction(id){
+    
+    let idRequest
+    
+    getData();
+    
+    async function getData() {
+        try {
+const result = fetch(`http://188.82.156.135:8080/Back-end/ActivityRequestJoinGetByIdActivity?id_activity=` + id)
+const response = await result
+const jsonData = await response.json()
+idRequest= jsonData[0].id_request;
 
-            }).then(function (response) {Swal.fire(
+deleteOcc();
+
+} catch (e) {
+throw Error(e) } 
+
+        
+    }
+function deleteOcc(){
+               
+    fetch('http://188.82.156.135:8080/Back-end/ActivityDelete?id_activity=' + id)
+            .then(res => res.json())
+            .then((out) => {
+                console.log(out);
+
+                
+            }
+         ).then(updateRequest).catch(function(err) {console.log(err);})
+            
+}
+
+let estado = "Aguardar"
+
+function updateRequest(){
+         fetch('http://188.82.156.135:8080/Back-end/ActivityRequestStatePut', {
+                                headers: {
+                                    "Content-Type": "application/x-www-form-urlencoded"
+                                },
+                                method: 'PUT',
+                                body: `state=${estado}&id_request=${idRequest}`
+                
+                
+        }).then(function (response) {
+            Swal.fire(
   '',
-  'Pedido de Ocorrência removido com sucesso!',
+  'Atividade removida com sucesso!',
   'success'
 ).then(  function(){ 
                     
-     window.location.reload();
+    window.location.reload();
    });
             
                     
                 }).catch(function(err) {console.log(err);})
                 
 
-       }
+
+   }}
 
 
-// ARCHIVE REQUEST
+// ARCHIVE Activity
 
 function archive(id){
-    let archiveRequest = "Arquivado"
+    let archiveActivity = "Arquivado"
 
 
-            fetch('https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/RequestsUpdateState/'+ id, {
+            fetch('http://188.82.156.135:8080/Back-end/ActivityPutState'+ id, {
                 headers: {
                                     "Content-Type": "application/x-www-form-urlencoded"
                                 },
                                 method: 'PUT',
-                                body: `state=${archiveRequest}`
+                                body: `state=${archiveActivity}`
                             }).then(function (response) {Swal.fire(
               '',
               'Alteração efetuada com sucesso!',
@@ -754,216 +775,86 @@ function archive(id){
                         
     
     
-}
-      // FEATURES MATERIAL TABLE 
-       
-let id_request_for_material_creation
-       
-function delete_row(no, id)
-{
-            fetch('https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/OccurrenceMaterials/'+ id_request_for_material_creation +'/' + id, {
-                method: 'delete',
+}      
 
-            });
-            
-            $(document).ready(function() {
-        //Populate Select Dropdown with Materials 
-            fetch('https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/Material/')
-            .then(res => res.json())
-            .then((out) => {
-                $.each(out, function(index, value) {
-var selectmaterial = document.getElementById("material");
-    selectmaterial.options[selectmaterial.options.length] = new Option(value.category, value.id_material);
- });
-            }).catch(err => console.error(err));
-})
-            
-$( "#data_table" ).load( "PedidosOcorrencia.html #data_table" );
-
-
-
-    //LOAD MATERIAL TABLE
-     var idMaterial = document.getElementById("material").value;
-
-    function listMaterials() {
-            fetch('https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/OccurrenceMaterials/' + id_request_for_material_creation)
-            .then(res => res.json())
-            .then((out) => {
-                $.each(out, function(index, value) {
-                   let idMaterial = value.id_material;
-                    $('#data_table tbody').append('<tr><td>' + (value.category != null ? value.category : "") +  (value.quantity != null ? '</td><td>' + value.quantity : '</td><td>') +  "</td><td>" + (value.id_material != null ? "<a style='display: flex; justify-content: center;' onclick='delete_row("+id_request_for_material_creation+',' + idMaterial +")'><i style='color: red; display: inline-block;' class='fas fa-trash' ></i></a></td></tr>" : "")  )
-                });
-            }).catch(err => console.error(err));
-        }
-
-        $(document).ready(function() {
-            listMaterials();
-        })
-        
-
-}
-
-function edit_row(no, id_material)
-{
-
- var material=document.getElementById("material_row"+no);
- var material_quantity=document.getElementById("material_quantity_row"+no);
-	
- var material_data=material.innerHTML;
- var material_quantity_data=material_quantity.innerHTML;
-	
- material.innerHTML="<input type='text' id='material_text"+no+"' value='"+material_data+"'>";
- material_quantity.innerHTML="<input type='text' id='material_quantity_text"+no+"' value='"+material_quantity_data+"'>";
-}
-
-
-function add_row()
-{
- var material= $('#material option:selected').text();
- var idMaterial = document.getElementById("material").value;
- var id_material_selected = document.getElementById("material").value
- var material_quantity=document.getElementById("material_quantity").value;
-	
- var table=document.getElementById("data_table");
- var table_len=(table.rows.length)-1;
- var row = table.insertRow(table_len).outerHTML="<tr id='row"+table_len+"'><td id='material_row"+table_len+"'>"+material+"</td><td id='material_quantity_row"+table_len+"'>"+material_quantity+"</td><td> <a style='display: flex; justify-content: center;' onclick='delete_row("+table_len+',' + idMaterial +")'><i style='color: red; display: inline-block; position: center;' class='fas fa-trash' ></i></a></td></tr>";
-
-//ADD TO DATABASE
-                 fetch('https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/OccurrenceMaterials/', {
-                    headers: {
-                        "Content-Type": "application/x-www-form-urlencoded"
-                    },
-                    method: 'post',
-                    body: `id_request=${id_request_for_material_creation}&id_material=${id_material_selected}&quantity=${material_quantity}`
-                })
-.then(function(response) {
-  if(response.ok) {
-  } else {
-      Swal.fire(
-                      '',
-                      'Erro. Material já inserido!',
-                      'error'
             
             
-                    )
-            $(document).ready(function() {
-        //Populate Select Dropdown with Materials 
-            fetch('https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/Material/')
-            .then(res => res.json())
-            .then((out) => {
-                $.each(out, function(index, value) {
-var selectmaterial = document.getElementById("material");
-    selectmaterial.options[selectmaterial.options.length] = new Option(value.category, value.id_material);
- });
-            }).catch(err => console.error(err));
-})
-            
-$( "#data_table" ).load( "PedidosOcorrencia.html #data_table" );
-
-
-
-    //LOAD MATERIAL TABLE
+function editFunction(id){  
     
 
-    function listMaterials() {
-         var idMaterial = document.getElementById("material").value;
-     var table=document.getElementById("data_table");
- var table_len=(table.rows.length)-1;
-            fetch('https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/OccurrenceMaterials/' + id_request_for_material_creation)
-            .then(res => res.json())
-            .then((out) => {
-                $.each(out, function(index, value) {
-                   let idMaterial = value.id_material;
-                    $('#data_table tbody').append('<tr><td>' + (value.category != null ? value.category : "") +  (value.quantity != null ? '</td><td>' + value.quantity : '</td><td>') +  "</td><td>" + (value.id_material != null ? "<a style='display: flex; justify-content: center;' onclick='delete_row("+id_request_for_material_creation+',' + idMaterial +")'><i style='color: red; display: inline-block;' class='fas fa-trash' ></i></a></td></tr>" : "")  )
-                });
-            }).catch(err => console.error(err));
-        }
+    fetch('http://188.82.156.135:8080/Back-end/ActivityRequestJoinGetByIdActivity?id_activity='+ id)
+            .then(res => res.arrayBuffer())
+  .then(buffer => {
+    let decoder = new TextDecoder("iso-8859-1");
+    let text = decoder.decode(buffer);
+    resposta = JSON.parse(text.toString());
 
-        $(document).ready(function() {
-            listMaterials();
-        })
-        
-  }
-})
-.catch(function(error) {
-  console.log('Ocorreu um problema: ' + error.message);
-});
-     
-     
-     
-//Clean imputs
- document.getElementById("material").value= "";
- document.getElementById("material_quantity").value="";
-}
-        
 
-            
-            
-function editFunction(id){
-    id_request_for_material_creation = id;
     
-            fetch('https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/Requests/'+ id)
-            .then(res => res.json())
-            .then((out) => {
-                $.each(out, function(index, value) {
-                    if (value.date_Request !== null) {
-                        document.getElementById("date_Request").value = value.date_Request; }
-                    if (value.designation_Location !== null) {
-                        document.getElementById("designation_Location").value = value.designation_Location;}
-                    if (value.address_Location !== null) { 
-                        document.getElementById("address_Location").value = value.address_Location;}
-                    if (value.id_operations_manager !== null) { 
-                        var select = document.getElementById("managers");
-                            for(let i = 0;i < select.options.length;i++){
-                                if(select.options[i].value == value.id_operations_manager){
-                                    select.options[i].selected = true;
-                                }
-                            }
-                    }
+  }).then((out) => {
+
+
+                    if (resposta[0].date !== null) {
+                        document.getElementById("date_Request").value = resposta[0].date; }
+
+                    if (resposta[0].time !== null) {
+                        document.getElementById("time_Request").value = resposta[0].time;}
+
+                        if (resposta[0].name !== null) {
+                        document.getElementById("institution_name").value = resposta[0].name;}
+                        
+                        if (resposta[0].description !== null) {
+                        document.getElementById("name_Request").value = resposta[0].description;}
+                        
+                        if (resposta[0].type !== null) {
+                        document.getElementById("type_Request").value = resposta[0].type;}
+
+                    if (resposta[0].address !== null) { 
+                        document.getElementById("address_Location").value = resposta[0].address;}
+
+                  
+                   
                     
-                    if (value.degree_of_emergency_Crime_Nature !== null) { 
-                        var select = document.getElementById("degree_of_emergency_Crime_Nature");
-                            for(let i = 0;i < select.options.length;i++){
-                                if(select.options[i].value == value.degree_of_emergency_Crime_Nature){
-                                    select.options[i].selected = true;
-                                }
-                            }
-                    }                    
-                    
-                    if (value.county_Location !== null){
-                        document.getElementById("county").value = value.county_Location;
+                    if (resposta[0].county !== null){
+                        document.getElementById("county").value = resposta[0].county;
                     }
              
-                    if (value.type_Request !== null) { 
-                        document.getElementById("type_Request").value = value.type_Request; }
-                        
-                let select2 = document.getElementById("designation_Crime_Nature");
+                    if (resposta[0].district !== null) { 
+                        document.getElementById("district").value = resposta[0].district; }
 
-                            for(let i = 0;i < select2.options.length;i++){
-                                
-                                if(select2.options[i].value  == value.id_crime_nature){
-                                    select2.options[i].selected = true;
-                                }
-                            } 
+                                 
+                        if (resposta[0].post_code !== null) { 
+                        document.getElementById("post_code").value = resposta[0].post_code; }
+                        
+                                     
+                    if (resposta[0].latitude !== null) { 
+                        document.getElementById("latitude").value = resposta[0].latitude; }
+
+                        if(resposta[0].longitude !== null){
+                            document.getElementById("longitude").value = resposta[0].longitude;
+                        }
+                        
+                        
+
+                    if(resposta[0].photo != null){
+                        document.getElementById("requestIcon").value= resposta[0].photo;
+                        document.getElementById("requestIcon").src = "http://188.82.156.135:8080/Back-end/IMAGES/" + resposta[0].photo;
+                        console.log( "http://188.82.156.135:8080/Back-end/IMAGES/" + resposta[0].photo);
+                    }
                     
-                    
-                    if (value.state_Request !== null) { 
+                    if (resposta[0].state !== null) { 
                         let select1 = document.getElementById("state");
                             for(let i = 0;i < select1.options.length;i++){
-                                if(select1.options[i].value == value.state_Request){
+                                if(select1.options[i].value == resposta[0].state){
                                     select1.options[i].selected = true;
                                 }
                             } 
                     }
                     
-                    if (value.description_Request !== null) {
-                        document.getElementById("description_Request").value = value.description_Request; 
-                        
-                    }
-                    
+
                 
         
-                });
+    
             }).catch(err => console.error(err));
 
             const editForm = document.getElementById('editForm');
@@ -971,35 +862,18 @@ function editFunction(id){
                         editForm.addEventListener('submit', function(e){
                             e.preventDefault();
 
-            const date_Request = document.getElementById("date_Request").value
-            const designation_Location = document.getElementById("designation_Location").value
-            const address_Location  = document.getElementById("address_Location").value
-            const degree_of_emergency_Crime_Nature = document.getElementById("degree_of_emergency_Crime_Nature").value
-            const type_Request = document.getElementById("type_Request").value
-            const designation_Crime_Nature  = document.getElementById("designation_Crime_Nature").value
-            const state_Request = document.getElementById("state").value
-            const description_Request = document.getElementById("description_Request").value
-            let id_operations_manager
-            
-            if (document.getElementById("managers").value == 0){
-                id_operations_manager = null;
-            } else {id_operations_manager = document.getElementById("managers").value}
-            
-            document.getElementById("managers").addEventListener("change", function() {
-                if (document.getElementById("managers").value == 0){
-                    id_operations_manager = null
-                } else{
-                id_operations_manager = document.getElementById("managers").value}
 
-});
-            
+            const state = document.getElementById("state").value
+
+
+
     
-                            fetch('https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/Requests/'+ id, {
+                            fetch('http://188.82.156.135:8080/Back-end/ActivityPutState', {
                                 headers: {
                                     "Content-Type": "application/x-www-form-urlencoded"
                                 },
                                 method: 'PUT',
-                                body: `id_crime_nature=${designation_Crime_Nature}&degree_of_emergency=${degree_of_emergency_Crime_Nature}&type=${type_Request}&state=${state_Request}&description_Request=${description_Request}&id_operations_manager=${id_operations_manager}`
+                                body: `id_activity=${id}&state=${state}`
                             }).then(function (response) {Swal.fire(
               '',
               'Alteração efetuada com sucesso!',
@@ -1008,44 +882,15 @@ function editFunction(id){
                   window.location.reload();
                });
                             }).catch(function(err) {console.log(err);})
+
+
+ 
                         });
+
+
+                     
             
         
-    //LOAD MATERIAL TABLE
-
-    function listMaterials() {
-         var idMaterial = document.getElementById("material").value;
-        
-     var table=document.getElementById("data_table");
- var table_len=(table.rows.length)-1;
-            fetch('https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/OccurrenceMaterials/' + id_request_for_material_creation)
-            .then(res => res.json())
-            .then((out) => {
-                $('#data_table tbody').empty();
-                $('#data_table tbody').append('<tr><td><select class="selectbtn custom-select" id="material"> <option value="0"> Selecione Material: </option> </select></td><td><input type="number" id="material_quantity"></td><td> <button type="button" class="add btn btn-info add-new" id="addButton" onclick="add_row();"><i class="fa fa-plus"></i></button></td></tr>');
-                            $(document).ready(function() {
-        //Populate Select Dropdown with Materials 
-            fetch('https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/Material/')
-            .then(res => res.json())
-            .then((out) => {
-                $.each(out, function(index, value) {
-var selectmaterial = document.getElementById("material");
-    selectmaterial.options[selectmaterial.options.length] = new Option(value.category, value.id_material);
- });
-            }).catch(err => console.error(err));
-})
-                $.each(out, function(index, value) {
-                   let idMaterial = value.id_material;
-                    $('#data_table tbody').append('<tr><td>' + (value.category != null ? value.category : "") +  (value.quantity != null ? '</td><td>' + value.quantity : '</td><td>') +  "</td><td>" + (value.id_material != null ? "<a style='display: flex; justify-content: center;' onclick='delete_row("+id_request_for_material_creation+',' + idMaterial +")'><i style='color: red; display: inline-block;' class='fas fa-trash' ></i></a></td></tr>" : "")   )
-                });
-            }).catch(err => console.error(err));
-        }
-
-        $(document).ready(function() {
-            listMaterials();
-        })
-
-    
     
     
     

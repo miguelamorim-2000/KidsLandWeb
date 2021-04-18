@@ -51,7 +51,7 @@
     <link href="css/buttons.css" rel="stylesheet" type="text/css" />
 
     <!-- tab icon -->
-    <link rel="icon" href="https://i.ibb.co/1QqKMf4/Sem-t-tulo-1.png" type="image/icon type">
+    <link rel="icon" href="https://i.ibb.co/g3PKBk7/logo-Kids-Landv23.png" type="image/icon type">
     
     <!-- sweetalert2 -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
@@ -68,7 +68,7 @@
 
             <!-- Sidebar - Brand -->
  <a class="navbar-brand" href="PaginaInicial.html">
-          <img src="https://i.ibb.co/Rhpc8XK/logo-Kids-Land2.png" style="width: 110%; padding-top: 10px; padding-bottom: 10px; padding-left: 5px !important;" alt="">
+          <img src="https://i.ibb.co/g3PKBk7/logo-Kids-Landv23.png" style="width: 110%; padding-top: 10px; padding-bottom: 10px; padding-left: 5px !important;" alt="">
         </a>
 
             <!-- Divider -->
@@ -236,7 +236,14 @@
                                     Pesquisar Por:
                                     <i class="fas fa-filter"></i>
                                     <select id="filtrarPor" style="background-color: #f8f9fc; border: transparent;" type="text/css">
-                                                <option></option>
+                                        <option></option>
+                                                <option>ID</option>
+                                                <option>Estado</option>
+                                                <option>Nome</option>
+                                                <option>Data</option>
+                                                <option>Morada</option>
+                                                <option>Instituição</option>
+
 
 
                                             </select>
@@ -569,8 +576,19 @@ if (response.status== 469){
         
         <script>
 
-            
+    //Filter
         
+        
+var select = document.getElementById("filtrarPor");
+document.getElementById('filtrarPor').addEventListener('change', function() {
+     
+        if (select.selectedIndex == 0) {
+            nrRequests = 0;
+            listRequests();
+            document.getElementById("filterInput").value = "";
+            
+        }
+});
 
 function filter() {
     let e = document.getElementById("filtrarPor");
@@ -580,16 +598,24 @@ function filter() {
   let input, filter, table, tr, td, i, txtValue;
   input = document.getElementById("filterInput");
   filter = input.value.toUpperCase();  
-  table = document.getElementById("tableFacts");
+  table = document.getElementById("tableRequests");
   tr = table.getElementsByTagName("tr");
 
   // Loop through all table rows, and hide those who don't match the search query
   let coluna 
-  
-        if (campo == "Nome")  
+
+        if (campo == "ID")  
       {coluna = 1;}
-      else if (campo == "Designação") 
+      else if (campo == "Nome") 
       {coluna = 2;} 
+      else if (campo == "Estado")
+      {coluna = 7;}
+      else if (campo =="Data")
+      {coluna = 3;}
+      else if (campo =="Morada")
+      {coluna = 5;}
+      else if (campo =="Instituição")
+      {coluna = 6;}
 
   for (i = 0; i < tr.length; i++) {
       
@@ -688,7 +714,7 @@ function listRequests() {
             }
             ).then(function (response) {Swal.fire(
    '',
-   'Pedido de Atividade eliminado com sucesso',
+   'Atividade eliminada com sucesso',
    'success'
  ).then(  function(){ 
                      
@@ -719,6 +745,7 @@ function editFunction(id){
     let decoder = new TextDecoder("iso-8859-1");
     let text = decoder.decode(buffer);
     resposta = JSON.parse(text.toString());
+
 
 
 
@@ -797,7 +824,8 @@ function editFunction(id){
             const date= document.getElementById("date_Request").value
           
 
-            const time = document.getElementById("time_Request").value
+            const time = (document.getElementById("time_Request").value )
+
 
             const name = document.getElementById("institution_name").value
             const description = document.getElementById("name_Request").value
@@ -811,6 +839,18 @@ function editFunction(id){
             const longitude = document.getElementById("longitude").value
             const state = document.getElementById("state").value
 
+console.log("date: " + date);
+console.log("id_request: " + id);
+console.log("state: " + state);
+console.log("description: " + description);
+console.log("time: " +time);
+console.log("type: " + type);
+console.log("address: " + address);
+console.log("county: " + county)
+console.log("district: " + district);
+console.log("post_code: " + post_code)
+console.log("latitude: " + latitude)
+console.log("longitude: " + longitude)
 
 
     
