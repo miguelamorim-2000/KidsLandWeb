@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>PSP - Formulário de Ocorrencia </title>
+    <title>KidsLand - SOMETHING USEFULL</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -19,7 +19,7 @@
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
-
+    
     <!--Clock Style-->
     <link href="css/clock.css" rel="stylesheet" type="text/css">
     
@@ -51,9 +51,9 @@
     <link href="css/colors.css" rel="stylesheet" type="text/css">
     
     <!-- tab icon -->
-    <link rel="icon" href="https://www.psp.pt/PublishingImages/favicon.ico" type="image/icon type">
+    <link rel="icon" href="https://i.ibb.co/g3PKBk7/logo-Kids-Landv23.png" type="image/icon type">
     
-    <!-- sweetalert2 -->
+        <!-- sweetalert2 -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
 </head>
@@ -67,89 +67,84 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion sidebar-color" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
- <a class="navbar-brand" href="PaginaInicial.html">
-          <img src="https://svgshare.com/i/RzW.svg" style="padding-top: 10px; padding-bottom: 10px; padding-left: 5px !important;" alt="">
-        </a>
+            <a class="navbar-brand">
+                <img src="https://i.ibb.co/g3PKBk7/logo-Kids-Landv23.png" style="width: 110%; padding-top: 10px; padding-bottom: 10px; padding-left: 5px !important;" alt="">
+              </a>
 
-            <!-- Divider -->
-            <hr class="sidebar-divider my-0">
+             <!-- Divider -->
+      <hr class="sidebar-divider">
 
-            <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
-                <a class="nav-link" href="index.html">
-                   <i class="fas fa-chart-line"></i>
-                    <span>Dashboard</span></a>
-            </li>
+      <!-- Heading -->
+      <div class="sidebar-heading" >
+          Operações
+      </div>
 
-            <!-- Divider -->
-            <hr class="sidebar-divider">
+      <!-- Nav Item - Pages Collapse Menu -->
+      <li class="nav-item">
+          <a class="nav-link" href="FormularioFacto.html" 
+              aria-expanded="true" aria-controls="collapseTwo">
+              <i class="fas fa-edit"></i>
+              <span>Novo Facto</span>
+          </a>
+      </li>
 
-            <!-- Heading -->
-            <div class="sidebar-heading" >
-                Operações
-            </div>
+      <!-- Nav Item - Utilities Collapse Menu -->
+      <li class="nav-item">
+          <a class="nav-link" href="FormulárioInstituicao.html" 
+              aria-expanded="true" aria-controls="collapseUtilities">
+              <i class="fas fa-user-edit"></i>
+              <span>Nova Instituição</span>
+          </a>
+      </li>
+      
 
-            <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link" href="FormularioEntidade.html" 
-                    aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-edit"></i>
-                    <span>Nova Entidade</span>
-                </a>
-            </li>
+      <!-- Divider -->
+      <hr class="sidebar-divider">
 
-            <!-- Nav Item - Utilities Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link" href="FormulárioOperacional.html" 
-                    aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fas fa-user-edit"></i>
-                    <span>Novo Operacional</span>
-                </a>
-            </li>
+      <!-- Heading -->
+      <div class="sidebar-heading">
+          Dados
+      </div>
+
+      <!-- Nav Item - Charts -->
+      <li class="nav-item">
+          <a class="nav-link" href="CM_InstitutionsList.html">
+              <i class="fas fa-clock"></i>
+              <span>Instituições</span></a>
+      </li>
+
+      <li class="nav-item">
+          <a class="nav-link" href="CM_FactsList.html">
+              <i class="fas fa-map-marker-alt fa-fw"></i>
+              <span>Factos</span></a>
+      </li>
+
+      <!-- Nav Item - Tables -->
+      <li class="nav-item">
+          <a class="nav-link" href="CM_RequestActivities.html">
+              <i class="fas fa-exclamation-circle"></i>
+              <span>Pedidos de Atividades</span></a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" href="CM_AtivitiesProgrammed.html">
+              <i class="fas fa-exclamation-circle"></i>
+              <span>Atividades Programadas</span></a>
+      </li>
+      
+      <li class="nav-item">
+          <a class="nav-link" href="Entidades.html">    <!--alterar-->
+              <i class="fas fa-map-marker-alt fa-fw"></i>
+              <span>Plano de Ação</span></a>
+      </li>
             
-             <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link" href="FormulárioOcorrência.html">
-                    <i class="fas fa-plus"></i>
-                    <span>Novo Pedido de Ocorrencia</span></a>
-            </li>
 
-            <!-- Divider -->
-            <hr class="sidebar-divider">
-
-            <!-- Heading -->
-            <div class="sidebar-heading">
-                Dados
-            </div>
-
-            <!-- Nav Item - Charts -->
-            <li class="nav-item">
-                <a class="nav-link" href="PedidosOcorrencia.html">
-                    <i class="fas fa-clock"></i>
-                    <span>Pedidos de Ocorrência</span></a>
-            </li>
-
-            <!-- Nav Item - Tables -->
-            <li class="nav-item">
-                <a class="nav-link" href="Ocorrencias.html">
-                    <i class="fas fa-exclamation-circle"></i>
-                    <span>Ocorrências</span></a>
-            </li>
-            
-            <li class="nav-item">
-                <a class="nav-link" href="Entidades.html">
-                    <i class="fas fa-map-marker-alt fa-fw"></i>
-                    <span> Entidades </span></a>
-            </li>
-            
-            <li class="nav-item">
-                <a class="nav-link" href="Operacionais.html">  
-                    <i class="fa fa-users" aria-hidden="true"></i>
-                    <span> Operacionais </span></a>
-            </li>
-            
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
+            
+              <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
 
 
 
@@ -166,57 +161,56 @@
             <div id="content">
 
    <!-- Toptopbar -->
-                <section class="navbar navbar-expand navbar-light topbar static-top shadow topbar3"></section>
+   <section class="navbar navbar-expand navbar-light topbar static-top shadow topbar3"></section>
 
-                <!--Topbar-->
-                <nav style=" max-height: 60px !important;" class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow topbar2">
+   <!--Topbar-->
+   <nav style=" max-height: 60px !important;" class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow topbar2">
 
-                    <!-- Topbar Search -->
-                      <div style="text-align: center ; padding-left:40%; margin-top: 0.75%;">
-                        <h2 class="" style="font-size: 150% !important">
-                        Centro de Operações 
-                        </h2>
-                    </div>
+       <!-- Topbar Search -->
+         <div style="text-align: center ; padding-left:40%; margin-top: 0.75%;">
+           <h2 class="" style="font-size: 150% !important">
+           Centro de Operações 
+           </h2>
+       </div>
 
-                    <!-- Topbar Navbar -->
-                    <ul class="navbar-nav ml-auto">
+       <!-- Topbar Navbar -->
+       <ul class="navbar-nav ml-auto">
 
-                        <!-- Real Time Clock -->
-                        <li class="nav-itme dropdown no-arrow mt-6 mx-1">
-                            <div id='clock'>
-                                <br> 0:0:0 xx
-                            </div>
-                        </li>
+           <!-- Real Time Clock -->
+           <li class="nav-itme dropdown no-arrow mt-6 mx-1">
+               <div id='clock'>
+                   <br> 0:0:0 xx
+               </div>
+           </li>
 
-                        <div class="topbar-divider d-none d-sm-block"></div>
 
-                        <!-- Nav Item - User Information -->
-                        <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small" id="userName"></span>
-                                <img id="logoIcon" class="img-profile rounded-circle"
-                                    src="">
-                            </a>
-                            <!-- Dropdown - User Information -->
-                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                                <a class="dropdown-item">
-                                    <i class="fas fa-user-alt fa-sm fa-fw mr-2 text-gray-400"></i> Editar Foto
-                                                                             <form id="formProfile" class="form-horizontal form-material">
-                                            <input style="width: 120px;transform: scale(0.77,0.80);margin-left:10%"id="editPhoto" type="file" style="background-color: Transparent;background-repeat:no-repeat;border: none;cursor:pointer;overflow: hidden; " value="Editar Foto"></input>
-                                            <button style="background-color: Transparent;background-repeat:no-repeat; border: none; cursor:pointer;overflow: hidden; outline: none;"><i class="fas fas fa-upload fa-md fa-fw mr-2 " style="color: green;"></i></button>
-                                            </form>
-                                </a>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Logout
-                                </a>
-                            </div>
-                        </li>
 
-                    </ul>
 
-                </nav>
-                <!-- End of Topbar -->
+
+           <div class="topbar-divider d-none d-sm-block"></div>
+
+           <!-- Nav Item - User Information -->
+           <li class="nav-item dropdown no-arrow">
+               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                   <span class="mr-2 d-none d-lg-inline text-gray-600 small" id="userName"></span>
+                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots" viewBox="0 0 16 16" color="#1B4965">
+                       <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
+                     </svg>
+               </a>
+               <!-- Dropdown - User Information -->
+               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                   
+                   <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                       <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                       Logout
+                   </a>
+               </div>
+           </li>
+
+       </ul>
+
+   </nav>
+   <!-- End of Topbar -->
     
      <div class="container-fluid">
              <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
