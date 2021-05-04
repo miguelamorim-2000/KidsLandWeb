@@ -11,7 +11,7 @@
     <meta name="author" content="">
     
 
-    <title>Kidsland - Atividades Programadas</title>
+    <title>Kidsland - Participantes</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.css" rel="stylesheet" type="text/css">
@@ -55,7 +55,7 @@
     
     <!-- sweetalert2 -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-    <!--teste1-->
+
 </head>
 
 <body id="page-top">
@@ -63,93 +63,67 @@
     <!-- Page Wrapper -->
     <div id="wrapper">
 
-          <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion sidebar-color" id="accordionSidebar">
+      <!-- Sidebar -->
+      <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion sidebar-color" id="accordionSidebar">
 
-            <!-- Sidebar - Brand -->
- <a class="navbar-brand">
-    <img src="https://i.ibb.co/g3PKBk7/logo-Kids-Landv23.png" style="width: 110%; padding-top: 10px; padding-bottom: 10px; padding-left: 5px !important;" alt="">
-  </a>
-
-      <!-- Divider -->
-      <hr class="sidebar-divider">
-
-      <!-- Heading -->
-      <div class="sidebar-heading" >
-          Operações
-      </div>
-
-      <!-- Nav Item - Pages Collapse Menu -->
-      <li class="nav-item">
-          <a class="nav-link" href="FormularioFacto.html" 
-              aria-expanded="true" aria-controls="collapseTwo">
-              <i class="fas fa-edit"></i>
-              <span>Novo Facto</span>
+        <!-- Sidebar - Brand -->
+        <a class="navbar-brand">
+            <img src="https://i.ibb.co/g3PKBk7/logo-Kids-Landv23.png" style="width: 110%; padding-top: 10px; padding-bottom: 10px; padding-left: 5px !important;" alt="">
           </a>
-      </li>
 
-      <!-- Nav Item - Utilities Collapse Menu -->
-      <li class="nav-item">
-          <a class="nav-link" href="FormulárioInstituicao.html" 
-              aria-expanded="true" aria-controls="collapseUtilities">
-              <i class="fas fa-user-edit"></i>
-              <span>Nova Instituição</span>
-          </a>
-      </li>
-      
+  <!-- Divider -->
+  <hr class="sidebar-divider">
 
-      <!-- Divider -->
-      <hr class="sidebar-divider">
+  <!-- Heading -->
+  <div class="sidebar-heading" >
+      Operações
+  </div>
 
-      <!-- Heading -->
-      <div class="sidebar-heading">
-          Dados
-      </div>
+  <!-- Nav Item - Pages Collapse Menu -->
+  <li class="nav-item">
+      <a class="nav-link" href="IT_NewActivityRequest.html" 
+          aria-expanded="true" aria-controls="collapseTwo">
+          <i class="fas fa-edit"></i>
+          <span>Nova Atividade</span>
+      </a>
+  </li>
+  
 
-      <!-- Nav Item - Charts -->
-      <li class="nav-item">
-          <a class="nav-link" href="CM_InstitutionsList.html">
-              <i class="fas fa-clock"></i>
-              <span>Instituições</span></a>
-      </li>
+  <!-- Divider -->
+  <hr class="sidebar-divider">
 
-      <li class="nav-item">
-          <a class="nav-link" href="CM_FactsList.html">
-              <i class="fas fa-map-marker-alt fa-fw"></i>
-              <span>Factos</span></a>
-      </li>
+  <!-- Heading -->
+  <div class="sidebar-heading">
+      Dados
+  </div>
 
-      <!-- Nav Item - Tables -->
-      <li class="nav-item">
-          <a class="nav-link" href="CM_RequestActivities.html">
-              <i class="fas fa-exclamation-circle"></i>
-              <span>Pedidos de Atividades</span></a>
-      </li>
-      <li class="nav-item">
-          <a class="nav-link" href="CM_AtivitiesProgrammed.html">
-              <i class="fas fa-exclamation-circle"></i>
-              <span>Atividades Programadas</span></a>
-      </li>
-      
-      <li class="nav-item">
-          <a class="nav-link" href="Entidades.html">    <!--alterar-->
-              <i class="fas fa-map-marker-alt fa-fw"></i>
-              <span>Plano de Ação</span></a>
-      </li>
-            
+  <!-- Nav Item - Charts -->
+  <li class="nav-item">
+      <a class="nav-link" href="IT_ListActivities.html">
+          <i class="fas fa-clock"></i>
+          <span>Lista de Atividades</span></a>
+  </li>
 
-            <!-- Divider -->
-            <hr class="sidebar-divider d-none d-md-block">
-            
-              <!-- Sidebar Toggler (Sidebar) -->
-            <div class="text-center d-none d-md-inline">
-                <button class="rounded-circle border-0" id="sidebarToggle"></button>
-            </div>
+  <li class="nav-item">
+      <a class="nav-link" href="IT_Participants.html">
+          <i class="fas fa-map-marker-alt fa-fw"></i>
+          <span>Participantes</span></a>
+  </li>
+
+        
+
+        <!-- Divider -->
+        <hr class="sidebar-divider d-none d-md-block">
+        
+          <!-- Sidebar Toggler (Sidebar) -->
+        <div class="text-center d-none d-md-inline">
+            <button class="rounded-circle border-0" id="sidebarToggle"></button>
+        </div>
 
 
 
-        </ul>
-        <!-- End of Sidebar -->
+    </ul>
+    <!-- End of Sidebar -->
 
 
 
@@ -167,8 +141,7 @@
 
                     <!-- Topbar Search -->
                       <div style="  white-space: nowrap !important; text-align: center ; padding-left: 40%; margin-top: 0.75%;">
-                        <h2 class="" style="  white-space: nowrap !important; font-size: 150% !important;">
-                            Câmara Municipal de Guimarães
+                        <h2 class="" style="  white-space: nowrap !important; font-size: 150% !important;" id="institutionName">
                         </h2>
                     </div>
 
@@ -216,8 +189,8 @@
 
                     <!-- Page Heading -->
                     <div class="heading">
-                    <h1 class="pagesubtitle margin-t">Atividades Programadas</h1>
-                    <h6 class="info">Número de Pedidos: <span style="margin-bottom: 0px; font-weight: bold;" id="numberActivitiesCount" ></span></h6>
+                    <h1 class="pagesubtitle margin-t">Participantes</h1>
+                    <h6 class="info">Número de Participantes: <span style="margin-bottom: 0px; font-weight: bold;" id="activeFactos" ></span></h6>
                     
                     </div>
                     <!-- DataTales Example -->
@@ -230,14 +203,14 @@
                                     Pesquisar Por:
                                     <i class="fas fa-filter"></i>
                                     <select id="filtrarPor" style="background-color: #f8f9fc; border: transparent;" type="text/css">
-                                                <option></option>
+                                        <option></option>
                                                 <option>ID</option>
                                                 <option>Estado</option>
                                                 <option>Nome</option>
                                                 <option>Data</option>
-                                                <option>Tipo</option>
                                                 <option>Morada</option>
                                                 <option>Instituição</option>
+
 
 
                                             </select>
@@ -253,25 +226,26 @@
                                 </button>
                                     </div>
                                     <input id="filterInput" type="text" class="form-control bg-light border-0 small border-r-10" placeholder="Procurar por..." aria-label="Search" aria-describedby="basic-addon2">
+                                    
                                 </div>
                             </form>
+              
                             
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table table-bordered" id="tableActivities" width="100%" cellspacing="0">
+                                <table class="table table-bordered" id="tableRequests" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
                                             <th class="bs-checkbox " style="width: 36px; " data-field="state"><div class="th-inner ">
                                                 <input name="checkboxall" type="checkbox"  id="checkboxall"></div><div class="fht-cell"></div></th>
-                                                <th>ID </th>
-                                                <th>Nome</th>
-                                                <th>Data e Hora</th>
-                                                <th>Tipo</th>
-                                                <th>Instituição</th>
-                                                <th>Morada</th>
-                                                <th style="width : 120px !important">Estado</th>
-    
+                                                <th >ID</th>
+                                                <th >Nome</th>
+                                                <th >Data</th>
+                                                <th >Hora</th>
+                                                <th >Morada</th>
+                                                <th >Instituição</th>
+                                                <th>Estado </th>
                                             <th>
                                                 <i class="fas fa-ellipsis-v"></i></th>
                                         </tr>
@@ -349,103 +323,101 @@
       </div>
       
       <form id= "editForm" name="editionform">
+      <!--Body-->
+      <div class="modal-body mx-4">
         <!--Body-->
-        <div class="modal-body mx-4">
-          <!--Body-->
-          <div class="row row-space">
-          <div class="md-form pb-3 col-md-3">
-            <label data-error="wrong" data-success="right" for="date_Request">Data do Pedido</label>
-            <input type="date" id="date_Request" class="form-control validate" readonly >
+        <div class="row row-space">
+        <div class="md-form pb-3 col-md-3">
+          <label data-error="wrong" data-success="right" for="date_Request">Data do Pedido</label>
+          <input type="date" id="date_Request" class="form-control validate" >
+        </div>
+        <div class="md-form pb-3 col-md-2">
+            <label data-error="wrong" data-success="right" for="date_Request">Hora:</label>
+            <input style="padding-left: 10px;" type="time" id="time_Request" class="form-control validate" >
           </div>
-          <div class="md-form pb-3 col-md-2">
-              <label data-error="wrong" data-success="right" for="date_Request">Hora:</label>
-              <input style="padding-left: 10px;" type="time" id="time_Request" class="form-control validate" readonly>
-            </div>
-                  <div class="md-form pb-3 col-md-4">
-            <label data-error="wrong" data-success="right" for="designation_Location">Instituição</label>
-            <input type="text" id="institution_name" class="form-control validate" readonly>
-  
-          </div> 
-          <div class="md-form pb-3 col-md-2">
-              <label data-error="wrong" data-success="right" for="address_Location">Icon</label>
-              <br>
-              <img id="requestIcon" class="img-profile" src="" style="width: 100px ; height: 100px !important">
-  
-            </div>
-          
-          </div>
-          <div class="row row-space">
-              <div class="md-form pb-3 col-md-6">
-                  <label data-error="wrong" data-success="right" for="type_Request">Nome Atividade:</label>
-                  <input type="text" id="name_Request" class="form-control validate" readonly>
-                </div> 
-                      <div class="md-form pb-3 col-md-3">
-            <label data-error="wrong" data-success="right" for="type_Request">Tipo de Atividade</label>
-            <input type="text" id="type_Request" class="form-control validate" readonly>
-          </div> 
-  
-          
-  
-          
-          </div>
-          
-  
-       <div class="row row-space">   
-          <div class="md-form pb-8 col-md-8">
-            <label data-error="wrong" data-success="right" for="address_Location">Morada</label>
-            <input type="text" id="address_Location" class="form-control validate" readonly>
-          </div>
-                  <div class="md-form pb-3 col-md-4">
-            <label data-error="wrong" data-success="right" for="address_Location">Localidade</label>
-            <input type="text" id="county" class="form-control validate" readonly>
-          </div>
-          
-          </div>
-          
-           <div class="row row-space">       
-              <div class="md-form pb-3 col-md-4">
-                  <label data-error="wrong" data-success="right" for="address_Location">Distrito</label>
-                  <input type="text" id="district" class="form-control validate" readonly>
-                </div>
                 <div class="md-form pb-3 col-md-4">
-                  <label data-error="wrong" data-success="right" for="address_Location">Código-Postal</label>
-                  <input type="text" id="post_code" class="form-control validate" readonly>
-                </div>
-                <div class="md-form pb-3 col-md-2">
-                  <label data-error="wrong" data-success="right" for="address_Location">Latitude</label>
-                  <input type="text" id="latitude" class="form-control validate" readonly>
-                </div>
-                <div class="md-form pb-3 col-md-2">
-                  <label data-error="wrong" data-success="right" for="address_Location">Longitude</label>
-                  <input type="text" id="longitude" class="form-control validate" readonly>
-                </div>
-          </div>
-  
-       
-  
-       <!-- Division of page -->
-       <br></br>
-          <div style="height: 5px; background-color: #F7F7F7; margin-bottom: 5%;"></div> 
-                          
-      <!-- End of division of page -->  
-      <div class="row row-space">
-  
-          
-          <div class="md-form pb-3 col-md-4">
-            <label class="label"for="state_Request">Estado do Pedido: </label>
-                                  <select class="selectbtn custom-select" id="state" >
-                                      <option value="Arquivado">Arquivado</option>
-                                      <option value="Ativo">Ativo</option> 
-                                      <option value="Concluído">Concluído</option> 
+          <label data-error="wrong" data-success="right" for="designation_Location">Instituição</label>
+          <input type="text" id="institution_name" class="form-control validate" readonly>
 
-                                      </select>
+        </div> 
+        <div class="md-form pb-3 col-md-2">
+            <label data-error="wrong" data-success="right" for="address_Location">Icon</label>
+            <br>
+            <img id="requestIcon" class="img-profile" src="" style="width: 100px ; height: 100px !important">
+
           </div>
-          </div>
-          
-          <div class="text-center mb-5 mt-3">
-            <button type="submit" class="rounded-b button-color textb1" >Guardar Dados</button>
-          </div>
-          </form>
+        
+        </div>
+        <div class="row row-space">
+            <div class="md-form pb-3 col-md-6">
+                <label data-error="wrong" data-success="right" for="type_Request">Nome Atividade:</label>
+                <input type="text" id="name_Request" class="form-control validate">
+              </div> 
+                    <div class="md-form pb-3 col-md-3">
+          <label data-error="wrong" data-success="right" for="type_Request">Tipo de Atividade</label>
+          <input type="text" id="type_Request" class="form-control validate">
+        </div> 
+
+        
+
+        
+        </div>
+        
+
+     <div class="row row-space">   
+        <div class="md-form pb-8 col-md-8">
+          <label data-error="wrong" data-success="right" for="address_Location">Morada</label>
+          <input type="text" id="address_Location" class="form-control validate" >
+        </div>
+                <div class="md-form pb-3 col-md-4">
+          <label data-error="wrong" data-success="right" for="address_Location">Localidade</label>
+          <input type="text" id="county" class="form-control validate" >
+        </div>
+        
+        </div>
+        
+         <div class="row row-space">       
+            <div class="md-form pb-3 col-md-4">
+                <label data-error="wrong" data-success="right" for="address_Location">Distrito</label>
+                <input type="text" id="district" class="form-control validate" >
+              </div>
+              <div class="md-form pb-3 col-md-4">
+                <label data-error="wrong" data-success="right" for="address_Location">Código-Postal</label>
+                <input type="text" id="post_code" class="form-control validate" >
+              </div>
+              <div class="md-form pb-3 col-md-2">
+                <label data-error="wrong" data-success="right" for="address_Location">Latitude</label>
+                <input type="text" id="latitude" class="form-control validate" >
+              </div>
+              <div class="md-form pb-3 col-md-2">
+                <label data-error="wrong" data-success="right" for="address_Location">Longitude</label>
+                <input type="text" id="longitude" class="form-control validate" >
+              </div>
+        </div>
+
+     
+
+     <!-- Division of page -->
+     <br></br>
+        <div style="height: 5px; background-color: #F7F7F7; margin-bottom: 5%;"></div> 
+                        
+    <!-- End of division of page -->  
+    <div class="row row-space">
+
+        
+        <div class="md-form pb-3 col-md-4">
+          <label class="label"for="state_Request">Estado do Pedido: </label>
+                                <select class="selectbtn custom-select" id="state" >
+                                    <option value="Arquivada">Arquivada</option>
+                                    <option value="Aguardar">Aguardar</option> 
+                                    </select>
+        </div>
+        </div>
+        
+        <div class="text-center mb-5 mt-3">
+          <button type="submit" class="rounded-b button-color textb1" >Guardar Dados</button>
+        </div>
+        </form>
       </div>
     </div>
     <!--/.Content-->
@@ -454,6 +426,8 @@
 
 
 <script>  
+        //InnerInstitutionName
+        document.getElementById("institutionName").innerHTML = localStorage.getItem('name');
 
             //Inner Name
         document.getElementById("userName").innerHTML = localStorage.getItem('name');
@@ -570,44 +544,15 @@ if (response.status== 469){
         
         <script>
 
-            
+    //Filter
         
-        //Populate Select Dropdown with natures
-        var selectnature = document.getElementById("designation_Crime_Nature");
-            fetch('https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/CrimesNature/')
-            .then(res => res.json())
-            .then((out) => {
-                $.each(out, function(index, value) {
-    selectnature.options[selectnature.options.length] = new Option(value.designation, value.id_crime_nature);
- });
-            }).catch(err => console.error(err));
         
-        //Populate Select Dropdown with Materials 
-        var selectmaterial = document.getElementById("material");
-            fetch('https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/Material/')
-            .then(res => res.json())
-            .then((out) => {
-                $.each(out, function(index, value) {
-    selectmaterial.options[selectmaterial.options.length] = new Option(value.category, value.id_material);
- });
-            }).catch(err => console.error(err));
-
-//Populate Select Dropdown with Managers
-        var selectmanager = document.getElementById("managers");
-            fetch('https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/OperationalsTypeManager/')
-            .then(res => res.json())
-            .then((out) => {
-                $.each(out, function(index, value) {
-    selectmanager.options[selectmanager.options.length] = new Option(value.name_Candidate, value.id_operational);
- });
-            }).catch(err => console.error(err));
-
-//Filter
-        var select = document.getElementById("filtrarPor");
+var select = document.getElementById("filtrarPor");
 document.getElementById('filtrarPor').addEventListener('change', function() {
      
         if (select.selectedIndex == 0) {
-            listFacts();
+            nrRequests = 0;
+            listRequests();
             document.getElementById("filterInput").value = "";
             
         }
@@ -621,26 +566,24 @@ function filter() {
   let input, filter, table, tr, td, i, txtValue;
   input = document.getElementById("filterInput");
   filter = input.value.toUpperCase();  
-  table = document.getElementById("tableActivities");
+  table = document.getElementById("tableRequests");
   tr = table.getElementsByTagName("tr");
 
   // Loop through all table rows, and hide those who don't match the search query
   let coluna 
-  
-        if (campo == "Nome")  
-      {coluna = 2;}
-      else if (campo == "ID") 
-      {coluna = 1;} 
-      else if (campo == "Estado") 
-      {coluna = 7;} 
-      else if (campo == "Data") 
-      {coluna = 3;} 
-      else if (campo == "Tipo") 
-      {coluna = 4;} 
-      else if (campo == "Instituição") 
-      {coluna = 5;} 
-      else if (campo == "Morada") 
-      {coluna = 6;} 
+
+        if (campo == "ID")  
+      {coluna = 1;}
+      else if (campo == "Nome") 
+      {coluna = 2;} 
+      else if (campo == "Estado")
+      {coluna = 7;}
+      else if (campo =="Data")
+      {coluna = 3;}
+      else if (campo =="Morada")
+      {coluna = 5;}
+      else if (campo =="Instituição")
+      {coluna = 6;}
 
   for (i = 0; i < tr.length; i++) {
       
@@ -659,13 +602,13 @@ td = tr[i].getElementsByTagName("td")[coluna];
 
 //Populate table with facts
 
-let nrActivities = 0;
+let nrRequests = 0;
 
-function listActivities() {
+function listRequests() {
 
     let resposta;
  
-            fetch('http://188.82.156.135:8080/Back-end/ActivityRequestFutureGet')
+            fetch('http://188.82.156.135:8080/Back-end/ActivityRequestNonActivityGet')
             .then(res => res.arrayBuffer())
   .then(buffer => {
     let decoder = new TextDecoder("iso-8859-1");
@@ -678,122 +621,93 @@ function listActivities() {
   })
             .then((out) => {
 
-                $('#tableActivities tbody').empty();
+                $('#tableRequests tbody').empty();
                     for (let i = 0; i < resposta.length; i++){
-                        nrActivities = nrActivities + 1;
-                    $('#tableActivities tbody').append('<tr><td>' + '<input name="checkbox1"  type="checkbox" value='+resposta[i].id_activity+'>' +'</td><td>'+ resposta[i].id_activity +  '</td><td>'+ resposta[i].description +'</td><td>' + resposta[i].date  + " "+  resposta[i].time + '</td><td>'+ resposta[i].type + '</td><td>' + resposta[i].name + '</td><td>' + resposta[i].address + " , " + resposta[i].county+ " , "  + resposta[i].district +  (resposta[i].state == "Ativo" ? '</td><td><p class="ongoing">Ativo</p>' : (resposta[i].state == "Concluído" ? '</td><td><p class="solved">Concluído</p>' : (resposta[i].state == "Arquivado" ? '</td><td><p class="unsolved">Arquivado</p>'  : '</td><td><p class="unknown">Indefinido</p>' ))) + '</td><td>'+ '<div class="dropdown keep-open show-dropdown"> <a href="#" data-toggle="dropdown" aria-expanded="false" > <i class="fas fa-ellipsis-v"> </i></a> <ul class="dropdown-menu "  >                                                <li class="header-title"> <i class="fas fa-cog"></i> Opções</li>     <!-- Division of page -->                                            <div style="height: 2px; background-color: #F7F7F7; margin-bottom: 5%;"></div> <li data-target="#InfoModal" data-toggle="modal"><a id="editar" onclick="editFunction('+resposta[i].id_activity+')"> <p  class="dropdownText">                             <i class="far fa-edit" style="padding-right: 4px !important"></i>   Editar</p> </a></li>                                               <li > <a id="apagar" onclick="deleteFunction('+ resposta[i].id_activity+')"> <p href="#" class="dropdownText">                            <i class="fas fa-trash-alt" style="padding-right: 6px !important"></i>Eliminar</p></a></li> ' + '</td></tr>' )
-                    numberActivities();
+                        nrRequests = nrRequests + 1;
+                    $('#tableRequests tbody').append('<tr><td>' + '<input name="checkbox1"  type="checkbox" value='+ resposta[i].id_request +'>' +'</td><td>'+ resposta[i].id_request +'</td><td>'  + resposta[i].description + '</td><td>'+ resposta[i].date  + '</td><td>'+ resposta[i].time + '</td><td>' + resposta[i].address + " , " + resposta[i].county+ " , "  + resposta[i].district + '</td><td>' + resposta[i].name +  (resposta[i].state == "Aguardar" ? '</td><td><p class="pendent">Aguardar</p>' : (resposta[i].state == "Aceite" ? '</td><td><p class="solved">Concluída</p>' : (resposta[i].state == "Arquivada" ? '</td><td><p class="unsolved">Arquivado</p>'  : '</td><td><p class="unknown">Indefinido</p>' ))) + '</td><td>'+ '<div class="dropdown keep-open show-dropdown"> <a href="#" data-toggle="dropdown" aria-expanded="false" > <i class="fas fa-ellipsis-v"> </i></a> <ul class="dropdown-menu "  >                                                <li class="header-title"> <i class="fas fa-cog"></i> Opções</li>     <!-- Division of page -->                                            <div style="height: 2px; background-color: #F7F7F7; margin-bottom: 5%;"></div> <li data-target="#InfoModal" data-toggle="modal"><a id="editar" onclick="editFunction('+ resposta[i].id_request +')"> <p  class="dropdownText">                             <i class="far fa-edit" style="padding-right: 4px !important"></i>   Editar</p> </a></li>          <li > <a id="apagar" onclick="archiveFunction('+ resposta[i].id_request +')"> <p href="#" class="dropdownText">                            <i class="fas fa-archive" style="padding-right: 6px !important"></i>Arquivar</p></a></li>                                      <li > <a id="apagar" onclick="deleteFunction('+ resposta[i].id_request +')"> <p href="#" class="dropdownText">                            <i class="fas fa-trash-alt" style="padding-right: 6px !important"></i>Eliminar</p></a></li> ' + '</td></tr>' )
+                    numberRequests();
                     }
           
             }).catch(err => console.error(err));
         }
 
         $(document).ready(function() {
-            listActivities();
+            listRequests();
         }) 
 
         //ENTER NUMBER OF FACTS ACTIVE
 
-        function numberActivities(){
-            document.getElementById("numberActivitiesCount").innerHTML = nrActivities
+        function numberRequests(){
+            document.getElementById("activeFactos").innerHTML = nrRequests
 
         }
 
-        //DELETE FUNCTION 
+// ARCHIVE REQUEST
+
+        let statePUT = "Arquivada"
         
-        function deleteFunction(id){
-    
-    let idRequest
-    
-    getData();
-    
-    async function getData() {
-        try {
-const result = fetch(`http://188.82.156.135:8080/Back-end/ActivityRequestJoinGetByIdActivity?id_activity=` + id)
-const response = await result
-const jsonData = await response.json()
-idRequest= jsonData[0].id_request;
-
-deleteOcc();
-
-} catch (e) {
-throw Error(e) } 
-
-        
-    }
-function deleteOcc(){
-               
-    fetch('http://188.82.156.135:8080/Back-end/ActivityDelete?id_activity=' + id)
-            .then(res => res.json())
-            .then((out) => {
-                console.log(out);
-
-                
-            }
-         ).then(updateRequest).catch(function(err) {console.log(err);})
-            
-}
-
-let estado = "Aguardar"
-
-function updateRequest(){
-         fetch('http://188.82.156.135:8080/Back-end/ActivityRequestStatePut', {
-                                headers: {
+       function archiveFunction(id){
+            fetch('http://188.82.156.135:8080/Back-end/ActivityRequestStatePut', {
+                headers: {
                                     "Content-Type": "application/x-www-form-urlencoded"
                                 },
-                                method: 'PUT',
-                                body: `state=${estado}&id_request=${idRequest}`
-                
-                
-        }).then(function (response) {
-            Swal.fire(
+                method: 'PUT',
+                body: `id_request=${id}&state=${statePUT}`
+
+            }).then(function (response) {Swal.fire(
   '',
-  'Atividade removida com sucesso!',
+  'Pedido de Atividade arquivado com sucesso',
   'success'
 ).then(  function(){ 
                     
-    window.location.reload();
+     window.location.reload();
    });
             
                     
                 }).catch(function(err) {console.log(err);})
                 
 
+       }
 
-   }}
+       // Delete REQUEST
+
+        
+        function deleteFunction(id){
+            
+            fetch('http://188.82.156.135:8080/Back-end/RequestActivityDelete?id_request=' + id)
+            .then(res => res.json())
+            .then((out) => {
+                console.log(out);
+                
+            }
+            ).then(function (response) {Swal.fire(
+   '',
+   'Atividade eliminada com sucesso',
+   'success'
+ ).then(  function(){ 
+                     
+      window.location.reload();
+    });
+             
+                     
+                 }).catch(function(err) {console.log(err);})
+        
+
+        }
+
+ 
 
 
-// ARCHIVE Activity
 
-function archive(id){
-    let archiveActivity = "Arquivado"
+  
 
 
-            fetch('http://188.82.156.135:8080/Back-end/ActivityPutState'+ id, {
-                headers: {
-                                    "Content-Type": "application/x-www-form-urlencoded"
-                                },
-                                method: 'PUT',
-                                body: `state=${archiveActivity}`
-                            }).then(function (response) {Swal.fire(
-              '',
-              'Alteração efetuada com sucesso!',
-              'success'
-            ).then(  function(){ 
-                  window.location.reload();
-               });
-                            }).catch(function(err) {console.log(err);})
-                        
-    
-    
-}      
 
             
             
-function editFunction(id){  
+function editFunction(id){
     
-
-    fetch('http://188.82.156.135:8080/Back-end/ActivityRequestJoinGetByIdActivity?id_activity='+ id)
+            fetch('http://188.82.156.135:8080/Back-end/ActivityRequestByIdRequestGet?id_request='+ id)
             .then(res => res.arrayBuffer())
   .then(buffer => {
     let decoder = new TextDecoder("iso-8859-1");
@@ -801,62 +715,64 @@ function editFunction(id){
     resposta = JSON.parse(text.toString());
 
 
+
+
     
   }).then((out) => {
 
 
-                    if (resposta[0].date !== null) {
-                        document.getElementById("date_Request").value = resposta[0].date; }
+                    if (resposta.date !== null) {
+                        document.getElementById("date_Request").value = resposta.date; }
 
-                    if (resposta[0].time !== null) {
-                        document.getElementById("time_Request").value = resposta[0].time;}
+                    if (resposta.time !== null) {
+                        document.getElementById("time_Request").value = resposta.time;}
 
-                        if (resposta[0].name !== null) {
-                        document.getElementById("institution_name").value = resposta[0].name;}
+                        if (resposta.name !== null) {
+                        document.getElementById("institution_name").value = resposta.name;}
                         
-                        if (resposta[0].description !== null) {
-                        document.getElementById("name_Request").value = resposta[0].description;}
+                        if (resposta.description !== null) {
+                        document.getElementById("name_Request").value = resposta.description;}
                         
-                        if (resposta[0].type !== null) {
-                        document.getElementById("type_Request").value = resposta[0].type;}
+                        if (resposta.type !== null) {
+                        document.getElementById("type_Request").value = resposta.type;}
 
-                    if (resposta[0].address !== null) { 
-                        document.getElementById("address_Location").value = resposta[0].address;}
+                    if (resposta.address !== null) { 
+                        document.getElementById("address_Location").value = resposta.address;}
 
                   
                    
                     
-                    if (resposta[0].county !== null){
-                        document.getElementById("county").value = resposta[0].county;
+                    if (resposta.county !== null){
+                        document.getElementById("county").value = resposta.county;
                     }
              
-                    if (resposta[0].district !== null) { 
-                        document.getElementById("district").value = resposta[0].district; }
+                    if (resposta.district !== null) { 
+                        document.getElementById("district").value = resposta.district; }
 
                                  
-                        if (resposta[0].post_code !== null) { 
-                        document.getElementById("post_code").value = resposta[0].post_code; }
+                        if (resposta.post_code !== null) { 
+                        document.getElementById("post_code").value = resposta.post_code; }
                         
                                      
-                    if (resposta[0].latitude !== null) { 
-                        document.getElementById("latitude").value = resposta[0].latitude; }
+                    if (resposta.latitude !== null) { 
+                        document.getElementById("latitude").value = resposta.latitude; }
 
-                        if(resposta[0].longitude !== null){
-                            document.getElementById("longitude").value = resposta[0].longitude;
+                        if(resposta.longitude !== null){
+                            document.getElementById("longitude").value = resposta.longitude;
                         }
                         
                         
 
-                    if(resposta[0].photo != null){
-                        document.getElementById("requestIcon").value= resposta[0].photo;
-                        document.getElementById("requestIcon").src = "http://188.82.156.135:8080/Back-end/IMAGES/" + resposta[0].photo;
-                        console.log( "http://188.82.156.135:8080/Back-end/IMAGES/" + resposta[0].photo);
+                    if(resposta.photo != null){
+                        document.getElementById("requestIcon").value= resposta.photo;
+                        document.getElementById("requestIcon").src = "http://188.82.156.135:8080/Back-end/IMAGES/" + resposta.photo;
+                        console.log( "http://188.82.156.135:8080/Back-end/IMAGES/" + resposta.photo);
                     }
                     
-                    if (resposta[0].state !== null) { 
+                    if (resposta.state !== null) { 
                         let select1 = document.getElementById("state");
                             for(let i = 0;i < select1.options.length;i++){
-                                if(select1.options[i].value == resposta[0].state){
+                                if(select1.options[i].value == resposta.state){
                                     select1.options[i].selected = true;
                                 }
                             } 
@@ -873,18 +789,45 @@ function editFunction(id){
                         editForm.addEventListener('submit', function(e){
                             e.preventDefault();
 
+            const date= document.getElementById("date_Request").value
+          
 
+            const time = (document.getElementById("time_Request").value )
+
+
+            const name = document.getElementById("institution_name").value
+            const description = document.getElementById("name_Request").value
+            const type = document.getElementById("type_Request").value
+            const address = document.getElementById("address_Location").value
+            const county = document.getElementById("county").value
+            const district = document.getElementById("district").value
+            const post_code = document.getElementById("post_code").value
+            const photo = document.getElementById("requestIcon").value
+            const latitude = document.getElementById("latitude").value
+            const longitude = document.getElementById("longitude").value
             const state = document.getElementById("state").value
 
+console.log("date: " + date);
+console.log("id_request: " + id);
+console.log("state: " + state);
+console.log("description: " + description);
+console.log("time: " +time);
+console.log("type: " + type);
+console.log("address: " + address);
+console.log("county: " + county)
+console.log("district: " + district);
+console.log("post_code: " + post_code)
+console.log("latitude: " + latitude)
+console.log("longitude: " + longitude)
 
 
     
-                            fetch('http://188.82.156.135:8080/Back-end/ActivityPutState', {
+                            fetch('http://188.82.156.135:8080/Back-end/ActivityRequestPut', {
                                 headers: {
                                     "Content-Type": "application/x-www-form-urlencoded"
                                 },
                                 method: 'PUT',
-                                body: `id_activity=${id}&state=${state}`
+                                body: `id_request=${id}&date=${date}&time=${time}&state=${state}&description=${description}&type=${type}&address=${address}&county=${county}&district=${district}&post_code=${post_code}&latitude=${latitude}&longitude=${longitude}`
                             }).then(function (response) {Swal.fire(
               '',
               'Alteração efetuada com sucesso!',
@@ -902,41 +845,47 @@ function editFunction(id){
                      
             
         
+
+    
     
     
     
 }
             
-//Transform to Occurrence selected checboxes
+//Transform to Activity selected checkboxes
 
             function generateOccurrence(){
-                $("#tableFacts input[type=checkbox]:checked").each(function () {
+                $("#tableRequests input[type=checkbox]:checked").each(function () {
                     var id = $(this).closest("tr")[0].cells[1].firstChild.nodeValue;
-            
-                fetch('https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/Occurrences', {
+                    const state = "Ativo";
+                    const id_reward = 1;
+                    const state2 = "Aceite"           
+                fetch('http://188.82.156.135:8080/Back-end/ActivityPost', {
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded"
                     },
                     method: 'post',
-                    body: `id_request=${id}&state=Pendente`
+                    body: `id_request=${id}&state=${state}&id_reward=${id_reward}`
                 })
                 
-                    fetch('https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/RequestsUpdateState/' + id, {
+                    fetch('http://188.82.156.135:8080/Back-end/ActivityRequestStatePut', {
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded"
                     },
                     method: 'PUT',
-                    body: `state=Aceite`
+                    body: `id_request=${id}&state=${state2}`
                 })
             })
             
             Swal.fire(
                       '',
-                      'Ocorrências geradas com sucesso!',
+                      'Atividades geradas com sucesso!',
                       'success').then(  function(){ 
                           window.location.reload();
                        });
             }
+            
+
             
              //Logout function 
     let logoutBtn = document.getElementById("logoutBtn")

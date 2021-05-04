@@ -168,8 +168,7 @@
                     <!-- Topbar Search -->
                       <div style="text-align: center ; padding-left:40%; margin-top: 0.75%;">
                         <h2 class="" style="font-size: 150% !important">
-                        Centro de Operações 
-                        </h2>
+Câmara Municipal de Guimarães                        </h2>
                     </div>
 
                     <!-- Topbar Navbar -->
@@ -216,7 +215,7 @@
         <div class="wrapper wrapper--w680">
             <div class="card card-4">
                 <div class="card-body">
-                    <h2 class="title">Novo Instituição</h2>
+                    <h2 class="title">Nova Instituição</h2>
                     <h4 class="subtitle" style="margin-top: 3%">Dados</h3> 
                     <form id="institutionForm" name="institutionForm">
                         <div class="row row-space">
@@ -389,73 +388,13 @@
         document.getElementById("userName").innerHTML = localStorage.getItem('name');
         
         //Icon
-        if (localStorage.getItem("photo") != "null"){
-            document.getElementById('logoIcon').src= "../../Back-end/assets/usersPhotos/"+localStorage.getItem("photo")
-        } else {document.getElementById('logoIcon').src= "img/undraw_profile.svg"}
+
     
     //UPDATE PROFILE PICTURE
     
     
     let id_user = localStorage.getItem('id_user')
-    
-    //Upload form
-    
-    document.getElementById("formProfile").addEventListener("submit", function(e){
-        e.preventDefault()
-     //Edit profile photo if uploaded
-       if  (document.getElementById("editPhoto").files.length != 0){
-           
-let sampleFile = document.getElementById("editPhoto").files[0]
-;
 
-var data = {"files": sampleFile,"id_user": id_user}
-
-
-const formData = new FormData();
-
-    formData.append("sampleFile", document.getElementById("editPhoto").files[0]);
-    formData.append("id_user", id_user)
-
-
-fetch('https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/upload/', {
-    method: 'POST',
-    body: formData }).then(function (response) {
-if (response.status== 469){
-                            Swal.fire(
-              
-                                    '',
-                              'A foto de perfil inserida é demasiado grande!',
-                              'error'
-                            )
-              
-          }else if (response.status == 470){
-             Swal.fire(
-              
-                                    '',
-                              'O formato do ficheiro inserido não é suportado.',
-                              'error'
-                            )
-          } else if (response.status == 200){
-                           Swal.fire(
-              
-                                    '',
-                              'Foto de Perfil alterada com sucesso!',
-                              'success'
-                            )
-                            .then( localStorage.setItem('photo', document.getElementById("editPhoto").files[0].name))
-                            .then(window.location.reload())
-             
-             
-          }
-        
-    })
-
-       }
-
-        
-        
-    });
-    
         
         //Populate Select Dropdown with Candidates
             var select = document.getElementById("candidatesList");
@@ -463,6 +402,7 @@ if (response.status== 469){
             .then(res => res.json())
             .then((out) => {
                 $.each(out, function(index, value) {
+                    console.log(out);
     select.options[select.options.length] = new Option(value.name, value.id_candidate);
  });
             }).catch(err => console.error(err));

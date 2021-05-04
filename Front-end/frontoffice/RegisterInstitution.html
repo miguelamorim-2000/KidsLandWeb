@@ -5,8 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1,0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         
-        <title> KidsLand - Instituições</title>
-        <link rel="stylesheet" href="LoginInstitution.css" type="text/css">
+        <title> KidsLand - Candidatar Instituição</title>
+        <link rel="stylesheet" href="registerInstitution.css" type="text/css">
         
         <link rel="stylesheet" href="headerfooter.css" type="text/css">
         
@@ -44,38 +44,64 @@
 	<div class="limiter">
 		<div id= "body1" class="container-login100">
 			<div class="wrap-login100">
-				<form class="login100-form validate-form" id="loginForm">
+                <form class="login100-form validate-form" id="registerForm">
 					<span class="login100-form-title p-b-48">
 						<img src="https://i.ibb.co/JCMp9R0/logo-Kids-Land-V21.png" width="300" height="190">
 					</span>
-<hr id="separateLine" style="height:3px; width:100%; border-width:0; color:#052F83; background-color:#46D0D9">
-					<p id="titleCitizen"> Login - Instituições</p>
+                    <hr id="separateLine" style="height:3px; width:100%; border-width:0; color:#052F83; background-color:#46D0D9">
+					<p id="titleCitizen"> Candidatura - Instituição</p>
 
+					<div class="wrap-input100 validate-input" >
+					  <br>
+						<input class="input100" type="text" name="name" id="designation">
+						<span class="focus-input100" data-placeholder="Designação"></span>
+					</div>
+					
+					<div class="wrap-input100 validate-input" >
+					  <br>
+						<input class="input100" type="number" name="nif" id= "nif">
+						<span class="focus-input100" data-placeholder="NIF"></span>
+					</div>
+					
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is: a@b.c">
 					  <br>
 						<input class="input100" type="text" name="email" id="email">
 						<span class="focus-input100" data-placeholder="Email"></span>
 					</div>
 
-					<div class="wrap-input100 validate-input" data-validate="Enter password">
-						<span class="btn-show-pass" onclick="showPassword()">
-							<i class="fas fa-eye"></i>
-						</span>
-						<br>
-						<input class="input100" type="password" name="pass" id="password">
-						<span class="focus-input100" data-placeholder="Password"></span>
-					</div>
+					<div class="wrap-input100 validate-input" >
+                        <br>
+                          <input class="input100" type="phone" name="telephone" id="telephone">
+                          <span class="focus-input100" data-placeholder="Telefone"></span>
+                      </div>
+
+                      <div class="wrap-input100 validate-input">
+                        <br>
+                          <input class="input100" type="text" name="address" id="address">
+                          <span class="focus-input100" data-placeholder="Morada"></span>
+                          
+                      </div>
+                      <div class="wrap-input100 validate-input">
+                        <br>
+                          <input class="input100" type="text" name="county" id="county">
+                          <span class="focus-input100" data-placeholder="Localidade"></span>
+                      </div>
+                      <div class="wrap-input100 validate-input" data-validate = "Valid email is: a@b.c">
+                        <br>
+                          <input class="input100" type="text" name="district" id="district">
+                          <span class="focus-input100" data-placeholder="Distrito"></span>
+                      </div>
+                      <div class="wrap-input100 validate-input" >
+                        <br>
+                          <input class="input100" type="text" name="postcode" id="postcode">
+                          <span class="focus-input100" data-placeholder="Código-Postal"></span>
+                      </div>
 
 					<div class="container-loginButton">
-							<input id="loginBtn" type="submit" name="submit" class="btn btn-primary btn-md" value="Iniciar Sessão" >
+					  <br>
+						<input id="registerBtn" type="click" name="submit" class="btn btn-primary btn-md" value="Submeter Candidatura">
 							</button>
 						</div>
-						                            <div id="register-link">
-                                <a href="RegisterInstitution.html" style="color:#143656;">Criar Candidatura</a>
-                            </div>
-                             <div id="recover-link">
-                                <a href="ForgotPassword.html" style="color: #143656;">Recuperar Password</a>
-                            </div>
 					</div>
 
 
@@ -84,42 +110,41 @@
 		</div>
 	</div>
 		<script>
+
 	  
-	   loginForm.addEventListener('submit', function(e){
+	   registerBtn.addEventListener('click', function(e){
 	     e.preventDefault();
 	          const email = document.getElementById("email").value;
-            const password = document.getElementById("password").value;
+            const designation = document.getElementById("designation").value;
+            const address = document.getElementById("address").value;
+            const county = document.getElementById("county").value;
+            const district = document.getElementById("district").value;
+            const nif = document.getElementById("nif").value;
+            const telephone = document.getElementById("telephone").value;
+            const postcode = document.getElementById("postcode").value;
+
 
 	     
-	                      fetch('https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/signin', {
+	                      fetch('http://188.82.156.135:8080/Back-end/InstitutionPost', {
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded"
                     },
                     method: 'post',
-                    body: `email=${email}&password=${password}`
+                    body: `email=${email}&name=${designation}&address=${address}&county=${county}&district=${district}&nif=${nif}
+                    phone_number=${telephone}&post_code=${postcode}`
                 }).then(res => res.json())
             .then((out) => {
          console.log(out)
             if (out.status == 200) {
               
-              localStorage.setItem('id_denouncer', out.MSG.id_denouncer); 
-              localStorage.setItem('name', out.MSG.name); 
-              localStorage.setItem('address', out.MSG.address); 
-              localStorage.setItem('gender', out.MSG.gender); 
-              localStorage.setItem('cc_number', out.MSG.cc_number); 
-              localStorage.setItem('birth_date', out.MSG.birth_date); 
-              localStorage.setItem('cc_validity', out.MSG.cc_validity); 
-              localStorage.setItem('id_user', out.MSG.id_user);
-              localStorage.setItem('phone_number', out.MSG.phone_number); 
-              localStorage.setItem('post_code', out.MSG.post_code); 
-              localStorage.setItem('county', out.MSG.county); 
-              localStorage.setItem('district', out.MSG.district); 
-              localStorage.setItem('naturality', out.MSG.naturality); 
-              localStorage.setItem('email', out.MSG.email); 
-              localStorage.setItem('photo', out.MSG.photo);
-              
-              
-               window.location.replace(out.url2)
+
+                Swal.fire(
+                      '',
+                      'Candidatura submetida com sucesso!',
+                      'error'
+                    )
+                    .then(function(){window.location.replace("/LoginInstitution")});
+  
  
 
             }else {

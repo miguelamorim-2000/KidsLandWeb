@@ -83,7 +83,7 @@
           <a class="nav-link" href="FormularioFacto.html" 
               aria-expanded="true" aria-controls="collapseTwo">
               <i class="fas fa-edit"></i>
-              <span>Novo Facto</span>
+              <span>Novo Colaborador</span>
           </a>
       </li>
 
@@ -115,26 +115,17 @@
       <li class="nav-item">
           <a class="nav-link" href="CM_FactsList.html">
               <i class="fas fa-map-marker-alt fa-fw"></i>
-              <span>Factos</span></a>
+              <span>Utilizadores</span></a>
       </li>
 
       <!-- Nav Item - Tables -->
       <li class="nav-item">
           <a class="nav-link" href="CM_RequestActivities.html">
               <i class="fas fa-exclamation-circle"></i>
-              <span>Pedidos de Atividades</span></a>
+              <span>Colaboradores</span></a>
       </li>
-      <li class="nav-item">
-          <a class="nav-link" href="CM_AtivitiesProgrammed.html">
-              <i class="fas fa-exclamation-circle"></i>
-              <span>Atividades Programadas</span></a>
-      </li>
-      
-      <li class="nav-item">
-          <a class="nav-link" href="Entidades.html">    <!--alterar-->
-              <i class="fas fa-map-marker-alt fa-fw"></i>
-              <span>Plano de Ação</span></a>
-      </li>
+
+
             
 
             <!-- Divider -->
@@ -167,7 +158,7 @@
                     <!-- Topbar Search -->
                       <div style="  white-space: nowrap !important; text-align: center ; padding-left: 40%; margin-top: 0.75%;">
                         <h2 class="" style="  white-space: nowrap !important; font-size: 150% !important;">
-                            Câmara Municipal de Guimarães
+                        Administrador
                         </h2>
                     </div>
 
@@ -476,84 +467,9 @@
             //Inner Name
         document.getElementById("userName").innerHTML = localStorage.getItem('name');
         
-        //Icon
-        if (localStorage.getItem("photo") != "null"){
-            document.getElementById('logoIcon').src= "../../Back-end/assets/usersPhotos/"+localStorage.getItem("photo")
-        } else {document.getElementById('logoIcon').src= "img/undraw_profile.svg"}
-    
-        //UPDATE PROFILE PICTURE
-    
-    
-    let id_user = localStorage.getItem('id_user')
-    
-    //Upload form
-    
-    document.getElementById("formProfile").addEventListener("submit", function(e){
-        e.preventDefault()
-     //Edit profile photo if uploaded
-       if  (document.getElementById("editPhoto").files.length != 0){
-           
-let sampleFile = document.getElementById("editPhoto").files[0]
-;
 
-var data = {"files": sampleFile,"id_user": id_user}
-
-
-const formData = new FormData();
-
-    formData.append("sampleFile", document.getElementById("editPhoto").files[0]);
-    formData.append("id_user", id_user)
-
-
-fetch('https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/upload/', {
-    method: 'POST',
-    body: formData }).then(function (response) {
-if (response.status== 469){
-                            Swal.fire(
-              
-                                    '',
-                              'A foto de perfil inserida é demasiado grande!',
-                              'error'
-                            )
-              
-          }else if (response.status == 470){
-             Swal.fire(
-              
-                                    '',
-                              'O formato do ficheiro inserido não é suportado.',
-                              'error'
-                            )
-          } else if (response.status == 200){
-                           Swal.fire(
-              
-                                    '',
-                              'Foto de Perfil alterada com sucesso!',
-                              'success'
-                            )
-                            .then( localStorage.setItem('photo', document.getElementById("editPhoto").files[0].name))
-                            .then(window.location.reload())
-             
-             
-          }
-        
-    })
-
-       }
 
         
-        
-    });
-    
-
-//Number of active requests
-                  fetch('https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/RequestsNonOccurrencesCount/')
-            .then(res => res.json())
-            .then((out) => {
-                $.each(out, function(index, value) {
-                    activeRequests.innerHTML = value.rows ;
-    
- });
-            }).catch(err => console.error(err));
             
  </script>
  
@@ -597,38 +513,7 @@ if (response.status== 469){
         
         <script>
 
-            
-        
-        //Populate Select Dropdown with natures
-        var selectnature = document.getElementById("designation_Crime_Nature");
-            fetch('https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/CrimesNature/')
-            .then(res => res.json())
-            .then((out) => {
-                $.each(out, function(index, value) {
-    selectnature.options[selectnature.options.length] = new Option(value.designation, value.id_crime_nature);
- });
-            }).catch(err => console.error(err));
-        
-        //Populate Select Dropdown with Materials 
-        var selectmaterial = document.getElementById("material");
-            fetch('https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/Material/')
-            .then(res => res.json())
-            .then((out) => {
-                $.each(out, function(index, value) {
-    selectmaterial.options[selectmaterial.options.length] = new Option(value.category, value.id_material);
- });
-            }).catch(err => console.error(err));
-
-//Populate Select Dropdown with Managers
-        var selectmanager = document.getElementById("managers");
-            fetch('https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/OperationalsTypeManager/')
-            .then(res => res.json())
-            .then((out) => {
-                $.each(out, function(index, value) {
-    selectmanager.options[selectmanager.options.length] = new Option(value.name_Candidate, value.id_operational);
- });
-            }).catch(err => console.error(err));
-
+         
 //Filter
         var select = document.getElementById("filtrarPor");
 document.getElementById('filtrarPor').addEventListener('change', function() {
@@ -683,9 +568,10 @@ td = tr[i].getElementsByTagName("td")[coluna];
 }
 
         
-function listActivities() {
+let nrFacts = 0;
 
- 
+function listInstitutions() {
+
     let nrInstitutions
 
     let resposta;
@@ -709,12 +595,14 @@ function listActivities() {
                     $('#tableInstitutions tbody').append('<tr><td>' + '<input name="checkbox1"  type="checkbox" value='+ resposta[i].id_institution + '>' +'</td><td>' +  resposta[i].nif + '</td><td>' + resposta[i].id_institution +  '</td><td>'+ resposta[i].total_activities+  '</td><td>'+ resposta[i].address +'</td><td>'+ resposta[i].county +'</td><td>'+ resposta[i].district+'</td><td>'+ resposta[i].postal_code + '</td><td>'+ resposta[i].phone_number+'</td><td>'+'<div class="dropdown keep-open show-dropdown"> <a href="#" data-toggle="dropdown" aria-expanded="false" > <i class="fas fa-ellipsis-v"> </i></a> <ul class="dropdown-menu "  >                                                <li class="header-title"> <i class="fas fa-cog"></i> Opções</li>     <!-- Division of page -->                                            <div style="height: 2px; background-color: #F7F7F7; margin-bottom: 5%;"></div> <li data-target="#InfoModal" data-toggle="modal"><a id="editar" onclick="editFunction()"> <p  class="dropdownText">                             <i class="far fa-edit" style="padding-right: 4px !important"></i>   Editar</p> </a></li>                                               <li > <a id="apagar" onclick="deleteFunction()"> <p href="#" class="dropdownText">                            <i class="fas fa-trash-alt" style="padding-right: 6px !important"></i>Eliminar</p></a></li> ' + '</td></tr>'  )
                   //  numberFacts();
                     }
+          
             }).catch(err => console.error(err));
         }
 
         $(document).ready(function() {
-            listActivities();
+            listInstitutions();
         }) 
+
         
        function deleteFunction(id){
             fetch('https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/Requests/'+ id, {

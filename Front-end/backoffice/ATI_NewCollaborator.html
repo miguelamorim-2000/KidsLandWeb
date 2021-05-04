@@ -9,30 +9,32 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>KidsLand - Novo Facto</title>
+    <title>KidsLand - Novo Colaborador </title>
 
     <!-- Custom fonts for this template-->
-    <link href="vendor/fontawesome-free/css/all.css" rel="stylesheet" type="text/css">
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="css/sb-admin-2.css" rel="stylesheet" type="text/css">
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
     
-    <!--Custom styles from main page -->
-    <link rel="stylesheet" href="css/formEntity.css" type="text/css">
-     
     <!--Clock Style-->
     <link href="css/clock.css" rel="stylesheet" type="text/css">
+    
+    <!--Custom styles from main page -->
+    <link rel="stylesheet" href="css/formOccurence.css" type="text/css">
     
     <!--Colors Sheet-->
     <link href="css/colors.css" rel="stylesheet" type="text/css">
     
     <!--Border Colors-->
     <link href="css/borders.css" rel="stylesheet" type="text/css">
-    
+
+    <!--Button Table-->
+    <link href="css/table.css" rel="stylesheet" type="text/css">
+
     <!--Margins Style-->
     <link href="css/margins.css" rel="stylesheet" type="text/css">
 
@@ -44,21 +46,21 @@
 
     <!--Sidebar Styles-->
     <link href="css/sidebar.css" rel="stylesheet" type="text/css">
-
+    
     <!--Colors-->
     <link href="css/colors.css" rel="stylesheet" type="text/css">
     
-        <!-- tab icon -->
+    <!-- tab icon -->
     <link rel="icon" href="https://i.ibb.co/g3PKBk7/logo-Kids-Landv23.png" type="image/icon type">
     
-    <!-- sweetalert2 -->
+        <!-- sweetalert2 -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
 </head>
 
 <body id="page-top">
     
-<!-- Page Wrapper -->
+  <!-- Page Wrapper -->
     <div id="wrapper">
 
          <!-- Sidebar -->
@@ -82,7 +84,7 @@
           <a class="nav-link" href="FormularioFacto.html" 
               aria-expanded="true" aria-controls="collapseTwo">
               <i class="fas fa-edit"></i>
-              <span>Novo Facto</span>
+              <span>Novo Colaborador</span>
           </a>
       </li>
 
@@ -114,26 +116,17 @@
       <li class="nav-item">
           <a class="nav-link" href="CM_FactsList.html">
               <i class="fas fa-map-marker-alt fa-fw"></i>
-              <span>Factos</span></a>
+              <span>Utilizadores</span></a>
       </li>
 
       <!-- Nav Item - Tables -->
       <li class="nav-item">
           <a class="nav-link" href="CM_RequestActivities.html">
               <i class="fas fa-exclamation-circle"></i>
-              <span>Pedidos de Atividades</span></a>
+              <span>Colaboradores</span></a>
       </li>
-      <li class="nav-item">
-          <a class="nav-link" href="CM_AtivitiesProgrammed.html">
-              <i class="fas fa-exclamation-circle"></i>
-              <span>Atividades Programadas</span></a>
-      </li>
-      
-      <li class="nav-item">
-          <a class="nav-link" href="Entidades.html">    <!--alterar-->
-              <i class="fas fa-map-marker-alt fa-fw"></i>
-              <span>Plano de Ação</span></a>
-      </li>
+
+
             
 
             <!-- Divider -->
@@ -149,26 +142,24 @@
         </ul>
         <!-- End of Sidebar -->
 
-        
 
- <!-- Content Wrapper -->
+
+        <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
 
             <!-- Main Content -->
             <div id="content">
 
-                 <!-- Toptopbar -->
+   <!-- Toptopbar -->
                 <section class="navbar navbar-expand navbar-light topbar static-top shadow topbar3"></section>
 
                 <!--Topbar-->
                 <nav style=" max-height: 60px !important;" class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow topbar2">
 
                     <!-- Topbar Search -->
-                      <div style="  white-space: nowrap !important; text-align: center ; padding-left: 40%; margin-top: 0.75%;">
-                        <h2 class="" style="  white-space: nowrap !important; font-size: 150% !important;">
-                            Câmara Municipal de Guimarães
-                        </h2>
-                    </div>
+                      <div style="text-align: center ; padding-left:40%; margin-top: 0.75%;">
+                        <h2 class="" style="font-size: 150% !important">
+Administrador                    </div>
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
@@ -179,6 +170,7 @@
                                 <br> 0:0:0 xx
                             </div>
                         </li>
+
 
 
 
@@ -197,7 +189,7 @@
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                                 
                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400" ></i>
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
                                 </a>
                             </div>
@@ -207,62 +199,131 @@
 
                 </nav>
                 <!-- End of Topbar -->
-
     
-                <!-- Begin Page Content -->
      <div class="container-fluid">
              <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
         <div class="wrapper wrapper--w680">
             <div class="card card-4">
                 <div class="card-body">
-                    <h2 class="title">Novo Facto</h2>
-                    <form id= "factForm" name="factForm" >
-                            <div class="row row-space" >
-
-                            <div class="col-6">
-                                <div class="input-group">
-                                    <label class="label" "> Nome do Facto: </label>
-                                    <br>
-                                    <br>
-                                    <input name="designation" class="input--style-4" type="text" id="nameFact" name="name" >
-                                </div>
-                            </div>
-                   
-                        </div>
+                    <h2 class="title">Novo Colaborador</h2>
+                    <h4 class="subtitle" style="margin-top: 3%">Dados</h3> 
+                    <form id="institutionForm" name="institutionForm">
                         <div class="row row-space">
 
-                            <div class="col-6" >
-                                <label class="label">Descrição do facto: </label>
-                                <div class="col-md-14">
-                                    <textarea rows="3" class="form-control form-control-line input--style-4" id="descriptionFact" name="description"></textarea>
+                            
+                            <div class="col-6">
+                                <div class="input-group">
+                                    <label class="label">Nome: </label>
+                                    <input class="input--style-4" type="text" id="name" name="name">
                                 </div>
                             </div>
-                            <div class="col-6" style="border: 1px solid #ccc!important;border-radius: 16px;padding-left: 40px; padding-top: 28px ;margin-top: 28px;" >
-                                <label class="label">Selecione uma imagem para o facto </label>
-                                <div class="col-md-14" style="margin-top: 30px !important;">
-                                    <form id="formProfile"  class="form-horizontal form-material">
-                                        <input id="editarFotografia" type="file" style="background-color: Transparent;background-repeat:no-repeat;border: none;cursor:pointer;overflow: hidden; " value="Editar Foto"></input>
-
-                                </form>
-
+                            <div class="col-3">
+                                <div class="input-group">
+                                    <label class="label">NIF: </label>
+                                    <input class="input--style-4" type="number"  id="nif" name="nif">
                                 </div>
                             </div>
                         </div>
+                            <div class="row row-space">  
+                            
+
+                        <div class="col-3">
+                                <div class="input-group">
+                                    <label class="label">Telefone: </label>
+                                    <input class="input--style-4" type="tel" id="phone_number" name="phone_number">
+                                </div>
+                            </div>
+    
+                            <div class="col-6">
+                                <div class="input-group">
+                                    <label class="label">Morada: </label>
+                                    <input class="input--style-4" type="text" id="address" name="address">
+                                </div>
+
+                            </div> 
+
+                        </div>
+
+                        <div class="row row-space">  
+                            <div class="col-3">
+                                <div class="input-group">
+                                    <label class="label">Localidade: </label>
+                                    <input class="input--style-4" type="text" id="county" name="county">
+                                </div>
+
+                            </div> 
+                            <div class="col-3">
+                                <div class="input-group">
+                                    <label class="label">Distrito: </label>
+                                    <input class="input--style-4" type="text" id="district" name="district">
+                                </div>
+
+                            </div> 
+                            <div class="col-3">
+                                <div class="input-group">
+                                    <label class="label">Código-Postal: </label>
+                                    <input class="input--style-4" type="text" id="post_code" name="post_code">
+                                </div>
+
+                            </div> 
+
+                            </div>
                         
-                    
-                        <br>
+                        <!-- Division of page -->
+                        </br>
+                        <div style="height: 5px; background-color: #F7F7F7; margin-bottom: 5%;"></div>
+                        <h4 class="subtitle" style="margin-top: 3%">Dados de Login</h3> 
+                        
+                            <div class= "row row-space">
 
-                        <div class="p-t-15 row justify-content-center">
-                            <button class="btn btn-primary" type="click" id="submitBtn" onclick="return validation()">Submeter</button>
+                            <div class="input-group">
+                                <div class="col-6">
+                                <label class="label">Tipo de Login: </label>
+                                <select class="selectbtn custom-select" id="candidatesList" name="candidatesList">
+                                    <option value="0" >Selecione o Tipo:</option>
+                                    </select>
+                                </div>
+                            </div>
                         </div>
-                    </form>
+
+
+                        <div class= "row row-space">
+                                <div class="col-6">
+                                <div class="input-group">
+                                    <label class="label">Email: </label>
+                                    <input class="input--style-4" type="email" id="email" name="email">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row row-space">  
+                            
+                            <div class="col-6">
+                                <div class="input-group">
+                                    <label class="label">Password: </label>
+                                    <input class="input--style-4" type="password" id="password" name="password">
+                                </div>
+                            </div> 
+                        <div class="col-6">
+                                <div class="input-group">
+                                    <label class="label">Confirmação da Password: </label> 
+                                    <input class="input--style-4" type="password" id="password_confirm" name="password_confirm">
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                        
+                         <div class="p-t-15 row justify-content-center">
+                            <button class="btn btn-primary" onclick="return validation();"  type="submit" >Submeter</button>
+                        </div>
+        
+                    </form> 
                     
-                </div>
+                </div> 
             </div>
         </div>
     </div>
     </div>
-    
     
     <!-- Footer -->
             <footer class="sticky-footer bg-white">
@@ -272,10 +333,9 @@
                     </div>
                 </div>
             </footer>
-    <!-- End of Footer -->
-    
-    
-    <!-- Logout Modal-->
+            <!-- End of Footer -->
+            
+            <!-- Logout Modal-->
     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -293,8 +353,7 @@
             </div>
         </div>
     </div>
-    
-    
+            
     <!-- Bootstrap core JavaScript-->
         <script src="vendor/jquery/jquery.min.js"></script>
         <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -315,121 +374,149 @@
 
         <!--Clock Script-->
         <script src="js/clock.js"></script>
-        <script type="text/javascript" src="js/ValidationFact.js"></script>
         
-        <!-- dropdown more, not close on clicking inside -->
-        <script>
-        $('ul.dropdown-menu').on('click', function(event){
-            // The event won't be propagated up to the document NODE and 
-            // therefore delegated events won't be fired
-            event.stopPropagation();
-        });
-        </script>
-        
-        
+        <!-- Validation Form -->
+      <script src="js/ValidationInstitution.js" type="text/javascript"></script>  
         
         <script>
-        //Inner Name
+       //Inner Name
         document.getElementById("userName").innerHTML = localStorage.getItem('name');
         
         //Icon
-        if (localStorage.getItem("photo") != "null"){
-            document.getElementById('logoIcon').src= "../../Back-end/assets/usersPhotos/"+localStorage.getItem("photo")
-        } else {document.getElementById('logoIcon').src= "img/undraw_profile.svg"}
-    
-    
 
     
-            
+    //UPDATE PROFILE PICTURE
     
+    
+    let id_user = localStorage.getItem('id_user')
+
         
-        //POST DATA
-            const factForm = document.getElementById('factForm');
-            const submitBtn = document.getElementById('submitBtn');
+        //Populate Select Dropdown with Candidates
+            var select = document.getElementById("candidatesList");
+            fetch('http://188.82.156.135:8080/Back-end/CandidateNOTInstitutionGET')
+            .then(res => res.json())
+            .then((out) => {
+                $.each(out, function(index, value) {
+                    console.log(out);
+    select.options[select.options.length] = new Option(value.name, value.id_candidate);
+ });
+            }).catch(err => console.error(err));
+
+        
+        //Select List on change fill data
+        document.getElementById('candidatesList').addEventListener('change', function() {
+  var idCandidateSelected = select.options[select.selectedIndex].value;
+  if (select.selectedIndex != 0 ){
+            fetch('http://188.82.156.135:8080/Back-end/CandidateGetId?id_candidate='+ idCandidateSelected)
+            .then(res => res.json())
+            .then((out) => {
+                $.each(out, function(index, value) {
+                    document.getElementById("name").value = value.name;
+                    document.getElementById("county").value = value.county;
+                    document.getElementById("district").value = value.district;
+                    document.getElementById("email").value = value.email;
+                    document.getElementById("nif").value = value.nif;
+                    document.getElementById("phone_number").value = value.phone_number;
+                    document.getElementById("post_code").value = value.post_code;
+                    document.getElementById("address").value = value.address;
+
+
+
+
+
+
+
+                });
+            }).catch(err => console.error(err));
+
+  
+} else {
+    document.getElementById("name").value = value.name;
+                    document.getElementById("county").value = "";
+                    document.getElementById("district").value = "";
+                    document.getElementById("email").value = "";
+                    document.getElementById("nif").value = "";
+                    document.getElementById("phone_number").value = "";
+                    document.getElementById("post_code").value = "";
+                    document.getElementById("address").value = "";
+
+                    
+    
+}
             
-            submitBtn.addEventListener('click', function(e){
+        });
+        
+        
+        //Submit form
+        
+        //Create User
+                   const institutionForm = document.getElementById('institutionForm');
+
+            
+                institutionForm.addEventListener('submit', function(e){
                 e.preventDefault();
-                console.log("ola");
-
-
-                //UPLOAD INFO && PHOTO
-
-            const description = document.getElementById("descriptionFact").value
-            const name = document.getElementById("nameFact").value
-
-            
-                            
-                fetch('http://188.82.156.135:8080/Back-end/FactPost', {
+                
+                   const email = document.getElementById("email").value;
+                   const password = document.getElementById("password").value;
+                   let id_user;  
+                
+                 fetch('http://188.82.156.135:8080/Back-end/RegisterUserInstitution', {
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded"
                     },
                     method: 'post',
-                    body: `description=${description}&name=${name}`
-                }).then(function (response) {Swal.fire(
+                    body: `email=${email}&password=${password}`
+                }).then(
+                    async function () {
+const email = document.getElementById("email").value;
+try {
+const result = fetch(`http://188.82.156.135:8080/Back-end/UserGetID?email=` + email)
+const response = await result
+const jsonData = await response.json()
+console.log(jsonData);
+id_user = jsonData.id_user;
+
+} catch (e) {
+throw Error(e) } }).then(
+function (){                 
+//Create Institution
+            const id_candidate = document.getElementById("candidatesList").value
+                            
+                fetch('http://188.82.156.135:8080/Back-end/InstitutionPost', {
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded"
+                    },
+                    method: 'post',
+                    body: `id_candidate=${id_candidate}&id_user=${id_user}`
+                }).then(
+                    fetch('http://188.82.156.135:8080/Back-end/SendEmailAccount', {
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded"
+                    },
+                    method: 'post',
+                    body: `password=${password}&email=${email}`
+
+                })).then(function (response) {Swal.fire(
                       '',
-                      'Facto criado com sucesso!',
+                      'Instituição admitida com sucesso!',
                       'success'
-                    ).then( 
-                        getIdFact()
                     ).then(  function(){ 
                           window.location.reload();
                        });
-                                
+                     
                     
                 }).catch(function(err) {console.log(err);})
-            });
-            
-        //Get Id Fact
-
-        function getIdFact(){
-
-            fetch('http://188.82.156.135:8080/Back-end/FactGetByName?name='+ document.getElementById("nameFact").value)
-            .then(res => res.json())
-            .then((out) => {
-uploadFactPic(out.id_fact);
+})
+                
+ 
  
 
-        });
-    }
 
-            //Upload Fact Pic
-function uploadFactPic(id_fact){         
-           let upload = document.getElementById("editarFotografia").files[0]
-           ;
-           
-           
-           const formData = new FormData();
-           
-               formData.append("upload", document.getElementById("editarFotografia").files[0]);
-             //  formData.append("id_fact", id_fact)
-           
-           console.log(id_fact);
-           fetch('http://188.82.156.135:8080/Back-end/FactUpload?id_fact='+ id_fact, {
-               method: 'PUT',
-               body: formData }).then(function (response) {
-           if (response.status== 469){
-                                       Swal.fire(
-                         
-                                               '',
-                                         'A foto de perfil inserida é demasiado grande!',
-                                         'error'
-                                       )
-                         
-                     }else if (response.status == 470){
-                        Swal.fire(
-                         
-                                               '',
-                                         'O formato do ficheiro inserido não é suportado.',
-                                         'error'
-                                       )
-                     } else if (response.status == 200){
-                     }
-                   
-               })
-           
-                  }
 
-     //Logout function 
+            
+            });
+            
+        //Logout function     
         let logoutBtn = document.getElementById("logoutBtn")
         logoutBtn.addEventListener('click', function(e){
                     fetch('https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/logout/')
@@ -491,9 +578,8 @@ function uploadFactPic(id_fact){
             }
             
         </script>
-
   
 </body>
 
-    
+
 </html>

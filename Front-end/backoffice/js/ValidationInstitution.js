@@ -1,10 +1,10 @@
     //dependencies
-    var cookieParser = require('cookie-parser');
+    /*var cookieParser = require('cookie-parser');
     var bodyParser = require('body-parser');
     var expressValidator = require('express-validator');
     var app = express();
-    
-    
+    */
+    /*
     //middleware
     app.use(bodyParser.urlencoded({
         extended: false
@@ -12,7 +12,7 @@
     app.use(validator());
     
     app.post('')
-    
+    */
  function validation(){   
      
     //candidates
