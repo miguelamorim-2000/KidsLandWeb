@@ -91,7 +91,7 @@
             const password = document.getElementById("password").value;
 
 	     
-	                      fetch('https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/signin', {
+	                      fetch('http://188.82.156.135:8080/Back-end/Login', {
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded"
                     },
@@ -100,36 +100,29 @@
                 }).then(res => res.json())
             .then((out) => {
          console.log(out)
-            if (out.status == 200) {
+            if (out.STATUS == 200) {
               
-              localStorage.setItem('id_denouncer', out.MSG.id_denouncer); 
-              localStorage.setItem('name', out.MSG.name); 
-              localStorage.setItem('address', out.MSG.address); 
-              localStorage.setItem('gender', out.MSG.gender); 
-              localStorage.setItem('cc_number', out.MSG.cc_number); 
-              localStorage.setItem('birth_date', out.MSG.birth_date); 
-              localStorage.setItem('cc_validity', out.MSG.cc_validity); 
-              localStorage.setItem('id_user', out.MSG.id_user);
-              localStorage.setItem('phone_number', out.MSG.phone_number); 
-              localStorage.setItem('post_code', out.MSG.post_code); 
-              localStorage.setItem('county', out.MSG.county); 
-              localStorage.setItem('district', out.MSG.district); 
-              localStorage.setItem('naturality', out.MSG.naturality); 
-              localStorage.setItem('email', out.MSG.email); 
-              localStorage.setItem('photo', out.MSG.photo);
+              localStorage.setItem('id_candidate', out.id_candidate); 
+              localStorage.setItem('nif', out.nif); 
+              localStorage.setItem('phone_number', out.phone_number); 
+              localStorage.setItem('id_user', out.id_user); 
+              localStorage.setItem('email', out.email); 
+              localStorage.setItem('id_institution', out.id_institution); 
+              localStorage.setItem('name', out.name); 
+
+
               
               
-               window.location.replace(out.url2)
- 
+              window.location.replace("/" + "Front-end/" +  out.PATH); 
 
             }else {
-              if (out.status == 400){
+              if (out.STATUS == 400){
                                     Swal.fire(
                       '',
                       'O email ou password não são válidos.',
                       'error'
                     )
-                    .then(function(){window.location.replace(out.url2)});
+                   
                 
               }else {
                     Swal.fire(

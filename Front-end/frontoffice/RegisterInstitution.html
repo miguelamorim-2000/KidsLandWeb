@@ -99,7 +99,7 @@
 
 					<div class="container-loginButton">
 					  <br>
-						<input id="registerBtn" type="click" name="submit" class="btn btn-primary btn-md" value="Submeter Candidatura">
+						<input id="registerBtn" type="submit" name="registerBtn" class="btn btn-primary btn-md" value="Submeter Candidatura">
 							</button>
 						</div>
 					</div>
@@ -112,7 +112,7 @@
 		<script>
 
 	  
-	   registerBtn.addEventListener('click', function(e){
+registerForm.addEventListener('submit', function(e){
 	     e.preventDefault();
 	          const email = document.getElementById("email").value;
             const designation = document.getElementById("designation").value;
@@ -122,39 +122,46 @@
             const nif = document.getElementById("nif").value;
             const telephone = document.getElementById("telephone").value;
             const postcode = document.getElementById("postcode").value;
-
+            console.log(email)
+         console.log(designation)
+         console.log(address)
+         console.log(county)
+         console.log(district)
+         console.log(nif)
+         console.log(telephone)
+         console.log(postcode)
+         let teste44 = 444444
 
 	     
-	                      fetch('http://188.82.156.135:8080/Back-end/InstitutionPost', {
+	                      fetch('http://188.82.156.135:8080/Back-end/CandidatePost', {
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded"
                     },
                     method: 'post',
-                    body: `email=${email}&name=${designation}&address=${address}&county=${county}&district=${district}&nif=${nif}
-                    phone_number=${telephone}&post_code=${postcode}`
+                    body: `email=${email}&name=${designation}&address=${address}&county=${county}&district=${district}&nif=${nif}&phone_number=${telephone}&post_code=${postcode}`
                 }).then(res => res.json())
             .then((out) => {
-         console.log(out)
-            if (out.status == 200) {
+
+            if (out.STATUS == 200) {
               
 
                 Swal.fire(
                       '',
                       'Candidatura submetida com sucesso!',
-                      'error'
+                      'success'
                     )
-                    .then(function(){window.location.replace("/LoginInstitution")});
+                    .then(function(){window.location.replace("LoginInstitution.html")});
   
  
 
             }else {
-              if (out.status == 400){
+              if (out.STATUS == 400){
                                     Swal.fire(
                       '',
-                      'O email ou password não são válidos.',
+                      'Ocorreu um problema com os dados inseridos.',
                       'error'
                     )
-                    .then(function(){window.location.replace(out.url2)});
+                    
                 
               }else {
                     Swal.fire(

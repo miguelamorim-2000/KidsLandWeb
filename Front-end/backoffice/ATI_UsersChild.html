@@ -340,115 +340,63 @@
       <div class="modal-body mx-4">
         <!--Body-->
         <div class="row row-space">
-        <div class="md-form pb-3 col-md-3">
-          <label data-error="wrong" data-success="right" for="date_Request">Data do Pedido</label>
-          <input type="date" id="date_Request" class="form-control validate" readonly>
-        </div>
-                <div class="md-form pb-3 col-md-9">
-          <label data-error="wrong" data-success="right" for="designation_Location">Entidade</label>
-          <input type="text" id="designation_Location" class="form-control validate" readonly>
+
+                <div class="md-form pb-3 col-md-8" style="margin-top: 4%">
+          <label data-error="wrong" data-success="right" for="designation_Location">Nome</label>
+          <input type="text" id="name" class="form-control validate" >
 
         </div> 
+
+        <div class="md-form pb-3 col-md-2">
+            <label data-error="wrong" data-success="right" for="address_Location">Icon</label>
+            <br>
+            <img id="icon" class="img-profile" src="" style="width: 100px ; height: 100px !important">
+
+          </div>
         
         </div>
         
 
      <div class="row row-space">   
-        <div class="md-form pb-8 col-md-8">
-          <label data-error="wrong" data-success="right" for="address_Location">Morada</label>
-          <input type="text" id="address_Location" class="form-control validate" readonly>
-        </div>
+
                 <div class="md-form pb-3 col-md-4">
-          <label data-error="wrong" data-success="right" for="address_Location">Localidade</label>
-          <input type="text" id="county" class="form-control validate" readonly>
+          <label data-error="wrong" data-success="right" for="address_Location">Data de Nascimento</label>
+          <input type="date" id="birth_date" class="form-control validate" >
         </div>
-        
-        </div>
-        
-         <div class="row row-space">       
-                <div class="md-form pb-3 col-md-12">
-          <label data-error="wrong" data-success="right" for="designation_Crime_Nature">Natureza do Crime </label>
-          <select class="selectbtn custom-select" id="designation_Crime_Nature" name="designation_Crime_Nature">
-                                    <option value="0">Selecione a natureza do crime:</option>
-          </select>
-        </div>
-        </div>
-        
-        <div class="row row-space">
-                    <div class="md-form pb-3 col-md-4">
-          <label data-error="wrong" data-success="right" for="type_Request">Tipo de Pedido</label>
-          <input type="text" id="type_Request" class="form-control validate">
-        </div> 
-        
-       <div class="md-form pb-3 col-md-4">
-          <label class="label" >Gravidade: </label>
-                                <select class="selectbtn custom-select" id="degree_of_emergency_Crime_Nature">
-                                    <option value="Muito Grave">Muito Grave</option>
-                                    <option value="Grave">Grave</option>
-                                    <option value="Moderado">Moderado</option>
-                                    </select>
-                                </div>
+        <div class="md-form pb-3 col-md-4">
+            <label data-error="wrong" data-success="right" for="address_Location">Telefone Tutor</label>
+            <input type="telephone" id="phone_number" class="form-control validate" >
+          </div>
+          <div class="md-form pb-8 col-md-2">
+            <label data-error="wrong" data-success="right" for="address_Location">Total Points</label>
+            <input type="number" id="total_points" class="form-control validate" >
+          </div>
         
         </div>
-        <div class="row row-space">
-                                <div class="col-8">
-                                <label class="label">Descrição: </label>
-                                <div class="col-md-14">
-                                    <textarea rows="5" class="form-control form-control-line" id="description_Request"></textarea>
-                                </div>
-                            </div>
-                            </div>
-                            
-            
-        
-              <br>          
-             <!-- Division of page -->
-             <br>
-                                <div style="height: 5px; background-color: #F7F7F7; margin-bottom: 5%;"></div> 
-                                
-            <!-- End of division of page -->  
-                <h4 class="modal-title w-100 dark-grey-text my-3 text-center" id="myModalLabel" style= "padding-left:30px !important;">Materiais</h4>
-         <table class="table table-bordered" id="data_table">
-            <thead>
-              <th>Categoria</th>
-              <th>Quantidade</th>
-            </thead>
-            <tbody>
-                            <tr>
-        <td><select class="selectbtn custom-select" id="material">
-            <option value="0"> Selecione Material: </option>
-         </select></td>
-         
-        <td><input type="number" id="material_quantity"></td>
-        <td> <button type="button" class="add btn btn-info add-new" id="addButton" onclick="add_row();"><i class="fa fa-plus"></i> </button></td>
-        </tr>
-        
-            
-            </tbody>
-          </table>
-            
-     <!-- Division of page -->
-     <br></br>
+
         <div style="height: 5px; background-color: #F7F7F7; margin-bottom: 5%;"></div> 
                         
     <!-- End of division of page -->  
     <div class="row row-space">
-                        <div class="md-form pb-3 col-md-4">
-          <label class="label"for="occurrence_manager">Gestor da Ocorrência: </label>
-                                <select class="selectbtn custom-select" id="managers" >
-                                    <option value="0">Selecione um Gestor:</option>
-                                 
-                                    </select>
-        </div>
+
         
         <div class="md-form pb-3 col-md-4">
-          <label class="label"for="state_Request">Estado da Ocorrência: </label>
-                                <select class="selectbtn custom-select" id="state" >
-                                    <option value="Arquivado">Arquivado</option>
-                                    <option value="Aguardar">Aguardar</option> 
+          <label class="label"for="stateChild">Estado do Pedido: </label>
+                                <select class="selectbtn custom-select" id="stateChild" >
+                                    <option value="Active">Ativo</option>
+                                    <option value="Inactive">Inativo</option> 
                                     </select>
         </div>
         </div>
+        
+
+        
+       
+     <!-- Division of page -->
+     <br></br>
+        <div style="height: 5px; background-color: #F7F7F7; margin-bottom: 5%;"></div> 
+                        
+
         
         <div class="text-center mb-5 mt-3">
           <button type="submit" class="rounded-b button-color textb1" >Guardar Dados</button>
@@ -590,7 +538,7 @@ function listUsers() {
                 $('#tableUsers tbody').empty();
                     for (let i = 0; i < resposta.length; i++){
                         nrUsers = nrUsers + 1;
-                    $('#tableUsers tbody').append('<tr><td>' + '<input name="checkbox1"  type="checkbox" value='+resposta[i].id_user+'>' +'</td><td>'+ resposta[i].id_user +  '</td><td>'+ resposta[i].name +'</td><td>' + resposta[i].birth_date  + '</td><td>'+ resposta[i].phone_number_tutor + '</td><td>' + resposta[i].total_points  +  (resposta[i].status == "Active" ? '</td><td><p class="solved">Ativo</p>' : (resposta[i].status == "Inactive" ? '</td><td><p class="unsolved">Inativo</p>' : '</td><td><p class="unknown">Indefinido</p>'  )) + '</td><td>'+ '<div class="dropdown keep-open show-dropdown"> <a href="#" data-toggle="dropdown" aria-expanded="false" > <i class="fas fa-ellipsis-v"> </i></a> <ul class="dropdown-menu "  >                                                <li class="header-title"> <i class="fas fa-cog"></i> Opções</li>     <!-- Division of page -->                                            <div style="height: 2px; background-color: #F7F7F7; margin-bottom: 5%;"></div> <li data-target="#InfoModal" data-toggle="modal"><a id="editar" onclick="editFunction('+resposta[i].id_activity+')"> <p  class="dropdownText">                             <i class="far fa-edit" style="padding-right: 4px !important"></i>   Editar</p> </a></li>                                               <li > <a id="apagar" onclick="deleteFunction('+ resposta[i].id_activity+')"> <p href="#" class="dropdownText">                            <i class="fas fa-trash-alt" style="padding-right: 6px !important"></i>Eliminar</p></a></li> ' + '</td></tr>'  )
+                    $('#tableUsers tbody').append('<tr><td>' + '<input name="checkbox1"  type="checkbox" value='+resposta[i].id_user+'>' +'</td><td>'+ resposta[i].id_user +  '</td><td>'+ resposta[i].name +'</td><td>' + resposta[i].birth_date  + '</td><td>'+ resposta[i].phone_number_tutor + '</td><td>' + resposta[i].total_points  +  (resposta[i].status == "Active" ? '</td><td><p class="solved">Ativo</p>' : (resposta[i].status == "Inactive" ? '</td><td><p class="unsolved">Inativo</p>' : '</td><td><p class="unknown">Indefinido</p>'  )) + '</td><td>'+ '<div class="dropdown keep-open show-dropdown"> <a href="#" data-toggle="dropdown" aria-expanded="false" > <i class="fas fa-ellipsis-v"> </i></a> <ul class="dropdown-menu "  >                                                <li class="header-title"> <i class="fas fa-cog"></i> Opções</li>     <!-- Division of page -->                                            <div style="height: 2px; background-color: #F7F7F7; margin-bottom: 5%;"></div> <li data-target="#InfoModal" data-toggle="modal"><a id="editar" onclick="editFunction('+resposta[i].id_user+')"> <p  class="dropdownText">                             <i class="far fa-edit" style="padding-right: 4px !important"></i>   Editar</p> </a></li>                                               <li > <a id="apagar" onclick="deleteFunction('+ resposta[i].id_user+')"> <p href="#" class="dropdownText">                            <i class="fas fa-trash-alt" style="padding-right: 6px !important"></i>Eliminar</p></a></li> ' + '</td></tr>'  )
                    numberUsers();
                     }
           
@@ -609,22 +557,41 @@ function listUsers() {
 
         }
 
-        
+        let statusCode
        function deleteFunction(id){
-            fetch('https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/Requests/'+ id, {
-                method: 'delete',
+        fetch('http://188.82.156.135:8080/Back-end/UserDelete?id_user=' + id)
+            .then(res => res.json())
+            .then((out) => {
+                console.log(out);
 
-            }).then(function (response) {Swal.fire(
-  '',
-  'Pedido de Ocorrência removido com sucesso!',
-  'success'
-).then(  function(){ 
-                    
-     window.location.reload();
-   });
+                statusCode = out.STATUS;
+
+                
+            }
+         ).then(function (response) {
+            if (statusCode == "200"){ 
+            Swal.fire(
+              '',
+              'Utilizador Criança eliminado com sucesso!',
+              'success'
+            ).then(  function(){ 
+                  window.location.reload();
+               });
+            } else
+            {
+                Swal.fire(
+              '',
+              'Ocorreu um Erro!',
+              'error'
+            ).then(  function(){ 
+                  window.location.reload();
+               });
+
+            }
+            }).catch(function(err) {console.log(err);})
+
             
                     
-                }).catch(function(err) {console.log(err);})
                 
 
        }
@@ -761,26 +728,10 @@ $( "#data_table" ).load( "PedidosOcorrencia.html #data_table" );
 
 
 
-    //LOAD MATERIAL TABLE
+
     
 
-    function listMaterials() {
-         var idMaterial = document.getElementById("material").value;
-     var table=document.getElementById("data_table");
- var table_len=(table.rows.length)-1;
-            fetch('https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/OccurrenceMaterials/' + id_request_for_material_creation)
-            .then(res => res.json())
-            .then((out) => {
-                $.each(out, function(index, value) {
-                   let idMaterial = value.id_material;
-                    $('#data_table tbody').append('<tr><td>' + (value.category != null ? value.category : "") +  (value.quantity != null ? '</td><td>' + value.quantity : '</td><td>') +  "</td><td>" + (value.id_material != null ? "<a style='display: flex; justify-content: center;' onclick='delete_row("+id_request_for_material_creation+',' + idMaterial +")'><i style='color: red; display: inline-block;' class='fas fa-trash' ></i></a></td></tr>" : "")  )
-                });
-            }).catch(err => console.error(err));
-        }
 
-        $(document).ready(function() {
-            listMaterials();
-        })
         
   }
 })
@@ -799,70 +750,52 @@ $( "#data_table" ).load( "PedidosOcorrencia.html #data_table" );
             
             
 function editFunction(id){
-    id_request_for_material_creation = id;
     
-            fetch('https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/Requests/'+ id)
-            .then(res => res.json())
-            .then((out) => {
-                $.each(out, function(index, value) {
-                    if (value.date_Request !== null) {
-                        document.getElementById("date_Request").value = value.date_Request; }
-                    if (value.designation_Location !== null) {
-                        document.getElementById("designation_Location").value = value.designation_Location;}
-                    if (value.address_Location !== null) { 
-                        document.getElementById("address_Location").value = value.address_Location;}
-                    if (value.id_operations_manager !== null) { 
-                        var select = document.getElementById("managers");
-                            for(let i = 0;i < select.options.length;i++){
-                                if(select.options[i].value == value.id_operations_manager){
-                                    select.options[i].selected = true;
-                                }
-                            }
-                    }
-                    
-                    if (value.degree_of_emergency_Crime_Nature !== null) { 
-                        var select = document.getElementById("degree_of_emergency_Crime_Nature");
-                            for(let i = 0;i < select.options.length;i++){
-                                if(select.options[i].value == value.degree_of_emergency_Crime_Nature){
-                                    select.options[i].selected = true;
-                                }
-                            }
-                    }                    
-                    
-                    if (value.county_Location !== null){
-                        document.getElementById("county").value = value.county_Location;
-                    }
-             
-                    if (value.type_Request !== null) { 
-                        document.getElementById("type_Request").value = value.type_Request; }
-                        
-                let select2 = document.getElementById("designation_Crime_Nature");
+            fetch('http://188.82.156.135:8080/Back-end/ChildGetById?id_user='+ id)
+            .then(res => res.arrayBuffer())
+  .then(buffer => {
+    let decoder = new TextDecoder("iso-8859-1");
+    let text = decoder.decode(buffer);
+    resposta = JSON.parse(text.toString());
 
-                            for(let i = 0;i < select2.options.length;i++){
-                                
-                                if(select2.options[i].value  == value.id_crime_nature){
-                                    select2.options[i].selected = true;
-                                }
-                            } 
-                    
-                    
-                    if (value.state_Request !== null) { 
-                        let select1 = document.getElementById("state");
-                            for(let i = 0;i < select1.options.length;i++){
-                                if(select1.options[i].value == value.state_Request){
-                                    select1.options[i].selected = true;
-                                }
-                            } 
+
+    
+  }).then((out) => {
+
+    console.log(resposta.birth_date)
+    let birthdate  = resposta.birth_date;
+    console.log(resposta.id_user);
+console.log(resposta)
+    console.log(resposta.state);
+
+
+    
+    let newDate = resposta.birth_date.split('/').reverse().join('/');
+
+    console.log(newDate)
+
+
+    document.getElementById("name").value = resposta.name;
+    document.getElementById("phone_number").value = resposta.phone_number_tutor;
+    document.getElementById("birth_date").value = newDate;
+    document.getElementById("total_points").value = resposta.total_points;
+    document.getElementById("stateChild").value = resposta.state;
+    console.log(newDate)
+
+
+    if(resposta.photo != null){
+                        document.getElementById("iconFact").value= resposta.photo;
+                        document.getElementById("iconFact").src = "http://188.82.156.135:8080/Back-end/IMAGES/" + resposta.photo;
+                        console.log( "http://188.82.156.135:8080/Back-end/IMAGES/" + resposta.photo);
                     }
-                    
-                    if (value.description_Request !== null) {
-                        document.getElementById("description_Request").value = value.description_Request; 
-                        
-                    }
+
+
+
+                 
                     
                 
         
-                });
+                
             }).catch(err => console.error(err));
 
             const editForm = document.getElementById('editForm');
@@ -910,41 +843,7 @@ function editFunction(id){
                         });
             
         
-    //LOAD MATERIAL TABLE
 
-    function listMaterials() {
-         var idMaterial = document.getElementById("material").value;
-        
-     var table=document.getElementById("data_table");
- var table_len=(table.rows.length)-1;
-            fetch('https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/OccurrenceMaterials/' + id_request_for_material_creation)
-            .then(res => res.json())
-            .then((out) => {
-                $('#data_table tbody').empty();
-                $('#data_table tbody').append('<tr><td><select class="selectbtn custom-select" id="material"> <option value="0"> Selecione Material: </option> </select></td><td><input type="number" id="material_quantity"></td><td> <button type="button" class="add btn btn-info add-new" id="addButton" onclick="add_row();"><i class="fa fa-plus"></i></button></td></tr>');
-                            $(document).ready(function() {
-        //Populate Select Dropdown with Materials 
-            fetch('https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/Material/')
-            .then(res => res.json())
-            .then((out) => {
-                $.each(out, function(index, value) {
-var selectmaterial = document.getElementById("material");
-    selectmaterial.options[selectmaterial.options.length] = new Option(value.category, value.id_material);
- });
-            }).catch(err => console.error(err));
-})
-                $.each(out, function(index, value) {
-                   let idMaterial = value.id_material;
-                    $('#data_table tbody').append('<tr><td>' + (value.category != null ? value.category : "") +  (value.quantity != null ? '</td><td>' + value.quantity : '</td><td>') +  "</td><td>" + (value.id_material != null ? "<a style='display: flex; justify-content: center;' onclick='delete_row("+id_request_for_material_creation+',' + idMaterial +")'><i style='color: red; display: inline-block;' class='fas fa-trash' ></i></a></td></tr>" : "")   )
-                });
-            }).catch(err => console.error(err));
-        }
-
-        $(document).ready(function() {
-            listMaterials();
-        })
-
-    
     
     
     
@@ -981,20 +880,20 @@ var selectmaterial = document.getElementById("material");
                        });
             }
             
-             //Logout function 
+           //Logout function 
     let logoutBtn = document.getElementById("logoutBtn")
         logoutBtn.addEventListener('click', function(e){
-                    fetch('https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/logout/')
+                    fetch('http://188.82.156.135:8080/Back-end/LogoutServlet')
                     .then(res => res.json())
                     .then((out) => {
                       console.log(out)
                       
-                    if (out.status == 200) {
+                    if (out.STATUS == 200) {
         localStorage.clear();
         window.location.replace(out.url2)
         
                     }else {
-                      if (out.status == 400){
+                      if (out.STATUS == 400){
                                             Swal.fire(
                               '',
                               'Não existe nenhuma sessão ativa',
@@ -1022,6 +921,7 @@ var selectmaterial = document.getElementById("material");
                   });
                     
         });
+        
         
         
         

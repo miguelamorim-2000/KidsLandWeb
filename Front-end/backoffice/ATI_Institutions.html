@@ -604,24 +604,47 @@ function listInstitutions() {
         }) 
 
         
+        let statusCode
        function deleteFunction(id){
-            fetch('https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/Requests/'+ id, {
-                method: 'delete',
+        fetch('http://188.82.156.135:8080/Back-end/UserDelete?id_user=' + id)
+            .then(res => res.json())
+            .then((out) => {
+                console.log(out);
 
-            }).then(function (response) {Swal.fire(
-  '',
-  'Pedido de Ocorrência removido com sucesso!',
-  'success'
-).then(  function(){ 
-                    
-     window.location.reload();
-   });
+                statusCode = out.STATUS;
+
+                
+            }
+         ).then(function (response) {
+            if (statusCode == "200"){ 
+            Swal.fire(
+              '',
+              ' Instituição eliminado com sucesso!',
+              'success'
+            ).then(  function(){ 
+                  window.location.reload();
+               });
+            } else
+            {
+                Swal.fire(
+              '',
+              'Ocorreu um Erro!',
+              'error'
+            ).then(  function(){ 
+                  window.location.reload();
+               });
+
+            }
+            }).catch(function(err) {console.log(err);})
+
             
                     
-                }).catch(function(err) {console.log(err);})
                 
 
        }
+                
+
+                    
 
 
 // ARCHIVE REQUEST
@@ -975,20 +998,20 @@ var selectmaterial = document.getElementById("material");
                        });
             }
             
-             //Logout function 
+           //Logout function 
     let logoutBtn = document.getElementById("logoutBtn")
         logoutBtn.addEventListener('click', function(e){
-                    fetch('https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/logout/')
+                    fetch('http://188.82.156.135:8080/Back-end/LogoutServlet')
                     .then(res => res.json())
                     .then((out) => {
                       console.log(out)
                       
-                    if (out.status == 200) {
+                    if (out.STATUS == 200) {
         localStorage.clear();
         window.location.replace(out.url2)
         
                     }else {
-                      if (out.status == 400){
+                      if (out.STATUS == 400){
                                             Swal.fire(
                               '',
                               'Não existe nenhuma sessão ativa',
@@ -1016,6 +1039,8 @@ var selectmaterial = document.getElementById("material");
                   });
                     
         });
+        
+        
         
         
         

@@ -429,20 +429,20 @@ function uploadFactPic(id_fact){
            
                   }
 
-     //Logout function 
-        let logoutBtn = document.getElementById("logoutBtn")
+    //Logout function 
+    let logoutBtn = document.getElementById("logoutBtn")
         logoutBtn.addEventListener('click', function(e){
-                    fetch('https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/logout/')
+                    fetch('http://188.82.156.135:8080/Back-end/LogoutServlet')
                     .then(res => res.json())
                     .then((out) => {
                       console.log(out)
                       
-                    if (out.status == 200) {
+                    if (out.STATUS == 200) {
         localStorage.clear();
         window.location.replace(out.url2)
         
                     }else {
-                      if (out.status == 400){
+                      if (out.STATUS == 400){
                                             Swal.fire(
                               '',
                               'Não existe nenhuma sessão ativa',
@@ -470,6 +470,8 @@ function uploadFactPic(id_fact){
                   });
                     
         });
+        
+        
         
         
         

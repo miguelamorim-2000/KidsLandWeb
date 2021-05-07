@@ -349,23 +349,11 @@
       <!--Body-->
       <div class="modal-body mx-4">
         <!--Body-->
-        <div class="row row-space">
-        <div class="md-form pb-3 col-md-3">
-          <label data-error="wrong" data-success="right" for="date_Request">Data do Pedido</label>
-          <input type="date" id="date_Request" class="form-control validate" readonly>
-        </div>
-                <div class="md-form pb-3 col-md-9">
-          <label data-error="wrong" data-success="right" for="designation_Location">Entidade</label>
-          <input type="text" id="designation_Location" class="form-control validate" readonly>
 
-        </div> 
-        
-        </div>
-        
 
      <div class="row row-space">   
         <div class="md-form pb-8 col-md-8">
-          <label data-error="wrong" data-success="right" for="address_Location">Morada</label>
+          <label data-error="wrong" data-success="right" for="address_Location">Nome</label>
           <input type="text" id="address_Location" class="form-control validate" readonly>
         </div>
                 <div class="md-form pb-3 col-md-4">
@@ -706,7 +694,7 @@ function listActivities() {
                 $('#tableInstitutions tbody').empty();
                     for (let i = 0; i < resposta.length; i++){
                         nrInstitutions = nrInstitutions + 1;
-                    $('#tableInstitutions tbody').append('<tr><td>' + '<input name="checkbox1"  type="checkbox" value='+ resposta[i].id_institution + '>' +'</td><td>' +  resposta[i].nif + '</td><td>' + resposta[i].id_institution +  '</td><td>'+ resposta[i].total_activities+  '</td><td>'+ resposta[i].address +'</td><td>'+ resposta[i].county +'</td><td>'+ resposta[i].district+'</td><td>'+ resposta[i].postal_code + '</td><td>'+ resposta[i].phone_number+'</td><td>'+'<div class="dropdown keep-open show-dropdown"> <a href="#" data-toggle="dropdown" aria-expanded="false" > <i class="fas fa-ellipsis-v"> </i></a> <ul class="dropdown-menu "  >                                                <li class="header-title"> <i class="fas fa-cog"></i> Opções</li>     <!-- Division of page -->                                            <div style="height: 2px; background-color: #F7F7F7; margin-bottom: 5%;"></div> <li data-target="#InfoModal" data-toggle="modal"><a id="editar" onclick="editFunction()"> <p  class="dropdownText">                             <i class="far fa-edit" style="padding-right: 4px !important"></i>   Editar</p> </a></li>                                               <li > <a id="apagar" onclick="deleteFunction()"> <p href="#" class="dropdownText">                            <i class="fas fa-trash-alt" style="padding-right: 6px !important"></i>Eliminar</p></a></li> ' + '</td></tr>'  )
+                    $('#tableInstitutions tbody').append('<tr><td>' + '<input name="checkbox1"  type="checkbox" value='+ resposta[i].id_institution + '>' +'</td><td>' +  resposta[i].nif + '</td><td>' + resposta[i].id_institution +  '</td><td>'+ resposta[i].total_activities+  '</td><td>'+ resposta[i].address +'</td><td>'+ resposta[i].county +'</td><td>'+ resposta[i].district+'</td><td>'+ resposta[i].post_code + '</td><td>'+ resposta[i].phone_number+'</td><td>'+'<div class="dropdown keep-open show-dropdown"> <a href="#" data-toggle="dropdown" aria-expanded="false" > <i class="fas fa-ellipsis-v"> </i></a> <ul class="dropdown-menu "  >                                                <li class="header-title"> <i class="fas fa-cog"></i> Opções</li>     <!-- Division of page -->                                            <div style="height: 2px; background-color: #F7F7F7; margin-bottom: 5%;"></div> <li data-target="#InfoModal" data-toggle="modal"><a id="editar" onclick="editFunction()"> <p  class="dropdownText">                             <i class="far fa-edit" style="padding-right: 4px !important"></i>   Editar</p> </a></li>                                               <li > <a id="apagar" onclick="deleteFunction()"> <p href="#" class="dropdownText">                            <i class="fas fa-trash-alt" style="padding-right: 6px !important"></i>Eliminar</p></a></li> ' + '</td></tr>'  )
                   //  numberFacts();
                     }
             }).catch(err => console.error(err));

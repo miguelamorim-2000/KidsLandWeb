@@ -90,7 +90,7 @@
 
       <!-- Nav Item - Utilities Collapse Menu -->
       <li class="nav-item">
-          <a class="nav-link" href="FormulárioInstituicao.html" 
+          <a class="nav-link" href="ATI_NewInstitution.html" 
               aria-expanded="true" aria-controls="collapseUtilities">
               <i class="fas fa-user-edit"></i>
               <span>Nova Instituição</span>
@@ -207,7 +207,7 @@ Administrador                    </div>
                 <div class="card-body">
                     <h2 class="title">Novo Colaborador</h2>
                     <h4 class="subtitle" style="margin-top: 3%">Dados</h3> 
-                    <form id="institutionForm" name="institutionForm">
+                    <form id="collaboratorForm" name="institutionForm">
                         <div class="row row-space">
 
                             
@@ -274,17 +274,7 @@ Administrador                    </div>
                         <div style="height: 5px; background-color: #F7F7F7; margin-bottom: 5%;"></div>
                         <h4 class="subtitle" style="margin-top: 3%">Dados de Login</h3> 
                         
-                            <div class= "row row-space">
 
-                            <div class="input-group">
-                                <div class="col-6">
-                                <label class="label">Tipo de Login: </label>
-                                <select class="selectbtn custom-select" id="candidatesList" name="candidatesList">
-                                    <option value="0" >Selecione o Tipo:</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
 
 
                         <div class= "row row-space">
@@ -403,102 +393,40 @@ Administrador                    </div>
             }).catch(err => console.error(err));
 
         
-        //Select List on change fill data
-        document.getElementById('candidatesList').addEventListener('change', function() {
-  var idCandidateSelected = select.options[select.selectedIndex].value;
-  if (select.selectedIndex != 0 ){
-            fetch('http://188.82.156.135:8080/Back-end/CandidateGetId?id_candidate='+ idCandidateSelected)
-            .then(res => res.json())
-            .then((out) => {
-                $.each(out, function(index, value) {
-                    document.getElementById("name").value = value.name;
-                    document.getElementById("county").value = value.county;
-                    document.getElementById("district").value = value.district;
-                    document.getElementById("email").value = value.email;
-                    document.getElementById("nif").value = value.nif;
-                    document.getElementById("phone_number").value = value.phone_number;
-                    document.getElementById("post_code").value = value.post_code;
-                    document.getElementById("address").value = value.address;
-
-
-
-
-
-
-
-                });
-            }).catch(err => console.error(err));
-
-  
-} else {
-    document.getElementById("name").value = value.name;
-                    document.getElementById("county").value = "";
-                    document.getElementById("district").value = "";
-                    document.getElementById("email").value = "";
-                    document.getElementById("nif").value = "";
-                    document.getElementById("phone_number").value = "";
-                    document.getElementById("post_code").value = "";
-                    document.getElementById("address").value = "";
-
-                    
-    
-}
             
-        });
+        
         
         
         //Submit form
         
         //Create User
-                   const institutionForm = document.getElementById('institutionForm');
+                   const collaboratorForm = document.getElementById('collaboratorForm');
 
             
-                institutionForm.addEventListener('submit', function(e){
+                collaboratorForm.addEventListener('submit', function(e){
                 e.preventDefault();
                 
                    const email = document.getElementById("email").value;
                    const password = document.getElementById("password").value;
-                   let id_user;  
+                   const name = document.getElementById("name").value;
+                   const nif = document.getElementById("nif").value;
+                   const phone_number = document.getElementById("phone_number").value;
+                   const county = document.getElementById("county").value;
+                   const address = document.getElementById("address").value;
+                   const district = document.getElementById("district").value;
+                   const post_code = document.getElementById("post_code").value;
+                   const type = "Collaborator";
+
                 
-                 fetch('http://188.82.156.135:8080/Back-end/RegisterUserInstitution', {
+                 fetch('http://188.82.156.135:8080/Back-end/RegisterStaff', {
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded"
                     },
                     method: 'post',
-                    body: `email=${email}&password=${password}`
-                }).then(
-                    async function () {
-const email = document.getElementById("email").value;
-try {
-const result = fetch(`http://188.82.156.135:8080/Back-end/UserGetID?email=` + email)
-const response = await result
-const jsonData = await response.json()
-console.log(jsonData);
-id_user = jsonData.id_user;
-
-} catch (e) {
-throw Error(e) } }).then(
-function (){                 
-//Create Institution
-            const id_candidate = document.getElementById("candidatesList").value
-                            
-                fetch('http://188.82.156.135:8080/Back-end/InstitutionPost', {
-                    headers: {
-                        "Content-Type": "application/x-www-form-urlencoded"
-                    },
-                    method: 'post',
-                    body: `id_candidate=${id_candidate}&id_user=${id_user}`
-                }).then(
-                    fetch('http://188.82.156.135:8080/Back-end/SendEmailAccount', {
-                    headers: {
-                        "Content-Type": "application/x-www-form-urlencoded"
-                    },
-                    method: 'post',
-                    body: `password=${password}&email=${email}`
-
-                })).then(function (response) {Swal.fire(
+                    body: `email=${email}&password=${password}&name=${name}&nif=${nif}&phone_number=${phone_number}&county=${county}&address=${address}&district=${district}&post_code=${post_code}&type=${type}`
+                }).then(function (response) {Swal.fire(
                       '',
-                      'Instituição admitida com sucesso!',
+                      'Colaborador criado com sucesso!',
                       'success'
                     ).then(  function(){ 
                           window.location.reload();
@@ -514,22 +442,22 @@ function (){
 
 
             
-            });
+        
             
-        //Logout function     
-        let logoutBtn = document.getElementById("logoutBtn")
+        //Logout function 
+    let logoutBtn = document.getElementById("logoutBtn")
         logoutBtn.addEventListener('click', function(e){
-                    fetch('https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/logout/')
+                    fetch('http://188.82.156.135:8080/Back-end/LogoutServlet')
                     .then(res => res.json())
                     .then((out) => {
                       console.log(out)
                       
-                    if (out.status == 200) {
+                    if (out.STATUS == 200) {
         localStorage.clear();
         window.location.replace(out.url2)
         
                     }else {
-                      if (out.status == 400){
+                      if (out.STATUS == 400){
                                             Swal.fire(
                               '',
                               'Não existe nenhuma sessão ativa',
@@ -557,6 +485,7 @@ function (){
                   });
                     
         });
+        
         
         
         
