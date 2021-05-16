@@ -1,5 +1,5 @@
 <?php
 
-include_once("teste.html");
+include_once("RegisterCitizen.html");
 
 ?>
