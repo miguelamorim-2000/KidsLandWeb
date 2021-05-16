@@ -608,7 +608,7 @@ function listRequests() {
 
     let resposta;
  
-            fetch('http://188.82.156.135:8080/Back-end/ChildSubscritpionGetIdInstitution?id_institution=' + localStorage.getItem("id_institution"))
+            fetch('https://kidslandproxy.herokuapp.com/http://188.82.156.135:8080/Back-end/ChildSubscritpionGetIdInstitution?id_institution=' + localStorage.getItem("id_institution"))
             .then(res => res.arrayBuffer())
   .then(buffer => {
     let decoder = new TextDecoder("iso-8859-1");
@@ -647,7 +647,7 @@ function listRequests() {
         let statePUT = "Arquivada"
         
        function archiveFunction(id){
-            fetch('http://188.82.156.135:8080/Back-end/ActivityRequestStatePut', {
+            fetch('https://kidslandproxy.herokuapp.com/http://188.82.156.135:8080/Back-end/ActivityRequestStatePut', {
                 headers: {
                                     "Content-Type": "application/x-www-form-urlencoded"
                                 },
@@ -674,7 +674,7 @@ function listRequests() {
         
         function deleteFunction(id){
             
-            fetch('http://188.82.156.135:8080/Back-end/RequestActivityDelete?id_request=' + id)
+            fetch('https://kidslandproxy.herokuapp.com/http://188.82.156.135:8080/Back-end/RequestActivityDelete?id_request=' + id)
             .then(res => res.json())
             .then((out) => {
                 console.log(out);
@@ -705,7 +705,7 @@ function listRequests() {
 
         function givePoints(id_activity, id_child){
             let state = "closed"
-            fetch('http://188.82.156.135:8080/Back-end/SubscriptionStatePut', {
+            fetch('https://kidslandproxy.herokuapp.com/http://188.82.156.135:8080/Back-end/SubscriptionStatePut', {
                                 headers: {
                                     "Content-Type": "application/x-www-form-urlencoded"
                                 },
@@ -726,7 +726,7 @@ function listRequests() {
         function cancelPoints(id_activity, id_child){
             let state = "Arquivado"
 
-            fetch('http://188.82.156.135:8080/Back-end/SubscriptionStatePut', {
+            fetch('https://kidslandproxy.herokuapp.com/http://188.82.156.135:8080/Back-end/SubscriptionStatePut', {
                                 headers: {
                                     "Content-Type": "application/x-www-form-urlencoded"
                                 },
@@ -744,7 +744,7 @@ function listRequests() {
             
 function editFunction(id){
     
-            fetch('http://188.82.156.135:8080/Back-end/ActivityRequestByIdRequestGet?id_request='+ id)
+            fetch('https://kidslandproxy.herokuapp.com/http://188.82.156.135:8080/Back-end/ActivityRequestByIdRequestGet?id_request='+ id)
             .then(res => res.arrayBuffer())
   .then(buffer => {
     let decoder = new TextDecoder("iso-8859-1");
@@ -803,7 +803,7 @@ function editFunction(id){
                     if(resposta.photo != null){
                         document.getElementById("requestIcon").value= resposta.photo;
                         document.getElementById("requestIcon").src = "http://188.82.156.135:8080/Back-end/IMAGES/" + resposta.photo;
-                        console.log( "http://188.82.156.135:8080/Back-end/IMAGES/" + resposta.photo);
+                        console.log( "https://kidslandproxy.herokuapp.com/http://188.82.156.135:8080/Back-end/IMAGES/" + resposta.photo);
                     }
                     
                     if (resposta.state !== null) { 
@@ -859,7 +859,7 @@ console.log("longitude: " + longitude)
 
 
     
-                            fetch('http://188.82.156.135:8080/Back-end/ActivityRequestPut', {
+                            fetch('https://kidslandproxy.herokuapp.com/http://188.82.156.135:8080/Back-end/ActivityRequestPut', {
                                 headers: {
                                     "Content-Type": "application/x-www-form-urlencoded"
                                 },
@@ -897,7 +897,7 @@ console.log("longitude: " + longitude)
                     const state = "Ativo";
                     const id_reward = 1;
                     const state2 = "Aceite"           
-                fetch('http://188.82.156.135:8080/Back-end/ActivityPost', {
+                fetch('https://kidslandproxy.herokuapp.com/http://188.82.156.135:8080/Back-end/ActivityPost', {
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded"
                     },
@@ -905,7 +905,7 @@ console.log("longitude: " + longitude)
                     body: `id_request=${id}&state=${state}&id_reward=${id_reward}`
                 })
                 
-                    fetch('http://188.82.156.135:8080/Back-end/ActivityRequestStatePut', {
+                    fetch('https://kidslandproxy.herokuapp.com/http://188.82.156.135:8080/Back-end/ActivityRequestStatePut', {
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded"
                     },
@@ -927,7 +927,7 @@ console.log("longitude: " + longitude)
                 //Logout function 
     let logoutBtn = document.getElementById("logoutBtn")
         logoutBtn.addEventListener('click', function(e){
-                    fetch('http://188.82.156.135:8080/Back-end/LogoutServlet?email=' + localStorage.getItem("email"))
+                    fetch('https://kidslandproxy.herokuapp.com/http://188.82.156.135:8080/Back-end/LogoutServlet?email=' + localStorage.getItem("email"))
                     .then(res => res.json())
                     .then((out) => {
                       console.log(out)

@@ -493,7 +493,7 @@ const formData = new FormData();
     formData.append("id_user", id_user)
 
 
-fetch('https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/upload/', {
+fetch('https://kidslandproxy.herokuapp.com/https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/upload/', {
     method: 'POST',
     body: formData }).then(function (response) {
 if (response.status== 469){
@@ -534,7 +534,7 @@ if (response.status== 469){
     
 
 //Number of active requests
-                  fetch('https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/RequestsNonOccurrencesCount/')
+                  fetch('https://kidslandproxy.herokuapp.com/https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/RequestsNonOccurrencesCount/')
             .then(res => res.json())
             .then((out) => {
                 $.each(out, function(index, value) {
@@ -589,7 +589,7 @@ if (response.status== 469){
         
         //Populate Select Dropdown with natures
         var selectnature = document.getElementById("designation_Crime_Nature");
-            fetch('https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/CrimesNature/')
+            fetch('https://kidslandproxy.herokuapp.com/https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/CrimesNature/')
             .then(res => res.json())
             .then((out) => {
                 $.each(out, function(index, value) {
@@ -599,7 +599,7 @@ if (response.status== 469){
         
         //Populate Select Dropdown with Materials 
         var selectmaterial = document.getElementById("material");
-            fetch('https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/Material/')
+            fetch('https://kidslandproxy.herokuapp.com/https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/Material/')
             .then(res => res.json())
             .then((out) => {
                 $.each(out, function(index, value) {
@@ -609,7 +609,7 @@ if (response.status== 469){
 
 //Populate Select Dropdown with Managers
         var selectmanager = document.getElementById("managers");
-            fetch('https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/OperationalsTypeManager/')
+            fetch('https://kidslandproxy.herokuapp.com/https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/OperationalsTypeManager/')
             .then(res => res.json())
             .then((out) => {
                 $.each(out, function(index, value) {
@@ -678,7 +678,7 @@ function listActivities() {
 
     let resposta;
  
-            fetch('http://188.82.156.135:8080/Back-end/InstitutionUserCandidateGet')
+            fetch('https://kidslandproxy.herokuapp.com/http://188.82.156.135:8080/Back-end/InstitutionUserCandidateGet')
             .then(res => res.arrayBuffer())
   .then(buffer => {
     let decoder = new TextDecoder("iso-8859-1");
@@ -705,7 +705,7 @@ function listActivities() {
         }) 
         
        function deleteFunction(id){
-            fetch('https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/Requests/'+ id, {
+            fetch('https://kidslandproxy.herokuapp.com/https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/Requests/'+ id, {
                 method: 'delete',
 
             }).then(function (response) {Swal.fire(
@@ -730,7 +730,7 @@ function archive(id){
     let archiveRequest = "Arquivado"
 
 
-            fetch('https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/RequestsUpdateState/'+ id, {
+            fetch('https://kidslandproxy.herokuapp.com/https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/RequestsUpdateState/'+ id, {
                 headers: {
                                     "Content-Type": "application/x-www-form-urlencoded"
                                 },
@@ -754,14 +754,14 @@ let id_request_for_material_creation
        
 function delete_row(no, id)
 {
-            fetch('https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/OccurrenceMaterials/'+ id_request_for_material_creation +'/' + id, {
+            fetch('https://kidslandproxy.herokuapp.com/https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/OccurrenceMaterials/'+ id_request_for_material_creation +'/' + id, {
                 method: 'delete',
 
             });
             
             $(document).ready(function() {
         //Populate Select Dropdown with Materials 
-            fetch('https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/Material/')
+            fetch('https://kidslandproxy.herokuapp.com/https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/Material/')
             .then(res => res.json())
             .then((out) => {
                 $.each(out, function(index, value) {
@@ -779,7 +779,7 @@ $( "#data_table" ).load( "PedidosOcorrencia.html #data_table" );
      var idMaterial = document.getElementById("material").value;
 
     function listMaterials() {
-            fetch('https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/OccurrenceMaterials/' + id_request_for_material_creation)
+            fetch('https://kidslandproxy.herokuapp.com/https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/OccurrenceMaterials/' + id_request_for_material_creation)
             .then(res => res.json())
             .then((out) => {
                 $.each(out, function(index, value) {
@@ -822,7 +822,7 @@ function add_row()
  var row = table.insertRow(table_len).outerHTML="<tr id='row"+table_len+"'><td id='material_row"+table_len+"'>"+material+"</td><td id='material_quantity_row"+table_len+"'>"+material_quantity+"</td><td> <a style='display: flex; justify-content: center;' onclick='delete_row("+table_len+',' + idMaterial +")'><i style='color: red; display: inline-block; position: center;' class='fas fa-trash' ></i></a></td></tr>";
 
 //ADD TO DATABASE
-                 fetch('https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/OccurrenceMaterials/', {
+                 fetch('https://kidslandproxy.herokuapp.com/https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/OccurrenceMaterials/', {
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded"
                     },
@@ -841,7 +841,7 @@ function add_row()
                     )
             $(document).ready(function() {
         //Populate Select Dropdown with Materials 
-            fetch('https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/Material/')
+            fetch('https://kidslandproxy.herokuapp.com/https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/Material/')
             .then(res => res.json())
             .then((out) => {
                 $.each(out, function(index, value) {
@@ -862,7 +862,7 @@ $( "#data_table" ).load( "PedidosOcorrencia.html #data_table" );
          var idMaterial = document.getElementById("material").value;
      var table=document.getElementById("data_table");
  var table_len=(table.rows.length)-1;
-            fetch('https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/OccurrenceMaterials/' + id_request_for_material_creation)
+            fetch('https://kidslandproxy.herokuapp.com/https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/OccurrenceMaterials/' + id_request_for_material_creation)
             .then(res => res.json())
             .then((out) => {
                 $.each(out, function(index, value) {
@@ -895,7 +895,7 @@ $( "#data_table" ).load( "PedidosOcorrencia.html #data_table" );
 function editFunction(id){
     id_request_for_material_creation = id;
     
-            fetch('https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/Requests/'+ id)
+            fetch('https://kidslandproxy.herokuapp.com/https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/Requests/'+ id)
             .then(res => res.json())
             .then((out) => {
                 $.each(out, function(index, value) {
@@ -987,7 +987,7 @@ function editFunction(id){
 });
             
     
-                            fetch('https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/Requests/'+ id, {
+                            fetch('https://kidslandproxy.herokuapp.com/https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/Requests/'+ id, {
                                 headers: {
                                     "Content-Type": "application/x-www-form-urlencoded"
                                 },
@@ -1011,14 +1011,14 @@ function editFunction(id){
         
      var table=document.getElementById("data_table");
  var table_len=(table.rows.length)-1;
-            fetch('https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/OccurrenceMaterials/' + id_request_for_material_creation)
+            fetch('https://kidslandproxy.herokuapp.com/https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/OccurrenceMaterials/' + id_request_for_material_creation)
             .then(res => res.json())
             .then((out) => {
                 $('#data_table tbody').empty();
                 $('#data_table tbody').append('<tr><td><select class="selectbtn custom-select" id="material"> <option value="0"> Selecione Material: </option> </select></td><td><input type="number" id="material_quantity"></td><td> <button type="button" class="add btn btn-info add-new" id="addButton" onclick="add_row();"><i class="fa fa-plus"></i></button></td></tr>');
                             $(document).ready(function() {
         //Populate Select Dropdown with Materials 
-            fetch('https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/Material/')
+            fetch('https://kidslandproxy.herokuapp.com/https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/Material/')
             .then(res => res.json())
             .then((out) => {
                 $.each(out, function(index, value) {
@@ -1050,7 +1050,7 @@ var selectmaterial = document.getElementById("material");
                 $("#tableRequests input[type=checkbox]:checked").each(function () {
                     var id = $(this).closest("tr")[0].cells[1].firstChild.nodeValue;
             
-                fetch('https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/Occurrences', {
+                fetch('https://kidslandproxy.herokuapp.com/https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/Occurrences', {
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded"
                     },
@@ -1058,7 +1058,7 @@ var selectmaterial = document.getElementById("material");
                     body: `id_request=${id}&state=Pendente`
                 })
                 
-                    fetch('https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/RequestsUpdateState/' + id, {
+                    fetch('https://kidslandproxy.herokuapp.com/https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/RequestsUpdateState/' + id, {
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded"
                     },
@@ -1078,7 +1078,7 @@ var selectmaterial = document.getElementById("material");
                    //Logout function 
     let logoutBtn = document.getElementById("logoutBtn")
         logoutBtn.addEventListener('click', function(e){
-                    fetch('http://188.82.156.135:8080/Back-end/LogoutServlet?email=' + localStorage.getItem("email"))
+                    fetch('https://kidslandproxy.herokuapp.com/http://188.82.156.135:8080/Back-end/LogoutServlet?email=' + localStorage.getItem("email"))
                     .then(res => res.json())
                     .then((out) => {
                       console.log(out)

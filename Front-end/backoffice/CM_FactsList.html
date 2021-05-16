@@ -572,7 +572,7 @@ function listFacts() {
 
     let resposta;
  
-            fetch('http://188.82.156.135:8080/Back-end/FactGet')
+            fetch('https://kidslandproxy.herokuapp.com/http://188.82.156.135:8080/Back-end/FactGet')
             .then(res => res.arrayBuffer())
   .then(buffer => {
     let decoder = new TextDecoder("iso-8859-1");
@@ -606,7 +606,7 @@ function listFacts() {
 
         }
        function deleteFunction(id){
-            fetch('https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/Requests/'+ id, {
+            fetch('https://kidslandproxy.herokuapp.com/https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/Requests/'+ id, {
                 method: 'delete',
 
             }).then(function (response) {Swal.fire(
@@ -631,7 +631,7 @@ function archive(id){
     let archiveRequest = "Arquivado"
 
 
-            fetch('https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/RequestsUpdateState/'+ id, {
+            fetch('https://kidslandproxy.herokuapp.com/https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/RequestsUpdateState/'+ id, {
                 headers: {
                                     "Content-Type": "application/x-www-form-urlencoded"
                                 },
@@ -655,7 +655,7 @@ function archive(id){
             
 function editFunction(id){
     
-            fetch('http://188.82.156.135:8080/Back-end/FactGetById?id_fact='+ id)
+            fetch('https://kidslandproxy.herokuapp.com/http://188.82.156.135:8080/Back-end/FactGetById?id_fact='+ id)
             .then(res => res.arrayBuffer())
   .then(buffer => {
     let decoder = new TextDecoder("iso-8859-1");
@@ -670,8 +670,8 @@ function editFunction(id){
     document.getElementById("descriptionFact").value = resposta.description;
     if(resposta.photo != null){
                         document.getElementById("iconFact").value= resposta.photo;
-                        document.getElementById("iconFact").src = "http://188.82.156.135:8080/Back-end/IMAGES/" + resposta.photo;
-                        console.log( "http://188.82.156.135:8080/Back-end/IMAGES/" + resposta.photo);
+                        document.getElementById("iconFact").src = "https://kidslandproxy.herokuapp.com/http://188.82.156.135:8080/Back-end/IMAGES/" + resposta.photo;
+                        console.log( "https://kidslandproxy.herokuapp.com/http://188.82.156.135:8080/Back-end/IMAGES/" + resposta.photo);
                     }
 
 
@@ -701,7 +701,7 @@ console.log(name)
 
             
     
-                            fetch('http://188.82.156.135:8080/Back-end/FactPut?id_fact='+ id, {
+                            fetch('https://kidslandproxy.herokuapp.com/http://188.82.156.135:8080/Back-end/FactPut?id_fact='+ id, {
                                 headers: {
                                     "Content-Type": "application/x-www-form-urlencoded"
                                 },
@@ -736,7 +736,7 @@ function uploadFactPic(id_fact){
            
            console.log(id_fact);
            if (document.getElementById("editarFotografia").value != ""){
-           fetch('http://188.82.156.135:8080/Back-end/FactUpload?id_fact='+ id_fact, {
+           fetch('https://kidslandproxy.herokuapp.com/http://188.82.156.135:8080/Back-end/FactUpload?id_fact='+ id_fact, {
                method: 'PUT',
                body: formData }).then(function (response) {
            if (response.status== 469){
@@ -765,7 +765,7 @@ function uploadFactPic(id_fact){
         //Logout function 
         let logoutBtn = document.getElementById("logoutBtn")
         logoutBtn.addEventListener('click', function(e){
-                    fetch('http://188.82.156.135:8080/Back-end/LogoutServlet?email=' + localStorage.getItem("email"))
+                    fetch('https://kidslandproxy.herokuapp.com/http://188.82.156.135:8080/Back-end/LogoutServlet?email=' + localStorage.getItem("email"))
                     .then(res => res.json())
                     .then((out) => {
                       console.log(out)

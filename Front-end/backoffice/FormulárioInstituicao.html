@@ -398,7 +398,7 @@ Câmara Municipal de Guimarães                        </h2>
         
         //Populate Select Dropdown with Candidates
             var select = document.getElementById("candidatesList");
-            fetch('http://188.82.156.135:8080/Back-end/CandidateNOTInstitutionGET')
+            fetch('https://kidslandproxy.herokuapp.com/http://188.82.156.135:8080/Back-end/CandidateNOTInstitutionGET')
             .then(res => res.json())
             .then((out) => {
                 $.each(out, function(index, value) {
@@ -412,7 +412,7 @@ Câmara Municipal de Guimarães                        </h2>
         document.getElementById('candidatesList').addEventListener('change', function() {
   var idCandidateSelected = select.options[select.selectedIndex].value;
   if (select.selectedIndex != 0 ){
-            fetch('http://188.82.156.135:8080/Back-end/CandidateGetId?id_candidate='+ idCandidateSelected)
+            fetch('https://kidslandproxy.herokuapp.com/http://188.82.156.135:8080/Back-end/CandidateGetId?id_candidate='+ idCandidateSelected)
             .then(res => res.json())
             .then((out) => {
                 $.each(out, function(index, value) {
@@ -465,7 +465,7 @@ Câmara Municipal de Guimarães                        </h2>
                    const password = document.getElementById("password").value;
                    let id_user;  
                 
-                 fetch('http://188.82.156.135:8080/Back-end/RegisterUserInstitution', {
+                 fetch('https://kidslandproxy.herokuapp.com/http://188.82.156.135:8080/Back-end/RegisterUserInstitution', {
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded"
                     },
@@ -475,7 +475,7 @@ Câmara Municipal de Guimarães                        </h2>
                     async function () {
 const email = document.getElementById("email").value;
 try {
-const result = fetch(`http://188.82.156.135:8080/Back-end/UserGetID?email=` + email)
+const result = fetch(`https://kidslandproxy.herokuapp.com/http://188.82.156.135:8080/Back-end/UserGetID?email=` + email)
 const response = await result
 const jsonData = await response.json()
 console.log(jsonData);
@@ -487,14 +487,14 @@ function (){
 //Create Institution
             const id_candidate = document.getElementById("candidatesList").value
                             
-                fetch('http://188.82.156.135:8080/Back-end/InstitutionPost', {
+                fetch('https://kidslandproxy.herokuapp.com/http://188.82.156.135:8080/Back-end/InstitutionPost', {
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded"
                     },
                     method: 'post',
                     body: `id_candidate=${id_candidate}&id_user=${id_user}`
                 }).then(
-                    fetch('http://188.82.156.135:8080/Back-end/SendEmailAccount', {
+                    fetch('https://kidslandproxy.herokuapp.com/http://188.82.156.135:8080/Back-end/SendEmailAccount', {
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded"
                     },
@@ -524,7 +524,7 @@ function (){
       //Logout function 
     let logoutBtn = document.getElementById("logoutBtn")
         logoutBtn.addEventListener('click', function(e){
-                    fetch('http://188.82.156.135:8080/Back-end/LogoutServlet')
+                    fetch('https://kidslandproxy.herokuapp.com/http://188.82.156.135:8080/Back-end/LogoutServlet')
                     .then(res => res.json())
                     .then((out) => {
                       console.log(out)

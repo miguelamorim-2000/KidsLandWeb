@@ -359,7 +359,7 @@
 
             
                             
-                fetch('http://188.82.156.135:8080/Back-end/FactPost', {
+                fetch('https://kidslandproxy.herokuapp.com/http://188.82.156.135:8080/Back-end/FactPost', {
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded"
                     },
@@ -383,7 +383,7 @@
 
         function getIdFact(){
 
-            fetch('http://188.82.156.135:8080/Back-end/FactGetByName?name='+ document.getElementById("nameFact").value)
+            fetch('https://kidslandproxy.herokuapp.com/http://188.82.156.135:8080/Back-end/FactGetByName?name='+ document.getElementById("nameFact").value)
             .then(res => res.json())
             .then((out) => {
 uploadFactPic(out.id_fact);
@@ -404,7 +404,7 @@ function uploadFactPic(id_fact){
              //  formData.append("id_fact", id_fact)
            
            console.log(id_fact);
-           fetch('http://188.82.156.135:8080/Back-end/FactUpload?id_fact='+ id_fact, {
+           fetch('https://kidslandproxy.herokuapp.com/http://188.82.156.135:8080/Back-end/FactUpload?id_fact='+ id_fact, {
                method: 'PUT',
                body: formData }).then(function (response) {
            if (response.status== 469){
@@ -432,7 +432,7 @@ function uploadFactPic(id_fact){
     //Logout function 
     let logoutBtn = document.getElementById("logoutBtn")
         logoutBtn.addEventListener('click', function(e){
-                    fetch('http://188.82.156.135:8080/Back-end/LogoutServlet')
+                    fetch('https://kidslandproxy.herokuapp.com/http://188.82.156.135:8080/Back-end/LogoutServlet')
                     .then(res => res.json())
                     .then((out) => {
                       console.log(out)

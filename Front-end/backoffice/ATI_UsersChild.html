@@ -522,7 +522,7 @@ function listUsers() {
 
     let resposta;
  
-            fetch('http://188.82.156.135:8080/Back-end/ChildUserGet')
+            fetch('https://kidslandproxy.herokuapp.com/http://188.82.156.135:8080/Back-end/ChildUserGet')
             .then(res => res.arrayBuffer())
   .then(buffer => {
     let decoder = new TextDecoder("iso-8859-1");
@@ -559,7 +559,7 @@ function listUsers() {
 
         let statusCode
        function deleteFunction(id){
-        fetch('http://188.82.156.135:8080/Back-end/UserDelete?id_user=' + id)
+        fetch('https://kidslandproxy.herokuapp.com/http://188.82.156.135:8080/Back-end/UserDelete?id_user=' + id)
             .then(res => res.json())
             .then((out) => {
                 console.log(out);
@@ -603,7 +603,7 @@ function archive(id){
     let archiveRequest = "Arquivado"
 
 
-            fetch('https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/RequestsUpdateState/'+ id, {
+            fetch('https://kidslandproxy.herokuapp.com/https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/RequestsUpdateState/'+ id, {
                 headers: {
                                     "Content-Type": "application/x-www-form-urlencoded"
                                 },
@@ -627,14 +627,14 @@ let id_request_for_material_creation
        
 function delete_row(no, id)
 {
-            fetch('https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/OccurrenceMaterials/'+ id_request_for_material_creation +'/' + id, {
+            fetch('https://kidslandproxy.herokuapp.com/https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/OccurrenceMaterials/'+ id_request_for_material_creation +'/' + id, {
                 method: 'delete',
 
             });
             
             $(document).ready(function() {
         //Populate Select Dropdown with Materials 
-            fetch('https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/Material/')
+            fetch('https://kidslandproxy.herokuapp.com/https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/Material/')
             .then(res => res.json())
             .then((out) => {
                 $.each(out, function(index, value) {
@@ -652,7 +652,7 @@ $( "#data_table" ).load( "PedidosOcorrencia.html #data_table" );
      var idMaterial = document.getElementById("material").value;
 
     function listMaterials() {
-            fetch('https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/OccurrenceMaterials/' + id_request_for_material_creation)
+            fetch('https://kidslandproxy.herokuapp.com/https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/OccurrenceMaterials/' + id_request_for_material_creation)
             .then(res => res.json())
             .then((out) => {
                 $.each(out, function(index, value) {
@@ -695,7 +695,7 @@ function add_row()
  var row = table.insertRow(table_len).outerHTML="<tr id='row"+table_len+"'><td id='material_row"+table_len+"'>"+material+"</td><td id='material_quantity_row"+table_len+"'>"+material_quantity+"</td><td> <a style='display: flex; justify-content: center;' onclick='delete_row("+table_len+',' + idMaterial +")'><i style='color: red; display: inline-block; position: center;' class='fas fa-trash' ></i></a></td></tr>";
 
 //ADD TO DATABASE
-                 fetch('https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/OccurrenceMaterials/', {
+                 fetch('https://kidslandproxy.herokuapp.com/https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/OccurrenceMaterials/', {
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded"
                     },
@@ -714,7 +714,7 @@ function add_row()
                     )
             $(document).ready(function() {
         //Populate Select Dropdown with Materials 
-            fetch('https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/Material/')
+            fetch('https://kidslandproxy.herokuapp.com/https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/Material/')
             .then(res => res.json())
             .then((out) => {
                 $.each(out, function(index, value) {
@@ -751,7 +751,7 @@ $( "#data_table" ).load( "PedidosOcorrencia.html #data_table" );
             
 function editFunction(id){
     
-            fetch('http://188.82.156.135:8080/Back-end/ChildGetById?id_user='+ id)
+            fetch('https://kidslandproxy.herokuapp.com/http://188.82.156.135:8080/Back-end/ChildGetById?id_user='+ id)
             .then(res => res.arrayBuffer())
   .then(buffer => {
     let decoder = new TextDecoder("iso-8859-1");
@@ -786,7 +786,7 @@ console.log(resposta)
     if(resposta.photo != null){
                         document.getElementById("iconFact").value= resposta.photo;
                         document.getElementById("iconFact").src = "http://188.82.156.135:8080/Back-end/IMAGES/" + resposta.photo;
-                        console.log( "http://188.82.156.135:8080/Back-end/IMAGES/" + resposta.photo);
+                        console.log( "https://kidslandproxy.herokuapp.com/http://188.82.156.135:8080/Back-end/IMAGES/" + resposta.photo);
                     }
 
 
@@ -826,7 +826,7 @@ console.log(resposta)
 });
             
     
-                            fetch('https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/Requests/'+ id, {
+                            fetch('https://kidslandproxy.herokuapp.com/https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/Requests/'+ id, {
                                 headers: {
                                     "Content-Type": "application/x-www-form-urlencoded"
                                 },
@@ -883,7 +883,7 @@ console.log(resposta)
         //Logout function 
         let logoutBtn = document.getElementById("logoutBtn")
         logoutBtn.addEventListener('click', function(e){
-                    fetch('http://188.82.156.135:8080/Back-end/LogoutServlet?email=' + localStorage.getItem("email"))
+                    fetch('https://kidslandproxy.herokuapp.com/http://188.82.156.135:8080/Back-end/LogoutServlet?email=' + localStorage.getItem("email"))
                     .then(res => res.json())
                     .then((out) => {
                       console.log(out)

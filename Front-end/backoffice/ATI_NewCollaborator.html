@@ -383,7 +383,7 @@ Administrador                    </div>
         
         //Populate Select Dropdown with Candidates
             var select = document.getElementById("candidatesList");
-            fetch('http://188.82.156.135:8080/Back-end/CandidateNOTInstitutionGET')
+            fetch('https://kidslandproxy.herokuapp.com/http://188.82.156.135:8080/Back-end/CandidateNOTInstitutionGET')
             .then(res => res.json())
             .then((out) => {
                 $.each(out, function(index, value) {
@@ -418,7 +418,7 @@ Administrador                    </div>
                    const type = "Collaborator";
 
                 
-                 fetch('http://188.82.156.135:8080/Back-end/RegisterStaff', {
+                 fetch('https://kidslandproxy.herokuapp.com/http://188.82.156.135:8080/Back-end/RegisterStaff', {
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded"
                     },
@@ -445,7 +445,7 @@ Administrador                    </div>
                 //Logout function 
     let logoutBtn = document.getElementById("logoutBtn")
         logoutBtn.addEventListener('click', function(e){
-                    fetch('http://188.82.156.135:8080/Back-end/LogoutServlet?email=' + localStorage.getItem("email"))
+                    fetch('https://kidslandproxy.herokuapp.com/http://188.82.156.135:8080/Back-end/LogoutServlet?email=' + localStorage.getItem("email"))
                     .then(res => res.json())
                     .then((out) => {
                       console.log(out)
