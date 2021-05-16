@@ -204,12 +204,11 @@
                                     <i class="fas fa-filter"></i>
                                     <select id="filtrarPor" style="background-color: #f8f9fc; border: transparent;" type="text/css">
                                         <option></option>
-                                                <option>ID</option>
                                                 <option>Estado</option>
                                                 <option>Nome</option>
-                                                <option>Data</option>
-                                                <option>Morada</option>
-                                                <option>Instituição</option>
+                                                <option>Data de Nascimento</option>
+                                                <option>Telefone do Tutor</option>
+                                                <option>Atividade</option>
 
 
 
@@ -247,7 +246,7 @@
                                                 <th >Estado da Atividade</th>
                                             
                                             <th>
-                                                <i class="fas fa-ellipsis-v"></i></th>
+                                               </th>
                                         </tr>
                                     </thead>
                                     <tbody></tbody>
@@ -572,17 +571,15 @@ function filter() {
   // Loop through all table rows, and hide those who don't match the search query
   let coluna 
 
-        if (campo == "ID")  
-      {coluna = 1;}
-      else if (campo == "Nome") 
-      {coluna = 2;} 
-      else if (campo == "Estado")
-      {coluna = 7;}
-      else if (campo =="Data")
+    if (campo == "Nome") 
+      {coluna = 1;} 
+      else if (campo == "Data de Nascimento")
+      {coluna = 2;}
+      else if (campo =="Atividade")
       {coluna = 3;}
-      else if (campo =="Morada")
+      else if (campo =="Telefone do Tutor")
       {coluna = 5;}
-      else if (campo =="Instituição")
+      else if (campo =="Estado")
       {coluna = 6;}
 
   for (i = 0; i < tr.length; i++) {
@@ -624,7 +621,7 @@ function listRequests() {
                 $('#tableRequests tbody').empty();
                     for (let i = 0; i < resposta.length; i++){
                         nrRequests = nrRequests + 1;
-                    $('#tableRequests tbody').append('<tr><td>' + '<input name="checkbox1"  type="checkbox" value='+ resposta[i].name +'>' +'</td><td>'+  resposta[i].name +'</td><td>'  + resposta[i].birth_date + '</td><td>'+  resposta[i].description+ '</td><td>'+resposta[i].total_points  + '</td><td>'+ resposta[i].phone_number_tutor +  (resposta[i].state == "Aguardar" ? '</td><td><p class="pendent">Aguardar</p>' : (resposta[i].state == "closed" ? '</td><td><p class="solved">Concluído</p>' : (resposta[i].state == "Ativo" ? '</td><td><p class="ongoing">A Decorrer...</p>'  :  (resposta[i].state == "Arquivado" ? '</td><td><p class="unsolved">Arquivado</p>': '</td><td><p class="unknown">Indefinido</p>' )))) + '</td><td>'+ '<i class="fas fa-check-circle"style= "margin-left:15px;  color: #1B4965" onclick="givePoints('+resposta[i].id_activity+',' + resposta[i].id_child+')"/i>' + '<i class="fas fa-times-circle"onclick="cancelPoints('+resposta[i].id_activity+',' + resposta[i].id_child+')" style= "margin-left:6px; color: #1B4965" /i>' + '</td></tr>' )
+                    $('#tableRequests tbody').append('<tr><td>' + '<input name="checkbox1"  type="checkbox" value='+ resposta[i].name +'>' +'</td><td>'+  resposta[i].name +'</td><td>'  + resposta[i].birth_date + '</td><td>'+  resposta[i].description+ '</td><td>'+resposta[i].total_points  + '</td><td>'+ resposta[i].phone_number_tutor +  (resposta[i].state == "Aguardar" ? '</td><td><p class="pendent">Aguardar</p>' : (resposta[i].state == "closed" ? '</td><td><p class="solved">Concluído</p>' : (resposta[i].state == "Ativo" ? '</td><td><p class="ongoing">A Decorrer...</p>'  :  (resposta[i].state == "Arquivado" ? '</td><td><p class="unsolved">Arquivado</p>': '</td><td><p class="unknown">Indefinido</p>' )))) + '</td><td>' + ' <i class="fas fa-check-circle"style= " color: #1B4965" onclick="givePoints('+resposta[i].id_activity+',' + resposta[i].id_child+')"/i> ' + '</td><td>'+ ' <i class="fas fa-times-circle"onclick="cancelPoints('+resposta[i].id_activity+',' + resposta[i].id_child+')" style= "color: #1B4965" /i> '+ '</td></tr>' )
                     numberRequests();
                     }
           
@@ -711,7 +708,7 @@ function listRequests() {
                                 },
                                 method: 'PUT',
                                 body: `id_child=${id_child}&id_activity=${id_activity}&state=${state}`
-                            }).then(function (response) {Swal.fire(
+                            }).then(function (response) {console.log("dar"), Swal.fire(
               '',
               'Alteração efetuada com sucesso!',
               'success'
@@ -732,7 +729,7 @@ function listRequests() {
                                 },
                                 method: 'PUT',
                                 body: `id_child=${id_child}&id_activity=${id_activity}&state=${state}`
-                            }).then(function (response) {Swal.fire(
+                            }).then(function (response) {console.log(response),  console.log("delete"), Swal.fire(
               '',
               'Alteração efetuada com sucesso!',
               'success'

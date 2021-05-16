@@ -97,23 +97,32 @@
                     },
                     method: 'post',
                     body: `email=${email}&password=${password}`
-                }).then(res => res.json())
+                }) .then(res => res.arrayBuffer())
+  .then(buffer => {
+    let decoder = new TextDecoder("iso-8859-1");
+    let text = decoder.decode(buffer);
+    resposta = JSON.parse(text.toString());
+
+
+
+    
+  })
             .then((out) => {
-         console.log(out)
-            if (out.STATUS == 200) {
+         console.log(resposta)
+            if (resposta.STATUS == 200) {
               
-              localStorage.setItem('id_candidate', out.id_candidate); 
-              localStorage.setItem('nif', out.nif); 
-              localStorage.setItem('phone_number', out.phone_number); 
-              localStorage.setItem('id_user', out.id_user); 
-              localStorage.setItem('email', out.email); 
-              localStorage.setItem('id_institution', out.id_institution); 
-              localStorage.setItem('name', out.name); 
+              localStorage.setItem('id_candidate', resposta.id_candidate); 
+              localStorage.setItem('nif', resposta.nif); 
+              localStorage.setItem('phone_number', resposta.phone_number); 
+              localStorage.setItem('id_user', resposta.id_user); 
+              localStorage.setItem('email', resposta.email); 
+              localStorage.setItem('id_institution', resposta.id_institution); 
+              localStorage.setItem('name', resposta.name); 
 
 
               
               
-              window.location.replace("/" + "Front-end/" +  out.PATH); 
+              window.location.replace("/" + "Front-end/" +  resposta.PATH); 
 
             }else {
               if (out.STATUS == 400){
