@@ -118,6 +118,11 @@
               localStorage.setItem('email', resposta.email); 
               localStorage.setItem('id_institution', resposta.id_institution); 
               localStorage.setItem('name', resposta.name); 
+              localStorage.setItem('address', resposta.address); 
+              localStorage.setItem('county', resposta.county); 
+              localStorage.setItem('district', resposta.district); 
+              localStorage.setItem('post_code', resposta.post_code); 
+
 
 
               
@@ -125,7 +130,7 @@
               window.location.replace("/" + "Front-end/" +  resposta.PATH); 
 
             }else {
-              if (out.STATUS == 400){
+              if (resposta.STATUS == 400){
                                     Swal.fire(
                       '',
                       'O email ou password não são válidos.',
