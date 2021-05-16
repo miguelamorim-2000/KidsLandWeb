@@ -172,10 +172,15 @@
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="IT_EditarPerfil.html"  >
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400" ></i>
+                                    Perfil
+                                </a>
                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
                                 </a>
+
                             </div>
                         </li>
 
@@ -396,25 +401,10 @@
 
      
 
-     <!-- Division of page -->
-     <br></br>
-        <div style="height: 5px; background-color: #F7F7F7; margin-bottom: 5%;"></div> 
-                        
-    <!-- End of division of page -->  
-    <div class="row row-space">
 
         
-        <div class="md-form pb-3 col-md-4">
-          <label class="label"for="state_Request">Estado do Pedido: </label>
-                                <select class="selectbtn custom-select" id="state" >
-                                    <option value="Arquivada">Arquivada</option>
-                                    <option value="Aguardar">Aguardar</option> 
-                                    </select>
-        </div>
-        </div>
-        
         <div class="text-center mb-5 mt-3">
-          <button type="submit" class="rounded-b button-color textb1" >Guardar Dados</button>
+          <button type="submit" id="saveData" class="rounded-b button-color textb1" >Guardar Dados</button>
         </div>
         </form>
       </div>
@@ -624,11 +614,13 @@ function listRequests() {
                     for (let i = 0; i < resposta.length; i++){
                         nrRequests = nrRequests + 1;
                         
-                        let finalState
+                        let finalState, tipo;
                         if (resposta[i].state_request == "Aceite"){
                             finalState = resposta[i].state;
+                            tipo = 'Atividade';
                         }
-                        else {finalState = resposta[i].state_request}
+                        else {finalState = resposta[i].state_request;
+                        tipo= 'Pedido'}
 
                         console.log(finalState)
 
@@ -715,7 +707,7 @@ function listRequests() {
 
             
             
-function editFunction(id){
+function editFunction(id, tipo){
     
             fetch('https://kidslandproxy.herokuapp.com/http://188.82.156.135:8080/Back-end/ActivityRequestByIdRequestGet?id_request='+ id)
             .then(res => res.arrayBuffer())
@@ -780,13 +772,26 @@ console.log(out)
                         console.log( "https://kidslandproxy.herokuapp.com/http://188.82.156.135:8080/Back-end/IMAGES/" + resposta.photo);
                     }
                     
-                    if (resposta.state !== null) { 
-                        let select1 = document.getElementById("state");
-                            for(let i = 0;i < select1.options.length;i++){
-                                if(select1.options[i].value == resposta.state){
-                                    select1.options[i].selected = true;
-                                }
-                            } 
+
+
+
+                    if (tipo = "Atividade"){
+                        document.getElementById("longitude").disabled = true;
+                        document.getElementById("latitude").disabled = true;
+                        document.getElementById("post_code").disabled = true;
+                        document.getElementById("district").disabled = true;
+                        document.getElementById("county").disabled = true;
+                        document.getElementById("address_Location").disabled = true;
+                        document.getElementById("type_Request").disabled = true;
+                        document.getElementById("name_Request").disabled = true;
+                        document.getElementById("institution_name").disabled = true;
+                        document.getElementById("time_Request").disabled = true;
+                        document.getElementById("date_Request").disabled = true;
+                        document.getElementById("saveData").hidden = true;
+
+
+
+
                     }
                     
 
