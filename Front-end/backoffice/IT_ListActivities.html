@@ -623,9 +623,18 @@ function listRequests() {
                 $('#tableRequests tbody').empty();
                     for (let i = 0; i < resposta.length; i++){
                         nrRequests = nrRequests + 1;
+                        
+                        let finalState
+                        if (resposta[i].state_request == "Aceite"){
+                            finalState = resposta[i].state;
+                        }
+                        else {finalState = resposta[i].state_request}
+
+                        console.log(finalState)
+
 
     
-                    $('#tableRequests tbody').append('<tr><td>' + '<input name="checkbox1"  type="checkbox" value='+ resposta[i].id_request +'>' +'</td><td>'  + resposta[i].description + '</td><td>'+ resposta[i].date  + '</td><td>'+ resposta[i].time + '</td><td>' + resposta[i].address + " , " + resposta[i].county+ " , "  + resposta[i].district + '</td><td>' + resposta[i].name +  (resposta[i].state == "Aguardar" ? '</td><td><p class="pendent">Aguardar</p>' : (resposta[i].state == "Aceite" ? '</td><td><p class="solved">Concluída</p>' : (resposta[i].state == "Arquivada" ? '</td><td><p class="unsolved">Arquivado</p>'  : '</td><td><p class="unknown">Indefinido</p>' ))) + '</td><td>'+ '<div class="dropdown keep-open show-dropdown"> <a href="#" data-toggle="dropdown" aria-expanded="false" > <i class="fas fa-ellipsis-v"> </i></a> <ul class="dropdown-menu "  >                                                <li class="header-title"> <i class="fas fa-cog"></i> Opções</li>     <!-- Division of page -->                                            <div style="height: 2px; background-color: #F7F7F7; margin-bottom: 5%;"></div> <li data-target="#InfoModal" data-toggle="modal"><a id="editar" onclick="editFunction('+ resposta[i].id_request +')"> <p  class="dropdownText">                             <i class="far fa-edit" style="padding-right: 4px !important"></i>   Editar</p> </a></li>          <li > <a id="apagar" onclick="archiveFunction('+ resposta[i].id_request +')"> <p href="#" class="dropdownText">                            <i class="fas fa-archive" style="padding-right: 6px !important"></i>Arquivar</p></a></li>                                      <li > <a id="apagar" onclick="deleteFunction('+ resposta[i].id_request +')"> <p href="#" class="dropdownText">                            <i class="fas fa-trash-alt" style="padding-right: 6px !important"></i>Eliminar</p></a></li> ' + '</td></tr>' )
+                    $('#tableRequests tbody').append('<tr><td>' + '<input name="checkbox1"  type="checkbox" value='+ resposta[i].id_request +'>' +'</td><td>'  + resposta[i].description + '</td><td>'+ resposta[i].date  + '</td><td>'+ resposta[i].time + '</td><td>' + resposta[i].address + " , " + resposta[i].county+ " , "  + resposta[i].district + '</td><td>' + resposta[i].name + (finalState=="Aguardar" ? '</td><td><p class="pendent">Aguardar...</p>': (finalState=="Aceite" ? '</td><td><p class="solved">Aceite</p>': (finalState== "Arquivada" ? '</td><td><p class="unsolved">Arquivado</p>' :(finalState == "Ativo" ? '</td><td><p class="ongoing">Ativo</p>' : (finalState == "Concluído" ? '</td><td><p class="solved">Concluído</p>' : '</td><td><p class="unknown">Indefinido</p>' ))))) + '</td><td>'+ '<div class="dropdown keep-open show-dropdown"> <a href="#" data-toggle="dropdown" aria-expanded="false" > <i class="fas fa-ellipsis-v"> </i></a> <ul class="dropdown-menu "  >                                                <li class="header-title"> <i class="fas fa-cog"></i> Opções</li>     <!-- Division of page -->                                            <div style="height: 2px; background-color: #F7F7F7; margin-bottom: 5%;"></div> <li data-target="#InfoModal" data-toggle="modal"><a id="editar" onclick="editFunction('+ resposta[i].id_request +')"> <p  class="dropdownText">                             <i class="far fa-edit" style="padding-right: 4px !important"></i>   Editar</p> </a></li>          <li > <a id="apagar" onclick="archiveFunction('+ resposta[i].id_request +')"> <p href="#" class="dropdownText">                            <i class="fas fa-archive" style="padding-right: 6px !important"></i>Arquivar</p></a></li>                                      <li > <a id="apagar" onclick="deleteFunction('+ resposta[i].id_request +')"> <p href="#" class="dropdownText">                            <i class="fas fa-trash-alt" style="padding-right: 6px !important"></i>Eliminar</p></a></li> ' + '</td></tr>' )
                     numberRequests();
                     }
           
@@ -887,41 +896,17 @@ console.log("longitude: " + longitude)
             }
             
 
-            
-             //Logout function 
+                   //Logout function 
     let logoutBtn = document.getElementById("logoutBtn")
         logoutBtn.addEventListener('click', function(e){
-            let resposta;
-            
- 
- fetch('http://188.82.156.135:8080/Back-end/LogoutServlet')
- .then(res => res.arrayBuffer())
-.then(buffer => {
-let decoder = new TextDecoder("iso-8859-1");
-let text = decoder.decode(buffer);
-resposta = JSON.parse(text.toString());
-
-
-
-
-})
- .then((out) => {
-     
-
-
-
- }).then(        localStorage.clear(),
-        window.location.replace(out.url2)).catch(err => console.error(err));
-
-
-                    fetch('http://188.82.156.135:8080/Back-end/LogoutServlet')
+                    fetch('http://188.82.156.135:8080/Back-end/LogoutServlet?email=' + localStorage.getItem("email"))
                     .then(res => res.json())
                     .then((out) => {
-                      console.log("ola")
+                      console.log(out)
                       
                     if (out.STATUS == 200) {
         localStorage.clear();
-        window.location.replace(out.url2)
+        window.location.replace("/" + "Front-end/" +  out.PATH); 
         
                     }else {
                       if (out.STATUS == 400){
@@ -930,7 +915,8 @@ resposta = JSON.parse(text.toString());
                               'Não existe nenhuma sessão ativa',
                               'error'
                             )
-                            .then(function(){window.location.replace(out.url2)});
+                            .then(function(){        window.location.replace("/" + "Front-end/" +  out.PATH); 
+});
                         
                       }else {
                             Swal.fire(
