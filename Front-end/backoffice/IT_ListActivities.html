@@ -249,7 +249,7 @@
                                                 <th >Hora</th>
                                                 <th >Morada</th>
                                                 <th >Instituição</th>
-                                                <th>Estado </th>
+                                                <th style="min-width: 105px;">Estado </th>
                                             <th>
                                                 <i class="fas fa-ellipsis-v"></i></th>
                                         </tr>
@@ -605,7 +605,7 @@ function listRequests() {
     resposta = JSON.parse(text.toString());
 
 
-
+console.log(resposta)
     
   })
             .then((out) => {
@@ -613,20 +613,23 @@ function listRequests() {
                 $('#tableRequests tbody').empty();
                     for (let i = 0; i < resposta.length; i++){
                         nrRequests = nrRequests + 1;
+
+                        console.log(resposta[i].state_request)
                         
                         let finalState, tipo;
                         if (resposta[i].state_request == "Aceite"){
                             finalState = resposta[i].state;
-                            tipo = 'Atividade';
+                            tipo = "Atividade";
                         }
                         else {finalState = resposta[i].state_request;
-                        tipo= 'Pedido'}
+                        tipo= "Pedido"}
 
-                        console.log(finalState)
+       
+
 
 
     
-                    $('#tableRequests tbody').append('<tr><td>' + '<input name="checkbox1"  type="checkbox" value='+ resposta[i].id_request +'>' +'</td><td>'  + resposta[i].description + '</td><td>'+ resposta[i].date  + '</td><td>'+ resposta[i].time + '</td><td>' + resposta[i].address + " , " + resposta[i].county+ " , "  + resposta[i].district + '</td><td>' + resposta[i].name + (finalState=="Aguardar" ? '</td><td><p class="pendent">Aguardar...</p>': (finalState=="Aceite" ? '</td><td><p class="solved">Aceite</p>': (finalState== "Arquivada" ? '</td><td><p class="unsolved">Arquivado</p>' :(finalState == "Ativo" ? '</td><td><p class="ongoing">Ativo</p>' : (finalState == "Concluído" ? '</td><td><p class="solved">Concluído</p>' : '</td><td><p class="unknown">Indefinido</p>' ))))) + '</td><td>'+ '<div class="dropdown keep-open show-dropdown"> <a href="#" data-toggle="dropdown" aria-expanded="false" > <i class="fas fa-ellipsis-v"> </i></a> <ul class="dropdown-menu "  >                                                <li class="header-title"> <i class="fas fa-cog"></i> Opções</li>     <!-- Division of page -->                                            <div style="height: 2px; background-color: #F7F7F7; margin-bottom: 5%;"></div> <li data-target="#InfoModal" data-toggle="modal"><a id="editar" onclick="editFunction('+ resposta[i].id_request +')"> <p  class="dropdownText">                             <i class="far fa-edit" style="padding-right: 4px !important"></i>   Editar</p> </a></li>          <li > <a id="apagar" onclick="archiveFunction('+ resposta[i].id_request +')"> <p href="#" class="dropdownText">                            <i class="fas fa-archive" style="padding-right: 6px !important"></i>Arquivar</p></a></li>                                      <li > <a id="apagar" onclick="deleteFunction('+ resposta[i].id_request +')"> <p href="#" class="dropdownText">                            <i class="fas fa-trash-alt" style="padding-right: 6px !important"></i>Eliminar</p></a></li> ' + '</td></tr>' )
+                    $('#tableRequests tbody').append('<tr><td>' + '<input name="checkbox1"  type="checkbox" value='+ resposta[i].id_request +'>' +'</td><td>'  + resposta[i].description + '</td><td>'+ resposta[i].date  + '</td><td>'+ resposta[i].time + '</td><td>' + resposta[i].address + " , " + resposta[i].county+ " , "  + resposta[i].district + '</td><td>' + resposta[i].name + (finalState=="Aguardar" ? '</td><td><p class="pendent">Aguardar...</p>': (finalState=="Aceite" ? '</td><td><p class="solved">Aceite</p>': (finalState== "Arquivada" ? '</td><td><p class="unsolved">Arquivado</p>' :(finalState == "Ativo" ? '</td><td><p class="ongoing">Ativo</p>' : (finalState == "Concluído" ? '</td><td><p class="solved">Concluído</p>' : '</td><td><p class="unknown">Indefinido</p>' ))))) + '</td><td>'+ '<div class="dropdown keep-open show-dropdown"> <a href="#" data-toggle="dropdown" aria-expanded="false" > <i class="fas fa-ellipsis-v"> </i></a> <ul class="dropdown-menu "  >                                                <li class="header-title"> <i class="fas fa-cog"></i> Opções</li>     <!-- Division of page -->                                            <div style="height: 2px; background-color: #F7F7F7; margin-bottom: 5%;"></div> <li data-target="#InfoModal" data-toggle="modal"><a id="editar" onclick="editFunction('+ resposta[i].id_request + ')"> <p  class="dropdownText">                             <i class="far fa-edit" style="padding-right: 4px !important"></i>  '+ (resposta[i].state_request != "Aceite" ? "Editar" : "Detalhes") + (finalState == "Ativo" ? ' <li > <a id="apagar" onclick="finishFunction('+ resposta[i].id_activity + ')"> <p href="#" class="dropdownText">                            <i class="fas fa-archive" style="padding-right: 6px !important"></i>Terminar</p></a></li> ' : ""  ) + '</p> </a></li>        '+ (resposta[i].state_request != "Aceite"? ' <li > <a id="apagar" onclick="archiveFunction('+ resposta[i].id_request + ')"> <p href="#" class="dropdownText">                            <i class="fas fa-archive" style="padding-right: 6px !important"></i>Arquivar</p></a></li>                                      <li > <a id="apagar" onclick="deleteFunction('+ resposta[i].id_request +')"> <p href="#" class="dropdownText">                            <i class="fas fa-trash-alt" style="padding-right: 6px !important"></i>Eliminar</p></a></li> ': "") + '</td></tr>' )
                     numberRequests();
                     }
           
@@ -674,7 +677,7 @@ function listRequests() {
        // Delete REQUEST
 
         
-        function deleteFunction(id){
+       function deleteFunction(id){
             
             fetch('https://kidslandproxy.herokuapp.com/http://188.82.156.135:8080/Back-end/RequestActivityDelete?id_request=' + id)
             .then(res => res.json())
@@ -699,6 +702,8 @@ function listRequests() {
 
  
 
+ 
+
 
 
   
@@ -707,7 +712,11 @@ function listRequests() {
 
             
             
-function editFunction(id, tipo){
+function editFunction(id){
+
+
+
+let tipo;
     
             fetch('https://kidslandproxy.herokuapp.com/http://188.82.156.135:8080/Back-end/ActivityRequestByIdRequestGet?id_request='+ id)
             .then(res => res.arrayBuffer())
@@ -716,14 +725,23 @@ function editFunction(id, tipo){
     let text = decoder.decode(buffer);
     resposta = JSON.parse(text.toString());
 
-console.log(id)
-    console.log(resposta)
 
 
     
   }).then((out) => {
 
-console.log(out)
+    if (resposta.state == "Aceite"){
+                            tipo = "Atividade";
+                            console.log("------")
+                            console.log(resposta.state)
+
+                        }
+                        else {
+                        tipo= "Pedido"}
+
+                        console.log("$$$$$$$$$$$$$$$$4")
+                        console.log(tipo)
+
                     if (resposta.date !== null) {
                         document.getElementById("date_Request").value = resposta.date; }
 
@@ -775,7 +793,11 @@ console.log(out)
 
 
 
-                    if (tipo = "Atividade"){
+                    if (tipo == "Atividade"){
+                        console.log("1111111111111111111")
+
+                        console.log(tipo)
+
                         document.getElementById("longitude").disabled = true;
                         document.getElementById("latitude").disabled = true;
                         document.getElementById("post_code").disabled = true;
@@ -792,6 +814,22 @@ console.log(out)
 
 
 
+                    } else {
+                        console.log("222222222222222")
+
+                        console.log(tipo)
+                        document.getElementById("longitude").disabled = false;
+                        document.getElementById("latitude").disabled = false;
+                        document.getElementById("post_code").disabled = false;
+                        document.getElementById("district").disabled = false;
+                        document.getElementById("county").disabled = false;
+                        document.getElementById("address_Location").disabled = false;
+                        document.getElementById("type_Request").disabled = false;
+                        document.getElementById("name_Request").disabled = false;
+                        document.getElementById("institution_name").disabled = false;
+                        document.getElementById("time_Request").disabled = false;
+                        document.getElementById("date_Request").disabled = false;
+                        document.getElementById("saveData").hidden = false;
                     }
                     
 
@@ -821,11 +859,9 @@ console.log(out)
             const photo = document.getElementById("requestIcon").value
             const latitude = document.getElementById("latitude").value
             const longitude = document.getElementById("longitude").value
-            const state = document.getElementById("state").value
 
 console.log("date: " + date);
 console.log("id_request: " + id);
-console.log("state: " + state);
 console.log("description: " + description);
 console.log("time: " +time);
 console.log("type: " + type);
@@ -838,13 +874,13 @@ console.log("longitude: " + longitude)
 
 
     
-                            fetch('https://kidslandproxy.herokuapp.com/http://188.82.156.135:8080/Back-end/ActivityRequestPut', {
+                            fetch('https://kidslandproxy.herokuapp.com/http://188.82.156.135:8080/Back-end/ActivityRequestPutSemState', {
                                 headers: {
                                     "Content-Type": "application/x-www-form-urlencoded"
                                 },
                                 method: 'PUT',
-                                body: `id_request=${id}&date=${date}&time=${time}&state=${state}&description=${description}&type=${type}&address=${address}&county=${county}&district=${district}&post_code=${post_code}&latitude=${latitude}&longitude=${longitude}`
-                            }).then(function (response) {Swal.fire(
+                                body: `id_request=${id}&date=${date}&time=${time}&description=${description}&type=${type}&address=${address}&county=${county}&district=${district}&post_code=${post_code}&latitude=${latitude}&longitude=${longitude}`
+                            }).then(function (response) {console.log(response), Swal.fire(
               '',
               'Alteração efetuada com sucesso!',
               'success'
@@ -865,6 +901,33 @@ console.log("longitude: " + longitude)
     
     
     
+    
+}
+
+//Finish activity
+
+function finishFunction(id_activity){
+
+    let stateFinish = "Concluído"
+
+    fetch('https://kidslandproxy.herokuapp.com/http://188.82.156.135:8080/Back-end/ActivityPutState', {
+                                headers: {
+                                    "Content-Type": "application/x-www-form-urlencoded"
+                                },
+                                method: 'PUT',
+                                body: `id_activity=${id_activity}&state=${stateFinish}`
+                            }).then(function (response) {console.log(response), Swal.fire(
+              '',
+              'Alteração efetuada com sucesso!',
+              'success'
+            ).then(  function(){ 
+                  window.location.reload();
+               });
+                            }).catch(function(err) {console.log(err);})
+
+
+ 
+                   
     
 }
             

@@ -213,78 +213,167 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid" >
+                    
 
                     <!-- Page Heading -->
                     <div class="heading">
                     <h1 class="pagesubtitle margin-t">Atividades Programadas</h1>
                     <h6 class="info">Número de Pedidos: <span style="margin-bottom: 0px; font-weight: bold;" id="numberActivitiesCount" ></span></h6>
                     
+
                     </div>
-                    <!-- DataTales Example -->
-                    <div class="card shadow mb-4">
-                        <div class="card-header py-3">
-                            <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                                <div class="input-group cborder3">
-                                    <div class="input-group-append">
-                                        <button class="btn primary-color2" style="border: 3px solid" type="button">
-                                    Pesquisar Por:
-                                    <i class="fas fa-filter"></i>
-                                    <select id="filtrarPor" style="background-color: #f8f9fc; border: transparent;" type="text/css">
-                                                <option></option>
-                                                <option>ID</option>
-                                                <option>Estado</option>
-                                                <option>Nome</option>
-                                                <option>Data</option>
-                                                <option>Tipo</option>
-                                                <option>Morada</option>
-                                                <option>Instituição</option>
+
+                                        <!-- Content Row -->
+                                        <div class="row">
+
+                                            <!-- Número de Ocorrências(diáriamente) -->
+                                            <div class="col-xl-3 col-md-6 mb-4" style="margin-left: 4%;  max-width: 23%;">
+                                                <div class="card n-ocorrencias-lb shadow py-2">
+                                                    <div class="card-body">
+                                                        <div class="row no-gutters align-items-center">
+                                                            <div class="col ml-2">
+                                                                <div class="text-xs font-weight-bold text1 text-uppercase mb-1">
+                                                                    NÚMERO DE OCORRÊNCIAS (DIÁRIO)</div>
+                                                                <div class="h5 mb-0 font-weight-bold text-gray-800" id="nrOccurrencesDaily">                                      </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                    
+                                            <!-- Ocorrencias Ativas -->
+                                            <div class="col-xl-3 col-md-6 mb-4" style="  max-width: 23%;">
+                                                <div class="card ocorrencias-at-lb shadow py-2">
+                                                    <div class="card-body">
+                                                        <div class="row no-gutters align-items-center">
+                                                            <div class="col mr-2 ml-2">
+                                                                <div class="text-xs font-weight-bold text2 text-uppercase mb-1">
+                                                                    OCORRÊNCIAS ATIVAS</div>
+                                                                <div class="h5 mb-0 font-weight-bold text-gray-800" id="nrActiveOccurrences"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                    
+                                            <!-- Ocorrências Resolvidas -->
+                                            <div class="col-xl-3 col-md-6 mb-4" style="  max-width: 23%;">
+                                                <div class="card ocorrencias-re-lb shadow py-2">
+                                                    <div class="card-body">
+                                                        <div class="row no-gutters align-items-center">
+                                                            <div class="col mr-2 ml-2">
+                                                                <div class="text-xs font-weight-bold text3 text-uppercase mb-1">OCORRÊNCIAS RESOLVIDAS
+                                                                </div>
+                                                                <div class="row no-gutters align-items-center">
+                                                                    <div class="col-auto">
+                                                                        <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800" id="nrsolvedoccurrences"></div>
+                                                                    </div>
+                                                                    <div class="col">
+                                                                        <div class="progress progress-sm mr-2">
+                                                                            <div id= "occurrencessolved" class="progress-bar bg-info" role="progressbar"  aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                    
+                                            <!-- Pedidos Pendentes -->
+                                            <div class="col-xl-3 col-md-6 mb-4" style=" max-width: 23%;">
+                                                <div class="card pedidos-lb shadow py-2">
+                                                    <div class="card-body">
+                                                        <div class="row no-gutters align-items-center">
+                                                            <div class="col mr-2 ml-2">
+                                                                <div class="text-xs font-weight-bold text4 text-uppercase mb-1">
+                                                                    PEDIDOS PENDENTES</div>
+                                                                <div class="h5 mb-0 font-weight-bold text-gray-800" id="nrpendingrequests"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
 
 
-                                            </select>
-                                </button>
-                                </div>
+
+
+                                            
+                                        </div>
+
+                                                                                              <!-- Content Row -->
+
+                    <div class="row">
+
+                        <!-- Area Chart -->
+                        <div class="col-xl col-lg-auto">
+                            <div class="card shadow mb-4">
+                                <!-- Card Header - Dropdown -->
+                                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary">Visão Geral</h6>
+                                    <div class="dropdown no-arrow">
+                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
+                                            <div class="dropdown-header">Dropdown Header:</div>
+                                            <a class="dropdown-item" href="#">Action</a>
+                                            <a class="dropdown-item" href="#">Another action</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" href="#">Something else here</a>
+                                        </div>
                                     </div>
-                                </form>
-                            <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                                <div class="input-group cborder1">
-                                    <div class="input-group-append">
-                                        <button onclick="filter()" class="btn primary-color"  type="button">
-                                    <i class="fas fa-search fa-sm"></i>
-                                </button>
-                                    </div>
-                                    <input id="filterInput" type="text" class="form-control bg-light border-0 small border-r-10" placeholder="Procurar por..." aria-label="Search" aria-describedby="basic-addon2">
                                 </div>
-                            </form>
-                            
-                        </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered" id="tableActivities" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th class="bs-checkbox " style="width: 36px; " data-field="state"><div class="th-inner ">
-                                                <input name="checkboxall" type="checkbox"  id="checkboxall"></div><div class="fht-cell"></div></th>
-                                                <th>ID </th>
-                                                <th>Nome</th>
-                                                <th>Data e Hora</th>
-                                                <th>Tipo</th>
-                                                <th>Instituição</th>
-                                                <th>Morada</th>
-                                                <th style="width : 120px !important">Estado</th>
-    
-                                            <th>
-                                                <i class="fas fa-ellipsis-v"></i></th>
-                                        </tr>
-                                    </thead>
-                                    <tbody></tbody>
-                                </table>
+                                <!-- Card Body -->
+                                <div style="display: flex; flex-direction: row; height:100% ">
+                                    <div class="card-body">
+                                       <div style="max-width: 600px; height:300px;">
+                                            <canvas id="BarChart"></canvas>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div style="width: 90%; height:90%;">
+                                            <canvas id="BarChart2"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+
+                        
                     </div>
-                    <!--end table example-->
-                  </div>
-                </div>
-                <!-- /.container-fluid -->
+
+
+                                            <!-- Content Column -->
+                                            <div class="col-lg-6 mb-4">
+                                                <div class="card shadow mb-4">
+                                                    <!-- Project Card Example -->
+                                                    <div class="card shadow">
+                                                        <div class="card-header py-3">
+                                                            <h6 class="m-0 font-weight-bold text-primary">Outros Indicadores</h6>
+                                                        </div>
+                                                        <div class="card-body mr-2 ml-2 mt-2">
+                                                            <h4 class="small font-weight-bold">Ocorrências Muito Graves (Ativas) <span class="float-right" id="activeVStxt"></span></h4>
+                                                            <div class="progress mb-4">
+                                                                <div id="activeVS" class="progress-bar bg-danger" role="progressbar" style="opacity: 60%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                            <h4 class="small font-weight-bold">Ocorrências Graves (Ativas) <span id="activeStxt" class="float-right"></span></h4>
+                                                            <div class="progress mb-4">
+                                                                <div class="progress-bar bg-warning" role="progressbar" id="activeS" style="opacity: 53%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                            <h4 class="small font-weight-bold">Pedidos de Ocorrência Falsos (Mensal) <span class="float-right" id="fakeRequestsTxt"></span></h4>
+                                                            <div class="progress mb-4">
+                                                                <div id="fakeRequests"class="progress-bar bg-info" role="progressbar" style="opacity: 62%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            
+      
+                  
 
 
                 <!-- End of Main Content -->
@@ -572,340 +661,118 @@ if (response.status== 469){
 
             
         
-        //Populate Select Dropdown with natures
-        var selectnature = document.getElementById("designation_Crime_Nature");
-            fetch('https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/CrimesNature/')
-            .then(res => res.json())
-            .then((out) => {
-                $.each(out, function(index, value) {
-    selectnature.options[selectnature.options.length] = new Option(value.designation, value.id_crime_nature);
- });
-            }).catch(err => console.error(err));
-        
-        //Populate Select Dropdown with Materials 
-        var selectmaterial = document.getElementById("material");
-            fetch('https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/Material/')
-            .then(res => res.json())
-            .then((out) => {
-                $.each(out, function(index, value) {
-    selectmaterial.options[selectmaterial.options.length] = new Option(value.category, value.id_material);
- });
-            }).catch(err => console.error(err));
-
-//Populate Select Dropdown with Managers
-        var selectmanager = document.getElementById("managers");
-            fetch('https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/OperationalsTypeManager/')
-            .then(res => res.json())
-            .then((out) => {
-                $.each(out, function(index, value) {
-    selectmanager.options[selectmanager.options.length] = new Option(value.name_Candidate, value.id_operational);
- });
-            }).catch(err => console.error(err));
-
-//Filter
-        var select = document.getElementById("filtrarPor");
-document.getElementById('filtrarPor').addEventListener('change', function() {
-     
-        if (select.selectedIndex == 0) {
-            listFacts();
-            document.getElementById("filterInput").value = "";
-            
-        }
-});
-
-function filter() {
-    let e = document.getElementById("filtrarPor");
-    let campo = e.options[e.selectedIndex].text;
     
-  // Declare variables
-  let input, filter, table, tr, td, i, txtValue;
-  input = document.getElementById("filterInput");
-  filter = input.value.toUpperCase();  
-  table = document.getElementById("tableActivities");
-  tr = table.getElementsByTagName("tr");
 
-  // Loop through all table rows, and hide those who don't match the search query
-  let coluna 
+        
+
+window.addEventListener("load", function(){
+
+
+    let janeiro, fevereiro, março, abril, maio, junho, julho, agosto, setembro, outubro, novembro, dezembro;
   
-        if (campo == "Nome")  
-      {coluna = 2;}
-      else if (campo == "ID") 
-      {coluna = 1;} 
-      else if (campo == "Estado") 
-      {coluna = 7;} 
-      else if (campo == "Data") 
-      {coluna = 3;} 
-      else if (campo == "Tipo") 
-      {coluna = 4;} 
-      else if (campo == "Instituição") 
-      {coluna = 5;} 
-      else if (campo == "Morada") 
-      {coluna = 6;} 
-
-  for (i = 0; i < tr.length; i++) {
-      
-td = tr[i].getElementsByTagName("td")[coluna];
-
-    if (td) {
-      txtValue = td.textContent || td.innerText;
-      if (txtValue.toUpperCase().indexOf(filter) > -1) {
-        tr[i].style.display = "";
-      } else {
-        tr[i].style.display = "none";
-      }
-    }
-  }
-}
-
-//Populate table with facts
-
-let nrActivities = 0;
-
-function listActivities() {
-
-    let resposta;
- 
-            fetch('https://kidslandproxy.herokuapp.com/http://188.82.156.135:8080/Back-end/ActivityRequestFutureGet')
-            .then(res => res.arrayBuffer())
-  .then(buffer => {
-    let decoder = new TextDecoder("iso-8859-1");
-    let text = decoder.decode(buffer);
-    resposta = JSON.parse(text.toString());
-
-
-
-    
-  })
-            .then((out) => {
-
-                $('#tableActivities tbody').empty();
-                    for (let i = 0; i < resposta.length; i++){
-                        nrActivities = nrActivities + 1;
-                    $('#tableActivities tbody').append('<tr><td>' + '<input name="checkbox1"  type="checkbox" value='+resposta[i].id_activity+'>' +'</td><td>'+ resposta[i].id_activity +  '</td><td>'+ resposta[i].description +'</td><td>' + resposta[i].date  + " "+  resposta[i].time + '</td><td>'+ resposta[i].type + '</td><td>' + resposta[i].name + '</td><td>' + resposta[i].address + " , " + resposta[i].county+ " , "  + resposta[i].district +  (resposta[i].state == "Ativo" ? '</td><td><p class="ongoing">Ativo</p>' : (resposta[i].state == "Concluído" ? '</td><td><p class="solved">Concluído</p>' : (resposta[i].state == "Arquivado" ? '</td><td><p class="unsolved">Arquivado</p>'  : '</td><td><p class="unknown">Indefinido</p>' ))) + '</td><td>'+ '<div class="dropdown keep-open show-dropdown"> <a href="#" data-toggle="dropdown" aria-expanded="false" > <i class="fas fa-ellipsis-v"> </i></a> <ul class="dropdown-menu "  >                                                <li class="header-title"> <i class="fas fa-cog"></i> Opções</li>     <!-- Division of page -->                                            <div style="height: 2px; background-color: #F7F7F7; margin-bottom: 5%;"></div> <li data-target="#InfoModal" data-toggle="modal"><a id="editar" onclick="editFunction('+resposta[i].id_activity+')"> <p  class="dropdownText">                             <i class="far fa-edit" style="padding-right: 4px !important"></i>   Editar</p> </a></li>                                               <li > <a id="apagar" onclick="deleteFunction('+ resposta[i].id_activity+')"> <p href="#" class="dropdownText">                            <i class="fas fa-trash-alt" style="padding-right: 6px !important"></i>Eliminar</p></a></li> ' + '</td></tr>' )
-                    numberActivities();
-                    }
-          
-            }).catch(err => console.error(err));
-        }
-
-        $(document).ready(function() {
-            listActivities();
-        }) 
-
-        //ENTER NUMBER OF FACTS ACTIVE
-
-        function numberActivities(){
-            document.getElementById("numberActivitiesCount").innerHTML = nrActivities
-
-        }
-
-        //DELETE FUNCTION 
-        
-        function deleteFunction(id){
-    
-    let idRequest
-    
-    getData();
-    
-    async function getData() {
-        try {
-const result = fetch(`https://kidslandproxy.herokuapp.com/http://188.82.156.135:8080/Back-end/ActivityRequestJoinGetByIdActivity?id_activity=` + id)
+  fetchRegions();
+  
+//fetch of data for pie
+  async function fetchRegions() {
+try {
+const result = fetch(`https://kidslandproxy.herokuapp.com/http://188.82.156.135:8080/Back-end/SubscriptionCurrentYearMonthGet`)
 const response = await result
 const jsonData = await response.json()
-idRequest= jsonData[0].id_request;
+janeiro = jsonData[0].janeiro;
+fevereiro = jsonData[0].fevereiro;
+março = jsonData[0].março;
+abril = jsonData[0].abril;
+maio = jsonData[0].maio;
+junho = jsonData[0].junho;
+julho = jsonData[0].julho;
+agosto = jsonData[0].agosto;
+setembro = jsonData[0].setembro;
+outubro = jsonData[0].outubro;
+novembro = jsonData[0].novembro;
+dezembro = jsonData[0].dezembro;
 
-deleteOcc();
+
+
+createBarChart();
 
 } catch (e) {
-throw Error(e) } 
+throw Error(e) } }
 
-        
-    }
-function deleteOcc(){
-               
-    fetch('https://kidslandproxy.herokuapp.com/http://188.82.156.135:8080/Back-end/ActivityDelete?id_activity=' + id)
-            .then(res => res.json())
-            .then((out) => {
-                console.log(out);
+//construction bar chart
 
-                
-            }
-         ).then(updateRequest).catch(function(err) {console.log(err);})
-            
+
+    // Bar Chart Example
+var ctx2 = document.getElementById("BarChart2");
+
+function createBarChart(){
+    var BarChart = new Chart(ctx, {
+  type: 'horizontalBar',
+  data: {
+    labels: ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"],
+    datasets: [{
+      label: false,
+      backgroundColor: "#3890D0",
+      hoverBackgroundColor: "#006EBD",
+      borderColor: "#1779C0",
+      data: [janeiro , fevereiro, março,abril, maio,junho,julho,agosto,setembro,outubro,novembro,dezembro],
+    }],
+  },
+  options: {
+    responsive: true,
+    
+    maintainAspectRatio: true,
+    layout: {
+      padding: {
+        left: 10,
+        right: 5,
+        top: 25,
+        bottom: 20
+      }
+    },
+    scales: {
+      xAxes: [{
+        ticks: {
+          beginAtZero: true,
+          maxTicksLimit: 5,
+          padding: 10,
+          
+        },
+        time: {
+          unit: 'number'
+        },
+        gridLines: {
+          display: false,
+          drawBorder: false
+        },
+        maxBarThickness: 25,
+      }],
+      yAxes: [{
+        ticks: {
+          beginAtZero: true,
+          min: 0,
+          max: 600,
+          maxTicksLimit: 5,
+          padding: 10,
+          
+        },
+        gridLines: {
+          color: "rgb(234, 236, 244)",
+          zeroLineColor: "rgb(234, 236, 244)",
+          drawBorder: true,
+          borderDash: [2],
+          zeroLineBorderDash: [10]
+        }
+      }],
+    },
+    legend: {
+      display: false
+    },
+  }
+});
 }
 
-let estado = "Aguardar"
 
-function updateRequest(){
-         fetch('https://kidslandproxy.herokuapp.com/http://188.82.156.135:8080/Back-end/ActivityRequestStatePut', {
-                                headers: {
-                                    "Content-Type": "application/x-www-form-urlencoded"
-                                },
-                                method: 'PUT',
-                                body: `state=${estado}&id_request=${idRequest}`
-                
-                
-        }).then(function (response) {
-            Swal.fire(
-  '',
-  'Atividade removida com sucesso!',
-  'success'
-).then(  function(){ 
-                    
-    window.location.reload();
-   });
-            
-                    
-                }).catch(function(err) {console.log(err);})
-                
-
-
-   }}
-
-
-// ARCHIVE Activity
-
-function archive(id){
-    let archiveActivity = "Arquivado"
-
-
-            fetch('https://kidslandproxy.herokuapp.com/http://188.82.156.135:8080/Back-end/ActivityPutState'+ id, {
-                headers: {
-                                    "Content-Type": "application/x-www-form-urlencoded"
-                                },
-                                method: 'PUT',
-                                body: `state=${archiveActivity}`
-                            }).then(function (response) {Swal.fire(
-              '',
-              'Alteração efetuada com sucesso!',
-              'success'
-            ).then(  function(){ 
-                  window.location.reload();
-               });
-                            }).catch(function(err) {console.log(err);})
-                        
-    
-    
-}      
-
-            
-            
-function editFunction(id){  
-    
-
-    fetch('https://kidslandproxy.herokuapp.com/http://188.82.156.135:8080/Back-end/ActivityRequestJoinGetByIdActivity?id_activity='+ id)
-            .then(res => res.arrayBuffer())
-  .then(buffer => {
-    let decoder = new TextDecoder("iso-8859-1");
-    let text = decoder.decode(buffer);
-    resposta = JSON.parse(text.toString());
-
-
-    
-  }).then((out) => {
-
-
-                    if (resposta[0].date !== null) {
-                        document.getElementById("date_Request").value = resposta[0].date; }
-
-                    if (resposta[0].time !== null) {
-                        document.getElementById("time_Request").value = resposta[0].time;}
-
-                        if (resposta[0].name !== null) {
-                        document.getElementById("institution_name").value = resposta[0].name;}
-                        
-                        if (resposta[0].description !== null) {
-                        document.getElementById("name_Request").value = resposta[0].description;}
-                        
-                        if (resposta[0].type !== null) {
-                        document.getElementById("type_Request").value = resposta[0].type;}
-
-                    if (resposta[0].address !== null) { 
-                        document.getElementById("address_Location").value = resposta[0].address;}
-
-                  
-                   
-                    
-                    if (resposta[0].county !== null){
-                        document.getElementById("county").value = resposta[0].county;
-                    }
-             
-                    if (resposta[0].district !== null) { 
-                        document.getElementById("district").value = resposta[0].district; }
-
-                                 
-                        if (resposta[0].post_code !== null) { 
-                        document.getElementById("post_code").value = resposta[0].post_code; }
-                        
-                                     
-                    if (resposta[0].latitude !== null) { 
-                        document.getElementById("latitude").value = resposta[0].latitude; }
-
-                        if(resposta[0].longitude !== null){
-                            document.getElementById("longitude").value = resposta[0].longitude;
-                        }
-                        
-                        
-
-                    if(resposta[0].photo != null){
-                        document.getElementById("requestIcon").value= resposta[0].photo;
-                        document.getElementById("requestIcon").src = "https://kidslandproxy.herokuapp.com/http://188.82.156.135:8080/Back-end/IMAGES/" + resposta[0].photo;
-                        console.log( "https://kidslandproxy.herokuapp.com/http://188.82.156.135:8080/Back-end/IMAGES/" + resposta[0].photo);
-                    }
-                    
-                    if (resposta[0].state !== null) { 
-                        let select1 = document.getElementById("state");
-                            for(let i = 0;i < select1.options.length;i++){
-                                if(select1.options[i].value == resposta[0].state){
-                                    select1.options[i].selected = true;
-                                }
-                            } 
-                    }
-                    
-
-                
-        
-    
-            }).catch(err => console.error(err));
-
-            const editForm = document.getElementById('editForm');
-            
-                        editForm.addEventListener('submit', function(e){
-                            e.preventDefault();
-
-
-            const state = document.getElementById("state").value
-
-
-
-    
-                            fetch('https://kidslandproxy.herokuapp.com/http://188.82.156.135:8080/Back-end/ActivityPutState', {
-                                headers: {
-                                    "Content-Type": "application/x-www-form-urlencoded"
-                                },
-                                method: 'PUT',
-                                body: `id_activity=${id}&state=${state}`
-                            }).then(function (response) {Swal.fire(
-              '',
-              'Alteração efetuada com sucesso!',
-              'success'
-            ).then(  function(){ 
-                  window.location.reload();
-               });
-                            }).catch(function(err) {console.log(err);})
-
-
- 
-                        });
-
-
-                     
-            
-        
-    
-    
-    
-}
+})
             
 //Transform to Occurrence selected checboxes
 
