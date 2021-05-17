@@ -486,15 +486,15 @@
              }
              
              
-             /*
+             
              // Change Profile Data
 
-                        fetch('https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/Denouncers/'+ id_denouncer, {
+                        fetch('https://kidslandproxy.herokuapp.com/http://188.82.156.135:8080/Back-end/CandidatePut', {
                 headers: {
                                     "Content-Type": "application/x-www-form-urlencoded"
                                 },
                                 method: 'PUT',
-                                body: `address=${address}&gender=${gender}&cc_number=${cc_number}&cc_validity=${cc_validity}&naturality=${naturality}&phone_number=${phone_number}&birth_date=${birth_date}&name=${name}&district=${district}&county=${county}&post_code=${post_code}`
+                                body: `id_candidate=${id_candidate}&address=${address}&phone_number=${phone_number}&name=${name}&district=${district}&county=${county}&post_code=${post_code}`
                             }).then(function (response) {
                     if (response.ok){
       Swal.fire(
@@ -507,13 +507,9 @@
              localStorage.setItem('address', address)
              localStorage.setItem('district', district)
              localStorage.setItem('county', county)
-             localStorage.setItem('naturality', naturality)
-             localStorage.setItem('gender', gender)
              localStorage.setItem('post_code', post_code)
              localStorage.setItem('phone_number', phone_number)
-             localStorage.setItem('cc_number', cc_number)
-             localStorage.setItem('birth_date', birth_date)
-             localStorage.setItem('cc_validity', cc_validity)}).then(  function(){ 
+}).then(  function(){ 
                           window.location.reload();
                        });
   } else {
@@ -531,7 +527,7 @@
 });
 
 
-*/
+
         });
 
          //Verification Password is written to update
