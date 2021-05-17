@@ -62,8 +62,8 @@
     <!-- Page Wrapper -->
     <div id="wrapper">
 
-          <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion sidebar-color" id="accordionSidebar">
+         <!-- Sidebar -->
+         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion sidebar-color" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
  <a class="navbar-brand">
@@ -80,7 +80,7 @@
 
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
-          <a class="nav-link" href="FormularioFacto.html" 
+          <a class="nav-link" href="ATI_NewCollaborator.html" 
               aria-expanded="true" aria-controls="collapseTwo">
               <i class="fas fa-edit"></i>
               <span>Novo Colaborador</span>
@@ -89,7 +89,7 @@
 
       <!-- Nav Item - Utilities Collapse Menu -->
       <li class="nav-item">
-          <a class="nav-link" href="FormulárioInstituicao.html" 
+          <a class="nav-link" href="ATI_NewInstitution.html" 
               aria-expanded="true" aria-controls="collapseUtilities">
               <i class="fas fa-user-edit"></i>
               <span>Nova Instituição</span>
@@ -107,20 +107,20 @@
 
       <!-- Nav Item - Charts -->
       <li class="nav-item">
-          <a class="nav-link" href="CM_InstitutionsList.html">
+          <a class="nav-link" href="ATI_Institutions.html">
               <i class="fas fa-clock"></i>
               <span>Instituições</span></a>
       </li>
 
       <li class="nav-item">
-          <a class="nav-link" href="CM_FactsList.html">
+          <a class="nav-link" href="ATI_UsersChild.html">
               <i class="fas fa-map-marker-alt fa-fw"></i>
               <span>Utilizadores</span></a>
       </li>
 
       <!-- Nav Item - Tables -->
       <li class="nav-item">
-          <a class="nav-link" href="CM_RequestActivities.html">
+          <a class="nav-link" href="ATI_Collaborators.html">
               <i class="fas fa-exclamation-circle"></i>
               <span>Colaboradores</span></a>
       </li>
@@ -189,7 +189,10 @@
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                                
+                                <a class="dropdown-item" href="ATI_ChangePW.html"  >
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400" ></i>
+                                    Perfil
+                                </a>
                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
@@ -519,7 +522,7 @@
 document.getElementById('filtrarPor').addEventListener('change', function() {
      
         if (select.selectedIndex == 0) {
-            listRequests();
+            listInstitutions();
             document.getElementById("filterInput").value = "";
             
         }

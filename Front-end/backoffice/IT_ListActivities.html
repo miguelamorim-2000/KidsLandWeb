@@ -209,12 +209,10 @@
                                     <i class="fas fa-filter"></i>
                                     <select id="filtrarPor" style="background-color: #f8f9fc; border: transparent;" type="text/css">
                                         <option></option>
-                                                <option>ID</option>
                                                 <option>Estado</option>
                                                 <option>Nome</option>
                                                 <option>Data</option>
                                                 <option>Morada</option>
-                                                <option>Instituição</option>
 
 
 
@@ -561,18 +559,16 @@ function filter() {
   // Loop through all table rows, and hide those who don't match the search query
   let coluna 
 
-        if (campo == "ID")  
-      {coluna = 1;}
-      else if (campo == "Nome") 
-      {coluna = 2;} 
+
+     if (campo == "Nome") 
+      {coluna = 1;} 
       else if (campo == "Estado")
-      {coluna = 7;}
-      else if (campo =="Data")
-      {coluna = 3;}
-      else if (campo =="Morada")
-      {coluna = 5;}
-      else if (campo =="Instituição")
       {coluna = 6;}
+      else if (campo =="Data")
+      {coluna = 2;}
+      else if (campo =="Morada")
+      {coluna = 4;}
+
 
   for (i = 0; i < tr.length; i++) {
       
