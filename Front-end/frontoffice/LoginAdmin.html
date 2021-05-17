@@ -101,7 +101,6 @@
             if (out.STATUS == 200) {
               
   
-              localStorage.setItem('email', out.email); 
 
 
               
@@ -110,7 +109,7 @@
  
 
             }else {
-              if (out.status == 400){
+              if (out.STATUS == 400){
                                     Swal.fire(
                       '',
                       'O email ou password não são válidos.',
