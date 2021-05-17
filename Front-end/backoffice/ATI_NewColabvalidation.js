@@ -5,9 +5,11 @@
     var app = express();
 
     //middleware
-    app.use(bodyParser.urlencoded){
-        extended: false
-    }));
+    app.use(bodyParser.urlencoded);
+    {
+        extended: false;
+    }
+
     app.use(validator());
 
     app.post('')
@@ -124,7 +126,7 @@
             );
             collaboratorForm.password_confirm.focus()
             return false;
-            
+
         } else if ( confirmpassword_colab != password_colab){
             Swal.fire(
                 '',
