@@ -621,7 +621,6 @@ function listInstitutions() {
         fetch('https://kidslandproxy.herokuapp.com/http://188.82.156.135:8080/Back-end/UserDelete?id_user=' + id)
             .then(res => res.json())
             .then((out) => {
-                console.log(out);
 
                 statusCode = out.STATUS;
 
