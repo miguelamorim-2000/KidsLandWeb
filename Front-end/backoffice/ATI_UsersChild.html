@@ -258,6 +258,7 @@
                                             <th>Nome</th>
                                             <th>Data de Nascimento</th>
                                             <th>Telefone Tutor</th>
+                                            <th>Pontos</th>
                                             <th>Estado</th>
                  
                                             <th>
@@ -351,7 +352,7 @@
         <div class="md-form pb-3 col-md-2">
             <label data-error="wrong" data-success="right" for="photo">Icon</label>
             <br>
-            <img id="icon" class="img-profile" src="" style="width: 100px ; height: 100px !important">
+            <img id="iconFact" class="img-profile" src="" style="width: 100px ; height: 100px !important">
 
           </div>
         
@@ -535,7 +536,7 @@ function listUsers() {
                 $('#tableUsers tbody').empty();
                     for (let i = 0; i < resposta.length; i++){
                         nrUsers = nrUsers + 1;
-                    $('#tableUsers tbody').append('<tr><td>' + '<input name="checkbox1"  type="checkbox" value='+resposta[i].id_user+'>' +'</td><td>'+ resposta[i].id_user +  '</td><td>'+ resposta[i].name +'</td><td>' + resposta[i].birth_date  + '</td><td>'+ resposta[i].phone_number_tutor + (resposta[i].status == "Active" ? '</td><td><p class="solved">Ativo</p>' : (resposta[i].status == "Inactive" ? '</td><td><p class="unsolved">Inativo</p>' : '</td><td><p class="unknown">Indefinido</p>'  )) + '</td><td>'+ '<div class="dropdown keep-open show-dropdown"> <a href="#" data-toggle="dropdown" aria-expanded="false" > <i class="fas fa-ellipsis-v"> </i></a> <ul class="dropdown-menu "  >                                                <li class="header-title"> <i class="fas fa-cog"></i> Opções</li>     <!-- Division of page -->                                            <div style="height: 2px; background-color: #F7F7F7; margin-bottom: 5%;"></div> <li data-target="#InfoModal" data-toggle="modal"><a id="editar" onclick="editFunction('+resposta[i].id_user+')"> <p  class="dropdownText">                             <i class="far fa-edit" style="padding-right: 4px !important"></i>   Editar</p> </a></li>                                               <li > <a id="apagar" onclick="deleteFunction('+ resposta[i].id_user+')"> <p href="#" class="dropdownText">                            <i class="fas fa-trash-alt" style="padding-right: 6px !important"></i>Eliminar</p></a></li> ' + '</td></tr>'  )
+                    $('#tableUsers tbody').append('<tr><td>' + '<input name="checkbox1"  type="checkbox" value='+resposta[i].id_user+'>' +'</td><td>'+ resposta[i].id_user +  '</td><td>'+ resposta[i].name +'</td><td>' + resposta[i].birth_date  + '</td><td>'+ resposta[i].phone_number_tutor +'</td><td>'+  resposta[i].points+ (resposta[i].status == "Active" ? '</td><td><p class="solved">Ativo</p>' : (resposta[i].status == "Inactive" ? '</td><td><p class="unsolved">Inativo</p>' : '</td><td><p class="unknown">Indefinido</p>'  )) + '</td><td>'+ '<div class="dropdown keep-open show-dropdown"> <a href="#" data-toggle="dropdown" aria-expanded="false" > <i class="fas fa-ellipsis-v"> </i></a> <ul class="dropdown-menu "  >                                                <li class="header-title"> <i class="fas fa-cog"></i> Opções</li>     <!-- Division of page -->                                            <div style="height: 2px; background-color: #F7F7F7; margin-bottom: 5%;"></div> <li data-target="#InfoModal" data-toggle="modal"><a id="editar" onclick="editFunction('+resposta[i].id_user+')"> <p  class="dropdownText">                             <i class="far fa-edit" style="padding-right: 4px !important"></i>   Editar</p> </a></li>                                               <li > <a id="apagar" onclick="deleteFunction('+ resposta[i].id_user+')"> <p href="#" class="dropdownText">                            <i class="fas fa-trash-alt" style="padding-right: 6px !important"></i>Eliminar</p></a></li> ' + '</td></tr>'  )
                    numberUsers();
                     }
           
@@ -782,7 +783,7 @@ console.log(resposta)
     if(resposta.photo != null){
                         document.getElementById("iconFact").value= resposta.photo;
                         document.getElementById("iconFact").src = "http://188.82.156.135:8080/Back-end/IMAGES/" + resposta.photo;
-                        console.log( "https://kidslandproxy.herokuapp.com/http://188.82.156.135:8080/Back-end/IMAGES/" + resposta.photo);
+                        console.log( "http://188.82.156.135:8080/Back-end/IMAGES/" + resposta.photo);
                     }
 
 
@@ -799,10 +800,12 @@ console.log(resposta)
                         editForm.addEventListener('submit', function(e){
                             e.preventDefault();
 
-                            document.getElementById("name").value = resposta.name;
+   const name = document.getElementById("name").value;
    const phone_number_tutor = document.getElementById("phone_number").value ;
    const birth_date =  document.getElementById("birth_date").value ;
    const state =  document.getElementById("stateChild").value ;
+
+   console.log(state)
 
             
     
@@ -811,7 +814,7 @@ console.log(resposta)
                                     "Content-Type": "application/x-www-form-urlencoded"
                                 },
                                 method: 'PUT',
-                                body: `name=${name}&phone_number_tutor=${phone_number_tutor}&birth_date=${birth_date}&id_user=${id}`
+                                body: `name=${name}&phone_number_tutor=${phone_number_tutor}&status=${state}&birth_date=${birth_date}&id_user=${id}`
                             }).then(function (response) {Swal.fire(
               '',
               'Alteração efetuada com sucesso!',
