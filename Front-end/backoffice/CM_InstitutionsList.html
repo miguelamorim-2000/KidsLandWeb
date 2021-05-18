@@ -108,7 +108,7 @@
       <!-- Nav Item - Charts -->
       <li class="nav-item">
           <a class="nav-link" href="CM_InstitutionsList.html">
-              <i class="fas fa-clock"></i>
+              <i class="fas fa-house-user"></i>
               <span>Instituições</span></a>
       </li>
 
@@ -121,18 +121,18 @@
       <!-- Nav Item - Tables -->
       <li class="nav-item">
           <a class="nav-link" href="CM_RequestActivities.html">
-              <i class="fas fa-exclamation-circle"></i>
+              <i class="fas fa-clock"></i>
               <span>Pedidos de Atividades</span></a>
       </li>
       <li class="nav-item">
           <a class="nav-link" href="CM_AtivitiesProgrammed.html">
-              <i class="fas fa-exclamation-circle"></i>
+              <i class="far fa-calendar-alt"></i>
               <span>Atividades Programadas</span></a>
       </li>
       
       <li class="nav-item">
           <a class="nav-link" href="CM_ActionPlan.html">    <!--alterar-->
-              <i class="fas fa-map-marker-alt fa-fw"></i>
+              <i class="fas fa-chart-line"></i>
               <span>Plano de Ação</span></a>
       </li>
             
@@ -553,7 +553,7 @@ function listActivities() {
 
 console.log(resposta[i].post_code)
 
-                    $('#tableInstitutions tbody').append('<tr><td>' + '<input name="checkbox1"  type="checkbox" value='+ resposta[i].id_institution + '>' +'</td><td>' +  resposta[i].nif + '</td><td>' + resposta[i].name+  '</td><td>'+ resposta[i].count+  '</td><td>'+ resposta[i].address +'</td><td>'+ resposta[i].county +'</td><td>'+ resposta[i].district+'</td><td>'+ resposta[i].post_code + '</td><td>'+ resposta[i].phone_number+'</td><td>'+'<div class="dropdown keep-open show-dropdown"> <a href="#" data-toggle="dropdown" aria-expanded="false" > <i class="fas fa-ellipsis-v"> </i></a> <ul class="dropdown-menu "  >                                                <li class="header-title"> <i class="fas fa-cog"></i> Opções</li>     <!-- Division of page -->                                            <div style="height: 2px; background-color: #F7F7F7; margin-bottom: 5%;"></div> <li data-target="#InfoModal" data-toggle="modal"><a id="editar" onclick="editFunction('+resposta[i].id_institution+')"> <p  class="dropdownText">                             <i class="far fa-edit" style="padding-right: 4px !important"></i>   Editar</p> </a></li>             ' + '</td></tr>'  )
+                    $('#tableInstitutions tbody').append('<tr><td>' + '<input name="checkbox1"  type="checkbox" value='+ resposta[i].id_institution + '>' +'</td><td>' +  resposta[i].nif + '</td><td>' + resposta[i].name+  '</td><td>'+ resposta[i].count+  '</td><td>'+ resposta[i].address +'</td><td>'+ resposta[i].county +'</td><td>'+ resposta[i].district+'</td><td>'+ resposta[i].post_code + '</td><td>'+ resposta[i].phone_number+'</td><td>'+ '<div class="dropdown keep-open show-dropdown"> <a href="#" data-toggle="dropdown" aria-expanded="false" > <i class="fas fa-ellipsis-v"> </i></a> <ul class="dropdown-menu "  >                                                <li class="header-title"> <i class="fas fa-cog"></i> Opções</li>     <!-- Division of page -->                                            <div style="height: 2px; background-color: #F7F7F7; margin-bottom: 5%;"></div> <li data-target="#InfoModal" data-toggle="modal"><a id="editar" onclick="editFunction('+resposta[i].id_institution+')"> <p  class="dropdownText">                             <i class="far fa-edit" style="padding-right: 4px !important"></i>   Editar</p> </a></li>             ' + '</td></tr>'  )
 numberInstitutions();
                     
                     }
@@ -749,7 +749,7 @@ console.log(resposta)
     document.getElementById("district").value = resposta[0].district;
     document.getElementById("post_code").value = resposta[0].post_code;
     document.getElementById("nif").value = resposta[0].nif;
-    email = resposta[0].nif;
+    email = resposta[0].email;
 
 
 
@@ -779,7 +779,7 @@ console.log(resposta)
     const nif = document.getElementById("nif").value;
 
          
-            
+            console.log(id)
 
                             fetch('https://kidslandproxy.herokuapp.com/http://188.82.156.135:8080/Back-end/CandidateInstitutionPut?id_institution='+ id, {
                                 headers: {

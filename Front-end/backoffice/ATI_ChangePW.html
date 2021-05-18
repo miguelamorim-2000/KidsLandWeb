@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+
+    <title>Kidsland - Perfil </title>
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.css" rel="stylesheet" type="text/css">
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    
+    <!--Custom styles from main page -->
+    <link rel="stylesheet" href="css/formEntity.css" type="text/css">
+     
+    <!--Clock Style-->
+    <link href="css/clock.css" rel="stylesheet" type="text/css">
+    
+    <!--Colors Sheet-->
+    <link href="css/colors.css" rel="stylesheet" type="text/css">
+    
+    <!--Border Colors-->
+    <link href="css/borders.css" rel="stylesheet" type="text/css">
+    
+    <!--Margins Style-->
+    <link href="css/margins.css" rel="stylesheet" type="text/css">
+
+    <!--Text Styles-->
+    <link href="css/text.css" rel="stylesheet" type="text/css">
+
+    <!--Topbar Styles-->
+    <link href="css/topbar.css" rel="stylesheet" type="text/css">
+
+    <!--Sidebar Styles-->
+    <link href="css/sidebar.css" rel="stylesheet" type="text/css">
+
+    <!--Colors-->
+    <link href="css/colors.css" rel="stylesheet" type="text/css">
+    
+        <!-- tab icon -->
+    <link rel="icon" href="https://i.ibb.co/g3PKBk7/logo-Kids-Landv23.png" type="image/icon type">
+    
+    <!-- sweetalert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+</head>
+
+<body id="page-top">
+ 
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+         <!-- Sidebar -->
+         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion sidebar-color" id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+ <a class="navbar-brand">
+    <img src="https://i.ibb.co/g3PKBk7/logo-Kids-Landv23.png" style="width: 110%; padding-top: 10px; padding-bottom: 10px; padding-left: 5px !important;" alt="">
+  </a>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider">
+
+      <!-- Heading -->
+      <div class="sidebar-heading" >
+          Operações
+      </div>
+
+      <!-- Nav Item - Pages Collapse Menu -->
+      <li class="nav-item">
+          <a class="nav-link" href="ATI_NewCollaborator.html" 
+              aria-expanded="true" aria-controls="collapseTwo">
+              <i class="fas fa-edit"></i>
+              <span>Novo Colaborador</span>
+          </a>
+      </li>
+
+      <!-- Nav Item - Utilities Collapse Menu -->
+      <li class="nav-item">
+          <a class="nav-link" href="ATI_NewInstitution.html" 
+              aria-expanded="true" aria-controls="collapseUtilities">
+              <i class="fas fa-user-edit"></i>
+              <span>Nova Instituição</span>
+          </a>
+      </li>
+      
+
+      <!-- Divider -->
+      <hr class="sidebar-divider">
+
+      <!-- Heading -->
+      <div class="sidebar-heading">
+          Dados
+      </div>
+
+      <!-- Nav Item - Charts -->
+      <li class="nav-item">
+          <a class="nav-link" href="ATI_Institutions.html">
+              <i class="fas fa-house-user"></i>
+              <span>Instituições</span></a>
+      </li>
+
+      <li class="nav-item">
+          <a class="nav-link" href="ATI_UsersChild.html">
+              <i class="fas fa-users"></i>
+              <span>Utilizadores</span></a>
+      </li>
+
+      <!-- Nav Item - Tables -->
+      <li class="nav-item">
+          <a class="nav-link" href="ATI_Collaborators.html">
+              <i class="fas fa-user"></i>
+              <span>Colaboradores</span></a>
+      </li>
+
+
+            
+
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block">
+            
+              <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+
+
+
+        </ul>
+        <!-- End of Sidebar -->
+
+
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+        
+            <!-- Main Content -->
+            <div id="content">
+                
+               <!-- Toptopbar -->
+                <section class="navbar navbar-expand navbar-light topbar static-top shadow topbar3"></section>
+
+                <!--Topbar-->
+                <nav style="max-height: 60px !important;" class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow topbar2">
+
+                    <!-- Topbar Search -->
+                      <div style="  white-space: nowrap !important; text-align: center ; padding-left: 40%; margin-top: 0.75%;">
+                        <h2 class="" style="  white-space: nowrap !important; font-size: 150% !important;">
+                        Administrador
+                        </h2>
+                    </div>
+
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+
+
+                        <!-- Real Time Clock -->
+                        <li class="nav-itme dropdown no-arrow mt-6 mx-1">
+                            <div id="clock">
+                                <br> 0:0:0 xx
+                            </div>
+                        </li>
+
+
+  
+
+
+                        <div class="topbar-divider d-none d-sm-block"></div>
+
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small" id="userName"></span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots" viewBox="0 0 16 16" color="#1B4965">
+                                    <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
+                                  </svg>
+                            </a>
+                            <!-- Dropdown - User Information -->
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="ATI_ChangePW.html"  >
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400" ></i>
+                                    Perfil
+                                </a>
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Logout
+                                </a>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                </nav>
+                <!-- End of Topbar -->
+
+          <!-- Begin Page Content -->
+          <div class="container-fluid">
+            <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
+       <div class="wrapper wrapper--w680">
+           <div class="card card-4">
+               <div class="card-body">
+                   <h2 class="title">Perfil</h2>
+                   <!-- Row -->
+                   <div class="row">
+                       <!-- Column -->
+                       <div class="col-lg-4 col-xlg-9 col-md-7">
+                           <div class="card">
+                               <div class="card-body">
+                                   <center class="m-t-30">
+                                       <h4 class="card-title m-t-10"  style="margin-top: 12%" id="userName1"> Administrador</h4>
+
+                                       <div class="row text-center justify-content-md-center">
+                                       </div>
+                                   </center>
+                               </div>
+                               <div>
+                                   <hr>
+                               </div>
+                               <div class="card-body">
+                                   <small class="text-muted">Endereço de Email </small>
+                                   <h6 id="personalEmail"></h6>
+
+                               </div>
+                           </div>
+                       </div>
+                       <!-- Column -->
+                       
+                       <!-- Column -->
+                       <div class="col-lg-8 col-xlg-9 col-md-7">
+                           <div class="card">
+                               <div class="card-body">
+                                   <form id="formProfile" class="form-horizontal form-material">
+                                   
+                                     
+                                       
+                                                  
+
+                                
+                   
+                                   <div class="row row-space"> 
+                                       <div class="form-group">
+                                           <label class="col-md-12">Nova Password:</label>
+                                           <div class="col-md-12">
+                                               <input type="password" class="form-control form-control-line" id="personalPassword">
+                                           </div>
+                                       </div>
+                                       <div class="form-group">
+                                           <label class="col-md-12">Confirmação da Password:</label>
+                                           <div class="col-md-12">
+                                               <input type="password"  class="form-control form-control-line" id="personalPasswordConfirmation">
+                                           </div>
+                                       </div>
+                                    </div>
+                                   <br></br>
+                                   
+                                   <div class="form-group">
+                                       <div class="col-sm-12">
+                                               <button class="btn primary-color" type="submit" style="background:012B77;" onclick="return goodpassword()">Guardar Dados </button>
+                                           </div>
+                                       </div>
+                                       
+                                       </form>
+                                   </div>
+                           
+                               </div>
+                           </div>
+                       </div>
+                       <!-- Column -->
+                   </div>
+                   <!-- Row -->
+   
+
+
+                <!-- End of Main Content -->
+                <!-- Footer -->
+                <footer class="sticky-footer bg-white">
+                    <div class="container my-auto">
+                        <div class="copyright text-center my-auto">
+                            <span>Copyright &copy; <a href="http://prochildcolab.pt/"> ProChild - KidsLand </a></span>
+                        </div>
+                    </div>
+                </footer>
+                <!-- End of Footer -->
+
+            </div>
+            <!-- End of Content Wrapper -->
+
+        </div>
+        <!-- End of Page Wrapper -->
+
+        <!-- Scroll to Top Button-->
+        <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+        </a>
+        
+        
+        <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Deseja Sair?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Pressione o botão "Logout" se desejar encerrar sessão!</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" id="logoutBtn">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+ 
+        <!-- Edit Modal-->
+                
+                <!-- Modal -->
+<div class="modal fade" id="InfoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+  
+               <!--Content -->
+    <div class="modal-content form-elegant">
+                    
+                
+                <!--Header-->
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 dark-grey-text my-3" id="myModalLabel" style= "padding-left:30px !important;">Alteração de Dados</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      
+      <form id= "editForm" name="editionform">
+      <!--Body-->
+      <div class="modal-body mx-4">
+        <!--Body-->
+      
+        <div class="row row-space">   
+            <div class="md-form pb-8 col-md-8">
+              <label data-error="wrong" data-success="right" for="name">Nome</label>
+              <input type="text" id="name" class="form-control validate" >
+            </div>
+                    <div class="md-form pb-3 col-md-4">
+              <label data-error="wrong" data-success="right" for="nif">NIF</label>
+              <input type="number" id="nif" class="form-control validate" >
+            </div>
+            
+            </div>
+            
+             <div class="row row-space">       
+                <div class="md-form pb-3 col-md-8">
+                    <label data-error="wrong" data-success="right" for="address">Morada</label>
+                    <input type="text" id="address" class="form-control validate" >
+                  </div>
+            </div>
+            
+            <div class="row row-space">
+                        <div class="md-form pb-3 col-md-4">
+              <label data-error="wrong" data-success="right" for="type_Request">Localidade</label>
+              <input type="text" id="county" class="form-control validate">
+            </div> 
+            <div class="md-form pb-3 col-md-4">
+                <label data-error="wrong" data-success="right" for="type_Request">Distrito</label>
+                <input type="text" id="district" class="form-control validate">
+              </div>                  
+              
+              <div class="md-form pb-3 col-md-4">
+                <label data-error="wrong" data-success="right" for="type_Request">Código-Postal</label>
+                <input type="text" id="post_code" class="form-control validate">
+              </div> 
+    
+            
+            </div>
+            <div class="row row-space">
+                <div class="md-form pb-3 col-md-4">
+                    <label data-error="wrong" data-success="right" for="type_Request">Telefone</label>
+                    <input type="number" id="phone_number" class="form-control validate">
+                  </div> 
+    
+    
+                                </div>
+                                
+                
+            
+                  <br>          
+                 <!-- Division of page -->
+                 <br>
+                                    <div style="height: 5px; background-color: #F7F7F7; margin-bottom: 5%;"></div> 
+                                    <div class="row row-space">
+                                    <div class="md-form pb-3 col-md-8">
+                                        <label data-error="wrong" data-success="right" for="type_Request">Email</label>
+                                        <input type="text" id="email" class="form-control validate">
+                                      </div> 
+                                      </div>
+    
+                                      <div class="row row-space">
+                                        <div class="md-form pb-3 col-md-4">
+                                            <label data-error="wrong" data-success="right" for="type_Request">Password</label>
+                                            <input type="password" id="password" class="form-control validate">
+                                          </div> 
+                        
+                                          <div class="md-form pb-3 col-md-4">
+                                            <label data-error="wrong" data-success="right" for="type_Request">Confirmação Password</label>
+                                            <input type="password" id="password_confirm" class="form-control validate">
+                                          </div> 
+                            
+                                                        </div>
+    
+            
+            <div class="text-center mb-5 mt-3">
+              <button type="submit" class="rounded-b button-color textb1" >Guardar Dados</button>
+            </div>
+            </form>
+          </div>
+        </div>
+        <!--/.Content-->
+  </div>
+</div>
+
+
+<script>  
+
+
+        //Inner Email
+        if(localStorage.getItem('email') == "null"){
+            document.getElementById("personalEmail").innerHTML == "";
+            }else{
+             document.getElementById("personalEmail").innerHTML = localStorage.getItem('email');
+            }
+        
+
+
+        
+            
+ </script>
+ 
+        <!--End Information Modal-->
+        
+
+
+        <!-- Bootstrap core JavaScript-->
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+        <!-- Core plugin JavaScript-->
+        <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+        <!-- Custom scripts for all pages-->
+        <script src="js/sb-admin-2.min.js"></script>
+
+        <!-- Page level plugins -->
+        <script src="vendor/chart.js/Chart.min.js"></script>
+
+        <!-- Page level custom scripts -->
+        <script src="js/demo/chart-area-demo.js"></script>
+        <script src="js/demo/chart-pie-demo.js"></script>
+        <script src="js/demo/chart-bar-demo.js"></script>
+
+        <!--Clock Script-->
+        <script src="js/clock.js"></script>
+        
+
+        
+        <!-- dropdown more, not close on clicking inside -->
+        <script>
+        $('ul.dropdown-menu').on('click', function(event){
+            // The event won't be propagated up to the document NODE and 
+            // therefore delegated events won't be fired
+            event.stopPropagation();
+        });
+        </script>
+
+ 
+        
+        <script>
+
+                     //Verification Password is written to update
+        
+         function goodpassword(){
+            var password = document.getElementById("password");
+            var passwordconfirmation = document.getElementById("passwordConfirm")
+            
+            if (password != '' & passwordconfirmation == ''){
+                    Swal.fire('',
+                              'Repita a password, por favor!',
+                              'error')
+                    passwordConfirm.focus();
+                    return false;
+                
+                }
+                
+            if (passwordconfirmation != '' & password == ''){
+                    Swal.fire('',
+                              'Introduza a nova password, por favor!',
+                              'error')
+                    passwordConfirm.focus();
+                    return false;
+                
+                } 
+        }
+
+        const formProfile = document.getElementById("formProfile")
+formProfile.addEventListener("submit", function(e){
+            e.preventDefault();
+            console.log("ola")
+
+             let password = document.getElementById("personalPassword").value
+             let passwordConfirm= document.getElementById("personalPasswordConfirmation").value
+             let email =  localStorage.getItem('email')
+
+
+                          // Change password if inserted
+             
+                          if (password != "" && passwordConfirm!=""){
+                              console.log("oi")
+                 fetch ('https://kidslandproxy.herokuapp.com/http://188.82.156.135:8080/Back-end/PasswordPut', {
+                                     headers: {
+                                    "Content-Type": "application/x-www-form-urlencoded"
+                                },
+                                method: 'PUT',
+                                body: `password=${password}&email=${email}`
+                     
+                 }).then(function (response) {
+                    if (response.ok){
+      Swal.fire(
+      
+                            '',
+                      'Perfil atualizado com sucesso!',
+                      'success'
+                    ).then(    function(){         
+             localStorage.setItem('name', name)
+             localStorage.setItem('address', address)
+             localStorage.setItem('district', district)
+             localStorage.setItem('county', county)
+             localStorage.setItem('post_code', post_code)
+             localStorage.setItem('phone_number', phone_number)
+}).then(  function(){ 
+                          window.location.reload();
+                       });
+  } else {
+      Swal.fire(
+                      '',
+                      'Erro na atualização do perfil!',
+                      'error'
+                    )
+  }
+                    
+                     
+                    
+                }).catch(function(error) {
+  console.log('Ocorreu um problema: ' + error.message);
+});
+
+                          
+                          }
+
+                        });
+
+         
+
+        
+let nrInstitutions=0;
+
+
+                           //SET NUMBER INSTITUTIONS
+
+                           function numberInstitutions(){
+                   document.getElementById("activeRequests").innerHTML = nrInstitutions;
+                   }
+
+        
+                   let statusCode
+       function deleteFunction(id){
+        fetch('https://kidslandproxy.herokuapp.com/http://188.82.156.135:8080/Back-end/UserDelete?id_user=' + id)
+            .then(res => res.json())
+            .then((out) => {
+                console.log(out);
+
+                statusCode = out.STATUS;
+
+                
+            }
+         ).then(function (response) {
+            if (statusCode == "200"){ 
+            Swal.fire(
+              '',
+              'Utilizador Colaborador inativado com sucesso!',
+              'success'
+            ).then(  function(){ 
+                  window.location.reload();
+               });
+            } else
+            {
+                Swal.fire(
+              '',
+              'Ocorreu um Erro!',
+              'error'
+            ).then(  function(){ 
+                  window.location.reload();
+               });
+
+            }
+            }).catch(function(err) {console.log(err);})
+
+            
+                    
+                
+
+       }
+
+       let estado = "Active"
+
+function activateFunction(id){
+ fetch('https://kidslandproxy.herokuapp.com/http://188.82.156.135:8080/Back-end/UserPutStatus', {
+         headers: {
+                             "Content-Type": "application/x-www-form-urlencoded"
+                         },
+                         method: 'PUT',
+                         body: `status=${estado}&id_user=${id}`
+                     }).then(function (response) {Swal.fire(
+       '',
+       'Alteração efetuada com sucesso!',
+       'success'
+     ).then(  function(){ 
+           window.location.reload();
+        });
+                     }).catch(function(err) {console.log(err);})
+                 
+
+    
+
+}
+      
+
+
+
+
+                    
+
+
+// ARCHIVE REQUEST
+
+function archive(id){
+    let archiveRequest = "Arquivado"
+
+
+            fetch('https://kidslandproxy.herokuapp.com/https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/RequestsUpdateState/'+ id, {
+                headers: {
+                                    "Content-Type": "application/x-www-form-urlencoded"
+                                },
+                                method: 'PUT',
+                                body: `state=${archiveRequest}`
+                            }).then(function (response) {Swal.fire(
+              '',
+              'Alteração efetuada com sucesso!',
+              'success'
+            ).then(  function(){ 
+                  window.location.reload();
+               });
+                            }).catch(function(err) {console.log(err);})
+                        
+    
+    
+}
+      // FEATURES MATERIAL TABLE 
+       
+let id_request_for_material_creation
+       
+function delete_row(no, id)
+{
+            fetch('https://kidslandproxy.herokuapp.com/https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/OccurrenceMaterials/'+ id_request_for_material_creation +'/' + id, {
+                method: 'delete',
+
+            });
+            
+            $(document).ready(function() {
+        //Populate Select Dropdown with Materials 
+            fetch('https://kidslandproxy.herokuapp.com/https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/Material/')
+            .then(res => res.json())
+            .then((out) => {
+                $.each(out, function(index, value) {
+var selectmaterial = document.getElementById("material");
+    selectmaterial.options[selectmaterial.options.length] = new Option(value.category, value.id_material);
+ });
+            }).catch(err => console.error(err));
+})
+            
+$( "#data_table" ).load( "PedidosOcorrencia.html #data_table" );
+
+
+
+    //LOAD MATERIAL TABLE
+     var idMaterial = document.getElementById("material").value;
+
+    function listMaterials() {
+            fetch('https://kidslandproxy.herokuapp.com/https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/OccurrenceMaterials/' + id_request_for_material_creation)
+            .then(res => res.json())
+            .then((out) => {
+                $.each(out, function(index, value) {
+                   let idMaterial = value.id_material;
+                    $('#data_table tbody').append('<tr><td>' + (value.category != null ? value.category : "") +  (value.quantity != null ? '</td><td>' + value.quantity : '</td><td>') +  "</td><td>" + (value.id_material != null ? "<a style='display: flex; justify-content: center;' onclick='delete_row("+id_request_for_material_creation+',' + idMaterial +")'><i style='color: red; display: inline-block;' class='fas fa-trash' ></i></a></td></tr>" : "")  )
+                });
+            }).catch(err => console.error(err));
+        }
+
+        $(document).ready(function() {
+            listMaterials();
+        })
+        
+
+}
+
+function edit_row(no, id_material)
+{
+
+ var material=document.getElementById("material_row"+no);
+ var material_quantity=document.getElementById("material_quantity_row"+no);
+	
+ var material_data=material.innerHTML;
+ var material_quantity_data=material_quantity.innerHTML;
+	
+ material.innerHTML="<input type='text' id='material_text"+no+"' value='"+material_data+"'>";
+ material_quantity.innerHTML="<input type='text' id='material_quantity_text"+no+"' value='"+material_quantity_data+"'>";
+}
+
+
+function add_row()
+{
+ var material= $('#material option:selected').text();
+ var idMaterial = document.getElementById("material").value;
+ var id_material_selected = document.getElementById("material").value
+ var material_quantity=document.getElementById("material_quantity").value;
+	
+ var table=document.getElementById("data_table");
+ var table_len=(table.rows.length)-1;
+ var row = table.insertRow(table_len).outerHTML="<tr id='row"+table_len+"'><td id='material_row"+table_len+"'>"+material+"</td><td id='material_quantity_row"+table_len+"'>"+material_quantity+"</td><td> <a style='display: flex; justify-content: center;' onclick='delete_row("+table_len+',' + idMaterial +")'><i style='color: red; display: inline-block; position: center;' class='fas fa-trash' ></i></a></td></tr>";
+
+//ADD TO DATABASE
+                 fetch('https://kidslandproxy.herokuapp.com/https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/OccurrenceMaterials/', {
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded"
+                    },
+                    method: 'post',
+                    body: `id_request=${id_request_for_material_creation}&id_material=${id_material_selected}&quantity=${material_quantity}`
+                })
+.then(function(response) {
+  if(response.ok) {
+  } else {
+      Swal.fire(
+                      '',
+                      'Erro. Material já inserido!',
+                      'error'
+            
+            
+                    )
+            $(document).ready(function() {
+        //Populate Select Dropdown with Materials 
+            fetch('https://kidslandproxy.herokuapp.com/https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/Material/')
+            .then(res => res.json())
+            .then((out) => {
+                $.each(out, function(index, value) {
+var selectmaterial = document.getElementById("material");
+    selectmaterial.options[selectmaterial.options.length] = new Option(value.category, value.id_material);
+ });
+            }).catch(err => console.error(err));
+})
+            
+$( "#data_table" ).load( "PedidosOcorrencia.html #data_table" );
+
+
+
+    //LOAD MATERIAL TABLE
+    
+
+    function listMaterials() {
+         var idMaterial = document.getElementById("material").value;
+     var table=document.getElementById("data_table");
+ var table_len=(table.rows.length)-1;
+            fetch('https://kidslandproxy.herokuapp.com/https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/OccurrenceMaterials/' + id_request_for_material_creation)
+            .then(res => res.json())
+            .then((out) => {
+                $.each(out, function(index, value) {
+                   let idMaterial = value.id_material;
+                    $('#data_table tbody').append('<tr><td>' + (value.category != null ? value.category : "") +  (value.quantity != null ? '</td><td>' + value.quantity : '</td><td>') +  "</td><td>" + (value.id_material != null ? "<a style='display: flex; justify-content: center;' onclick='delete_row("+id_request_for_material_creation+',' + idMaterial +")'><i style='color: red; display: inline-block;' class='fas fa-trash' ></i></a></td></tr>" : "")  )
+                });
+            }).catch(err => console.error(err));
+        }
+
+        $(document).ready(function() {
+            listMaterials();
+        })
+        
+  }
+})
+.catch(function(error) {
+  console.log('Ocorreu um problema: ' + error.message);
+});
+     
+     
+     
+//Clean imputs
+ document.getElementById("material").value= "";
+ document.getElementById("material_quantity").value="";
+}
+        
+
+            
+            let id_collaborator;
+function editFunction(id){
+    fetch('https://kidslandproxy.herokuapp.com/http://188.82.156.135:8080/Back-end/CollaboratorUserJoinGetIdUser?id_user='+ id)
+            .then(res => res.arrayBuffer())
+  .then(buffer => {
+    let decoder = new TextDecoder("iso-8859-1");
+    let text = decoder.decode(buffer);
+    resposta = JSON.parse(text.toString());
+
+
+    
+  }).then((out) => {
+
+
+
+
+    document.getElementById("name").value = resposta[0].name;
+    document.getElementById("phone_number").value = resposta[0].phone_number;
+    document.getElementById("address").value = resposta[0].address;
+    document.getElementById("county").value = resposta[0].county;
+    document.getElementById("district").value = resposta[0].district;
+    document.getElementById("post_code").value = resposta[0].post_code;
+    document.getElementById("nif").value = resposta[0].nif;
+    document.getElementById("email").value = resposta[0].email
+    id_collaborator = resposta[0].id_collaborator;
+;
+
+
+
+
+
+
+
+
+                 
+                    
+                
+        
+                
+            }).catch(err => console.error(err));
+    
+
+            
+        
+    
+
+    
+    
+    
+    
+}
+            
+//Transform to Occurrence selected checboxes
+
+            function generateOccurrence(){
+                $("#tableRequests input[type=checkbox]:checked").each(function () {
+                    var id = $(this).closest("tr")[0].cells[1].firstChild.nodeValue;
+            
+                fetch('https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/Occurrences', {
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded"
+                    },
+                    method: 'post',
+                    body: `id_request=${id}&state=Pendente`
+                })
+                
+                    fetch('https://kidslandproxy.herokuapp.com/https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/RequestsUpdateState/' + id, {
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded"
+                    },
+                    method: 'PUT',
+                    body: `state=Aceite`
+                })
+            })
+            
+            Swal.fire(
+                      '',
+                      'Ocorrências geradas com sucesso!',
+                      'success').then(  function(){ 
+                          window.location.reload();
+                       });
+            }
+            
+           //Logout function 
+    let logoutBtn = document.getElementById("logoutBtn")
+        logoutBtn.addEventListener('click', function(e){
+                    fetch('https://kidslandproxy.herokuapp.com/http://188.82.156.135:8080/Back-end/LogoutServlet?email=' + localStorage.getItem("email"))
+                    .then(res => res.json())
+                    .then((out) => {
+                      console.log(out)
+                      
+                    if (out.STATUS == 200) {
+        localStorage.clear();
+        window.location.replace("/" + "Front-end/" +  out.PATH); 
+        
+                    }else {
+                      if (out.STATUS == 400){
+                                            Swal.fire(
+                              '',
+                              'Não existe nenhuma sessão ativa',
+                              'error'
+                            )
+                            .then(function(){        window.location.replace("/" + "Front-end/" +  out.PATH); 
+});
+                        
+                      }else {
+                            Swal.fire(
+              
+                              'Erro no Logout',
+                              'Algo de errado aconteceu no processo de Logout. Tente novamente.',
+                              'error'
+                            )
+                      }
+                    }
+                  })
+                  .catch(error => {
+                    ({
+          icon: 'error',
+          title: 'Erro',
+          text: `Pedido falhado: ${error}`
+        })
+          
+                  });
+                    
+        });
+        
+        
+        
+        
+        
+     
+            
+            
+            
+                    </script>
+                    
+</body>
+
+</html>

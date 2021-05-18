@@ -108,20 +108,20 @@
       <!-- Nav Item - Charts -->
       <li class="nav-item">
           <a class="nav-link" href="ATI_Institutions.html">
-              <i class="fas fa-clock"></i>
+              <i class="fas fa-house-user"></i>
               <span>Instituições</span></a>
       </li>
 
       <li class="nav-item">
           <a class="nav-link" href="ATI_UsersChild.html">
-              <i class="fas fa-map-marker-alt fa-fw"></i>
+              <i class="fas fa-users"></i>
               <span>Utilizadores</span></a>
       </li>
 
       <!-- Nav Item - Tables -->
       <li class="nav-item">
           <a class="nav-link" href="ATI_Collaborators.html">
-              <i class="fas fa-exclamation-circle"></i>
+              <i class="fas fa-user"></i>
               <span>Colaboradores</span></a>
       </li>
 
@@ -231,6 +231,7 @@
                                                 <option >Distrito</option>
                                                 <option >Código-Postal</option>
                                                 <option >Telefone</option>
+                                                <option>Estado</option>
                                             </select>
                                 </button>
                                 </div>
@@ -263,6 +264,7 @@
                                             <th>Distrito</th>
                                             <th>Código-Postal</th>
                                             <th style="min-width:130px">Telefone</th>
+                                            <th style="min-width:100px">Estado</th>
                                             <th>
                                                 <i class="fas fa-ellipsis-v"></i></th>
                                         </tr>
@@ -343,64 +345,50 @@
       <!--Body-->
       <div class="modal-body mx-4">
         <!--Body-->
-        <div class="row row-space">
-        <div class="md-form pb-3 col-md-3">
-          <label data-error="wrong" data-success="right" for="date_Request">Data do Pedido</label>
-          <input type="date" id="date_Request" class="form-control validate" readonly>
-        </div>
-                <div class="md-form pb-3 col-md-9">
-          <label data-error="wrong" data-success="right" for="designation_Location">Entidade</label>
-          <input type="text" id="designation_Location" class="form-control validate" readonly>
-
-        </div> 
-        
-        </div>
-        
-
+      
      <div class="row row-space">   
         <div class="md-form pb-8 col-md-8">
-          <label data-error="wrong" data-success="right" for="address_Location">Morada</label>
-          <input type="text" id="address_Location" class="form-control validate" readonly>
+          <label data-error="wrong" data-success="right" for="name">Nome</label>
+          <input type="text" id="name" class="form-control validate" >
         </div>
                 <div class="md-form pb-3 col-md-4">
-          <label data-error="wrong" data-success="right" for="address_Location">Localidade</label>
-          <input type="text" id="county" class="form-control validate" readonly>
+          <label data-error="wrong" data-success="right" for="nif">NIF</label>
+          <input type="number" id="nif" class="form-control validate" >
         </div>
         
         </div>
         
          <div class="row row-space">       
-                <div class="md-form pb-3 col-md-12">
-          <label data-error="wrong" data-success="right" for="designation_Crime_Nature">Natureza do Crime </label>
-          <select class="selectbtn custom-select" id="designation_Crime_Nature" name="designation_Crime_Nature">
-                                    <option value="0">Selecione a natureza do crime:</option>
-          </select>
-        </div>
+            <div class="md-form pb-3 col-md-8">
+                <label data-error="wrong" data-success="right" for="address">Morada</label>
+                <input type="text" id="address" class="form-control validate" >
+              </div>
         </div>
         
         <div class="row row-space">
                     <div class="md-form pb-3 col-md-4">
-          <label data-error="wrong" data-success="right" for="type_Request">Tipo de Pedido</label>
-          <input type="text" id="type_Request" class="form-control validate">
+          <label data-error="wrong" data-success="right" for="type_Request">Localidade</label>
+          <input type="text" id="county" class="form-control validate">
         </div> 
-        
-       <div class="md-form pb-3 col-md-4">
-          <label class="label" >Gravidade: </label>
-                                <select class="selectbtn custom-select" id="degree_of_emergency_Crime_Nature">
-                                    <option value="Muito Grave">Muito Grave</option>
-                                    <option value="Grave">Grave</option>
-                                    <option value="Moderado">Moderado</option>
-                                    </select>
-                                </div>
+        <div class="md-form pb-3 col-md-4">
+            <label data-error="wrong" data-success="right" for="type_Request">Distrito</label>
+            <input type="text" id="district" class="form-control validate">
+          </div>                  
+          
+          <div class="md-form pb-3 col-md-4">
+            <label data-error="wrong" data-success="right" for="type_Request">Código-Postal</label>
+            <input type="text" id="post_code" class="form-control validate">
+          </div> 
+
         
         </div>
         <div class="row row-space">
-                                <div class="col-8">
-                                <label class="label">Descrição: </label>
-                                <div class="col-md-14">
-                                    <textarea rows="5" class="form-control form-control-line" id="description_Request"></textarea>
-                                </div>
-                            </div>
+            <div class="md-form pb-3 col-md-4">
+                <label data-error="wrong" data-success="right" for="type_Request">Telefone</label>
+                <input type="number" id="phone_number" class="form-control validate">
+              </div> 
+
+
                             </div>
                             
             
@@ -409,50 +397,26 @@
              <!-- Division of page -->
              <br>
                                 <div style="height: 5px; background-color: #F7F7F7; margin-bottom: 5%;"></div> 
-                                
-            <!-- End of division of page -->  
-                <h4 class="modal-title w-100 dark-grey-text my-3 text-center" id="myModalLabel" style= "padding-left:30px !important;">Materiais</h4>
-         <table class="table table-bordered" id="data_table">
-            <thead>
-              <th>Categoria</th>
-              <th>Quantidade</th>
-            </thead>
-            <tbody>
-                            <tr>
-        <td><select class="selectbtn custom-select" id="material">
-            <option value="0"> Selecione Material: </option>
-         </select></td>
-         
-        <td><input type="number" id="material_quantity"></td>
-        <td> <button type="button" class="add btn btn-info add-new" id="addButton" onclick="add_row();"><i class="fa fa-plus"></i> </button></td>
-        </tr>
-        
-            
-            </tbody>
-          </table>
-            
-     <!-- Division of page -->
-     <br></br>
-        <div style="height: 5px; background-color: #F7F7F7; margin-bottom: 5%;"></div> 
+                                <div class="row row-space">
+                                <div class="md-form pb-3 col-md-8">
+                                    <label data-error="wrong" data-success="right" for="type_Request">Email</label>
+                                    <input type="text" id="email" class="form-control validate">
+                                  </div> 
+                                  </div>
+
+                                  <div class="row row-space">
+                                    <div class="md-form pb-3 col-md-4">
+                                        <label data-error="wrong" data-success="right" for="type_Request">Password</label>
+                                        <input type="password" id="password" class="form-control validate">
+                                      </div> 
+                    
+                                      <div class="md-form pb-3 col-md-4">
+                                        <label data-error="wrong" data-success="right" for="type_Request">Confirmação Password</label>
+                                        <input type="password" id="password_confirm" class="form-control validate">
+                                      </div> 
                         
-    <!-- End of division of page -->  
-    <div class="row row-space">
-                        <div class="md-form pb-3 col-md-4">
-          <label class="label"for="occurrence_manager">Gestor da Ocorrência: </label>
-                                <select class="selectbtn custom-select" id="managers" >
-                                    <option value="0">Selecione um Gestor:</option>
-                                 
-                                    </select>
-        </div>
-        
-        <div class="md-form pb-3 col-md-4">
-          <label class="label"for="state_Request">Estado da Ocorrência: </label>
-                                <select class="selectbtn custom-select" id="state" >
-                                    <option value="Arquivado">Arquivado</option>
-                                    <option value="Aguardar">Aguardar</option> 
-                                    </select>
-        </div>
-        </div>
+                                                    </div>
+
         
         <div class="text-center mb-5 mt-3">
           <button type="submit" class="rounded-b button-color textb1" >Guardar Dados</button>
@@ -524,6 +488,8 @@
 document.getElementById('filtrarPor').addEventListener('change', function() {
      
         if (select.selectedIndex == 0) {
+            nrInstitutions = 0;
+
             listInstitutions();
             document.getElementById("filterInput").value = "";
             
@@ -538,7 +504,7 @@ function filter() {
   let input, filter, table, tr, td, i, txtValue;
   input = document.getElementById("filterInput");
   filter = input.value.toUpperCase();  
-  table = document.getElementById("tableRequests");
+  table = document.getElementById("tableInstitutions");
   tr = table.getElementsByTagName("tr");
 
   // Loop through all table rows, and hide those who don't match the search query
@@ -556,6 +522,8 @@ function filter() {
       {coluna = 7;} 
       else if (campo == "Telefone")
       {coluna = 8;} 
+      else if (campo == "Estado")
+      {coluna =9;}
   
   for (i = 0; i < tr.length; i++) {
       
@@ -596,7 +564,7 @@ function listInstitutions() {
                 $('#tableInstitutions tbody').empty();
                     for (let i = 0; i < resposta.length; i++){
                         nrInstitutions = nrInstitutions + 1;
-                    $('#tableInstitutions tbody').append('<tr><td>' + '<input name="checkbox1"  type="checkbox" value='+ resposta[i].id_institution + '>' +'</td><td>' +  resposta[i].nif + '</td><td>' + resposta[i].name+  '</td><td>'+ resposta[i].total_activities+  '</td><td>'+ resposta[i].address +'</td><td>'+ resposta[i].county +'</td><td>'+ resposta[i].district+'</td><td>'+ resposta[i].post_code + '</td><td>'+ resposta[i].phone_number+'</td><td>'+'<div class="dropdown keep-open show-dropdown"> <a href="#" data-toggle="dropdown" aria-expanded="false" > <i class="fas fa-ellipsis-v"> </i></a> <ul class="dropdown-menu "  >                                                <li class="header-title"> <i class="fas fa-cog"></i> Opções</li>     <!-- Division of page -->                                            <div style="height: 2px; background-color: #F7F7F7; margin-bottom: 5%;"></div> <li data-target="#InfoModal" data-toggle="modal"><a id="editar" onclick="editFunction()"> <p  class="dropdownText">                             <i class="far fa-edit" style="padding-right: 4px !important"></i>   Editar</p> </a></li>                                               <li > <a id="apagar" onclick="deleteFunction()"> <p href="#" class="dropdownText">                            <i class="fas fa-trash-alt" style="padding-right: 6px !important"></i>Eliminar</p></a></li> ' + '</td></tr>'  )
+                    $('#tableInstitutions tbody').append('<tr><td>' + '<input name="checkbox1"  type="checkbox" value='+ resposta[i].id_institution + '>' +'</td><td>' +  resposta[i].nif + '</td><td>' + resposta[i].name+  '</td><td>'+ resposta[i].count+  '</td><td>'+ resposta[i].address +'</td><td>'+ resposta[i].county +'</td><td>'+ resposta[i].district+'</td><td>'+ resposta[i].post_code + '</td><td>'+ resposta[i].phone_number+ (resposta[i].status == "Active" ? '</td><td><p class="solved">Ativo</p>' : (resposta[i].status == "Inactive" ? '</td><td><p class="unsolved">Inativo</p>' : '</td><td><p class="unknown">Indefinido</p>'  )) + '</td><td>'+'<div class="dropdown keep-open show-dropdown"> <a href="#" data-toggle="dropdown" aria-expanded="false" > <i class="fas fa-ellipsis-v"> </i></a> <ul class="dropdown-menu "  >                                                <li class="header-title"> <i class="fas fa-cog"></i> Opções</li>     <!-- Division of page -->                                            <div style="height: 2px; background-color: #F7F7F7; margin-bottom: 5%;"></div> <li data-target="#InfoModal" data-toggle="modal"><a id="editar" onclick="editFunction('+resposta[i].id_institution+')"> <p  class="dropdownText">                             <i class="far fa-edit" style="padding-right: 4px !important"></i>   Editar</p> </a></li>   ' + (resposta[i].status == "Active" ? '                                            <li > <a id="apagar" onclick="deleteFunction('+resposta[i].id_user+')"> <p href="#" class="dropdownText">                            <i class="fas fa-trash-alt" style="padding-right: 6px !important"></i>Desativar</p></a></li> '  : '<li > <a id="apagar" onclick="activateFunction('+resposta[i].id_user+')"> <p href="#" class="dropdownText">                            <i class="fas fa-trash-alt" style="padding-right: 6px !important"></i>Ativar</p></a></li>') + '</td></tr>'  )
                    numberInstitutions();
                     }
           
@@ -650,6 +618,29 @@ function listInstitutions() {
             
                     
                 
+
+       }
+
+       let estado = "Active"
+
+       function activateFunction(id){
+        fetch('https://kidslandproxy.herokuapp.com/http://188.82.156.135:8080/Back-end/UserPutStatus', {
+                headers: {
+                                    "Content-Type": "application/x-www-form-urlencoded"
+                                },
+                                method: 'PUT',
+                                body: `status=${estado}&id_user=${id}`
+                            }).then(function (response) {Swal.fire(
+              '',
+              'Alteração efetuada com sucesso!',
+              'success'
+            ).then(  function(){ 
+                  window.location.reload();
+               });
+                            }).catch(function(err) {console.log(err);})
+                        
+    
+           
 
        }
              
@@ -826,109 +817,74 @@ $( "#data_table" ).load( "PedidosOcorrencia.html #data_table" );
 }
         
 
-            
+          let email;  
             
 function editFunction(id){
-    id_request_for_material_creation = id;
-    
-            fetch('https://kidslandproxy.herokuapp.com/https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/Requests/'+ id)
-            .then(res => res.json())
-            .then((out) => {
-                $.each(out, function(index, value) {
-                    if (value.date_Request !== null) {
-                        document.getElementById("date_Request").value = value.date_Request; }
-                    if (value.designation_Location !== null) {
-                        document.getElementById("designation_Location").value = value.designation_Location;}
-                    if (value.address_Location !== null) { 
-                        document.getElementById("address_Location").value = value.address_Location;}
-                    if (value.id_operations_manager !== null) { 
-                        var select = document.getElementById("managers");
-                            for(let i = 0;i < select.options.length;i++){
-                                if(select.options[i].value == value.id_operations_manager){
-                                    select.options[i].selected = true;
-                                }
-                            }
-                    }
-                    
-                    if (value.degree_of_emergency_Crime_Nature !== null) { 
-                        var select = document.getElementById("degree_of_emergency_Crime_Nature");
-                            for(let i = 0;i < select.options.length;i++){
-                                if(select.options[i].value == value.degree_of_emergency_Crime_Nature){
-                                    select.options[i].selected = true;
-                                }
-                            }
-                    }                    
-                    
-                    if (value.county_Location !== null){
-                        document.getElementById("county").value = value.county_Location;
-                    }
-             
-                    if (value.type_Request !== null) { 
-                        document.getElementById("type_Request").value = value.type_Request; }
-                        
-                let select2 = document.getElementById("designation_Crime_Nature");
+    fetch('https://kidslandproxy.herokuapp.com/http://188.82.156.135:8080/Back-end/InstitutionCandidateJByIdGet?id_institution='+ id)
+            .then(res => res.arrayBuffer())
+  .then(buffer => {
+    let decoder = new TextDecoder("iso-8859-1");
+    let text = decoder.decode(buffer);
+    resposta = JSON.parse(text.toString());
 
-                            for(let i = 0;i < select2.options.length;i++){
-                                
-                                if(select2.options[i].value  == value.id_crime_nature){
-                                    select2.options[i].selected = true;
-                                }
-                            } 
-                    
-                    
-                    if (value.state_Request !== null) { 
-                        let select1 = document.getElementById("state");
-                            for(let i = 0;i < select1.options.length;i++){
-                                if(select1.options[i].value == value.state_Request){
-                                    select1.options[i].selected = true;
-                                }
-                            } 
-                    }
-                    
-                    if (value.description_Request !== null) {
-                        document.getElementById("description_Request").value = value.description_Request; 
-                        
-                    }
+
+    
+  }).then((out) => {
+
+
+
+
+    document.getElementById("name").value = resposta[0].name;
+    document.getElementById("phone_number").value = resposta[0].phone_number;
+    document.getElementById("address").value = resposta[0].address;
+    document.getElementById("county").value = resposta[0].county;
+    document.getElementById("district").value = resposta[0].district;
+    document.getElementById("post_code").value = resposta[0].post_code;
+    document.getElementById("nif").value = resposta[0].nif;
+    document.getElementById("email").value = resposta[0].email
+;
+
+
+
+
+
+
+
+
+                 
                     
                 
         
-                });
+                
             }).catch(err => console.error(err));
-
+    
             const editForm = document.getElementById('editForm');
             
                         editForm.addEventListener('submit', function(e){
                             e.preventDefault();
 
-            const date_Request = document.getElementById("date_Request").value
-            const designation_Location = document.getElementById("designation_Location").value
-            const address_Location  = document.getElementById("address_Location").value
-            const degree_of_emergency_Crime_Nature = document.getElementById("degree_of_emergency_Crime_Nature").value
-            const type_Request = document.getElementById("type_Request").value
-            const designation_Crime_Nature  = document.getElementById("designation_Crime_Nature").value
-            const state_Request = document.getElementById("state").value
-            const description_Request = document.getElementById("description_Request").value
-            let id_operations_manager
-            
-            if (document.getElementById("managers").value == 0){
-                id_operations_manager = null;
-            } else {id_operations_manager = document.getElementById("managers").value}
-            
-            document.getElementById("managers").addEventListener("change", function() {
-                if (document.getElementById("managers").value == 0){
-                    id_operations_manager = null
-                } else{
-                id_operations_manager = document.getElementById("managers").value}
-
-});
-            
+    const name = document.getElementById("name").value;
+    const phone_number = document.getElementById("phone_number").value;
+    const address = document.getElementById("address").value ;
+    const county = document.getElementById("county").value;
+    const district = document.getElementById("district").value ;
+    const post_code = document.getElementById("post_code").value;
+    const nif = document.getElementById("nif").value;
+    const email = document.getElementById("email").value;
     
-                            fetch('https://kidslandproxy.herokuapp.com/https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/Requests/'+ id, {
+
+         
+           //UPDATE PASSWORD IF INSERTED
+
+           const password = document.getElementById("password").value;
+                        const passwordConfirm = document.getElementById("password_confirm").value;
+    if (password.length == 0){
+                            fetch('https://kidslandproxy.herokuapp.com/http://188.82.156.135:8080/Back-end/CandidateInstitutionPut?id_institution='+ id, {
                                 headers: {
                                     "Content-Type": "application/x-www-form-urlencoded"
                                 },
                                 method: 'PUT',
-                                body: `id_crime_nature=${designation_Crime_Nature}&degree_of_emergency=${degree_of_emergency_Crime_Nature}&type=${type_Request}&state=${state_Request}&description_Request=${description_Request}&id_operations_manager=${id_operations_manager}`
+                                body: `email=${email}&name=${name}&phone_number=${phone_number}&address=${address}&county=${county}&district=${district}&post_code=${post_code}&nif=${nif}`
                             }).then(function (response) {Swal.fire(
               '',
               'Alteração efetuada com sucesso!',
@@ -937,42 +893,68 @@ function editFunction(id){
                   window.location.reload();
                });
                             }).catch(function(err) {console.log(err);})
+
+                        }
+                        
+               
+
+
+
+                        if (password.length != 0){
+                            console.log(password == passwordConfirm)
+                            console.log(password)
+                            console.log(passwordConfirm)
+
+                            if (password == passwordConfirm){
+
+                                fetch('https://kidslandproxy.herokuapp.com/http://188.82.156.135:8080/Back-end/PasswordPut', {
+                                headers: {
+                                    "Content-Type": "application/x-www-form-urlencoded"
+                                },
+                                method: 'PUT',
+                                body: `email=${email}&password=${password}`
+                            }).then(function (response) {
+                                fetch('https://kidslandproxy.herokuapp.com/http://188.82.156.135:8080/Back-end/CandidateInstitutionPut?id_institution='+ id, {
+                                headers: {
+                                    "Content-Type": "application/x-www-form-urlencoded"
+                                },
+                                method: 'PUT',
+                                body: `email=${email}&name=${name}&phone_number=${phone_number}&address=${address}&county=${county}&district=${district}&post_code=${post_code}&nif=${nif}`
+                            }).then(function (response) {Swal.fire(
+              '',
+              'Alteração efetuada com sucesso!',
+              'success'
+            ).then(  function(){ 
+                  window.location.reload();
+               });
+                            }).catch(function(err) {console.log(err);})
+
+
+                             }).catch(function(err) {console.log(err);})
+
+                            }else {
+                                Swal.fire(
+              '',
+              'As palavras-passes não coincidem',
+              'error'
+            )
+                            }
+                        } 
+						
+
+                        
+                        
+               
+
+
+
+    
+      
+                        
                         });
             
         
-    //LOAD MATERIAL TABLE
-
-    function listMaterials() {
-         var idMaterial = document.getElementById("material").value;
-        
-     var table=document.getElementById("data_table");
- var table_len=(table.rows.length)-1;
-            fetch('https://kidslandproxy.herokuapp.com/https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/OccurrenceMaterials/' + id_request_for_material_creation)
-            .then(res => res.json())
-            .then((out) => {
-                $('#data_table tbody').empty();
-                $('#data_table tbody').append('<tr><td><select class="selectbtn custom-select" id="material"> <option value="0"> Selecione Material: </option> </select></td><td><input type="number" id="material_quantity"></td><td> <button type="button" class="add btn btn-info add-new" id="addButton" onclick="add_row();"><i class="fa fa-plus"></i></button></td></tr>');
-                            $(document).ready(function() {
-        //Populate Select Dropdown with Materials 
-            fetch('https://kidslandproxy.herokuapp.com/https://54d82a4bef854785886ab91f701b592a.vfs.cloud9.us-east-1.amazonaws.com/Material/')
-            .then(res => res.json())
-            .then((out) => {
-                $.each(out, function(index, value) {
-var selectmaterial = document.getElementById("material");
-    selectmaterial.options[selectmaterial.options.length] = new Option(value.category, value.id_material);
- });
-            }).catch(err => console.error(err));
-})
-                $.each(out, function(index, value) {
-                   let idMaterial = value.id_material;
-                    $('#data_table tbody').append('<tr><td>' + (value.category != null ? value.category : "") +  (value.quantity != null ? '</td><td>' + value.quantity : '</td><td>') +  "</td><td>" + (value.id_material != null ? "<a style='display: flex; justify-content: center;' onclick='delete_row("+id_request_for_material_creation+',' + idMaterial +")'><i style='color: red; display: inline-block;' class='fas fa-trash' ></i></a></td></tr>" : "")   )
-                });
-            }).catch(err => console.error(err));
-        }
-
-        $(document).ready(function() {
-            listMaterials();
-        })
+    
 
     
     
