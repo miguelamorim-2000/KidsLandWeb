@@ -12,14 +12,14 @@
 
     app.use(validator());
 
-    app.post('')
+    app.post('');
 
-    function validation(){
+    function colabvalidation(){
 
         var name_colab = collaboratorForm.name.value;
         var nif_colab = collaboratorForm.nif.value;
         var phone_colab = collaboratorForm.phone_number.value;
-        var adress_colab = collaboratorForm.adress.value;
+        var adress_colab = collaboratorForm.address.value;
         var county_colab = collaboratorForm.county.value;
         var district_colab = collaboratorForm.district.value;
         var zip_colab = collaboratorForm.post_code.value;
@@ -45,6 +45,24 @@
                 'error'
             );
             collaboratorForm.nif.focus()
+            return false;
+
+        } else if (nif_colab.toString().length < 9 ){
+            Swal.fire(
+                '',
+                'O NIF deve conter 9 números!',
+                'error'
+            );
+            collaboratorForm.nif.focus()
+            return false;
+
+        } else if (nif_colab.toString().length > 9 ){
+            Swal.fire(
+                '',
+                'O NIF deve conter 9 números!',
+                'error'
+            );
+            collaboratorForm.nif.focus();
             return false;
         }
 
