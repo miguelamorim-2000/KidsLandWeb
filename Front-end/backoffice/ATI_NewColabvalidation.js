@@ -105,6 +105,7 @@
             collaboratorForm.district.focus()
             return false;
         }
+        
 
         if(zip_colab == ''){
             Swal.fire(
@@ -114,7 +115,26 @@
             );
             collaboratorForm.post_code.focus()
             return false;
+
+        } else if (zip_colab.toString().length < 8 ){
+            Swal.fire(
+                '',
+                'O NIF deve conter 9 números!',
+                'error'
+            );
+            collaboratorForm.post_code.focus()
+            return false;
+
+        } else if (zip_colab.toString().length > 8 ){
+            Swal.fire(
+                '',
+                'O NIF deve conter 9 números!',
+                'error'
+            );
+            collaboratorForm.post_code.focus();
+            return false;
         }
+
 
         if(mail_colab == ''){
             Swal.fire(
