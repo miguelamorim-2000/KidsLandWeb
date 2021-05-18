@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1,0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         
-        <title> KidsLand - Instituições</title>
+        <title> KidsLand - Recuperar Password</title>
         <link rel="stylesheet" href="LoginInstitution.css" type="text/css">
         
         <link rel="stylesheet" href="headerfooter.css" type="text/css">
@@ -49,33 +49,39 @@
 						<img src="https://i.ibb.co/JCMp9R0/logo-Kids-Land-V21.png" width="300" height="190">
 					</span>
 <hr id="separateLine" style="height:3px; width:100%; border-width:0; color:#052F83; background-color:#46D0D9">
-					<p id="titleCitizen"> Login - Instituições</p>
+					<p id="titleCitizen"> Nova Password</p>
+                    <br>
+                    
 
-					<div class="wrap-input100 validate-input" data-validate = "Valid email is: a@b.c">
-					  <br>
-						<input class="input100" type="text" name="email" id="email">
-						<span class="focus-input100" data-placeholder="Email"></span>
-					</div>
 
-					<div class="wrap-input100 validate-input" data-validate="Enter password">
-						<span class="btn-show-pass" onclick="showPassword()">
+					<div class="wrap-input100 validate-input" >
+                        <span class="btn-show-pass" onclick="showPassword()">
 							<i class="fas fa-eye"></i>
 						</span>
-						<br>
-						<input class="input100" type="password" name="pass" id="password">
-						<span class="focus-input100" data-placeholder="Password"></span>
+						
+					  <br>
+						<input class="input100" type="password" id="password">
+						<span class="focus-input100" data-placeholder="Palavra-Passe"></span>
 					</div>
 
+                    <div class="wrap-input100 validate-input" >	
+                        					<span class="btn-show-pass" onclick="showPassword1()">
+                        <i class="fas fa-eye"></i>
+                    </span>
+                    
+                        <br>
+                          <input class="input100" type="password" id="passwordConfirm">
+                          <span class="focus-input100" data-placeholder="Confirmação Palavra-Passe"></span>
+                      </div>
+                                        <br>
+
+
 					<div class="container-loginButton">
-							<input id="loginBtn" type="submit" name="submit" class="btn btn-primary btn-md" value="Iniciar Sessão" >
+							<input id="loginBtn" type="submit" name="submit" class="btn btn-primary btn-md" value="Alterar Dados" >
 							</button>
 						</div>
-						                            <div id="register-link">
-                                <a href="RegisterInstitution.html" style="color:#143656;">Criar Candidatura</a>
-                            </div>
-                             <div id="recover-link">
-                                <a href="RecoverPW_Email.html" style="color: #143656;">Recuperar Password</a>
-                            </div>
+			
+   
 					</div>
 
 
@@ -87,15 +93,17 @@
 	  
 	   loginForm.addEventListener('submit', function(e){
 	     e.preventDefault();
-	          const email = document.getElementById("email").value;
-            const password = document.getElementById("password").value;
+	          const password = document.getElementById("password").value;
+              const passwordConfirm = document.getElementById("passwordConfirm").value;
+            const email = localStorage.getItem('temp_email')
 
+            if (password == passwordConfirm){
 	     
-	                      fetch('https://kidslandproxy.herokuapp.com/http://188.82.156.135:8080/Back-end/Login', {
+	                      fetch('https://kidslandproxy.herokuapp.com/http://188.82.156.135:8080/Back-end/PasswordPut', {
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded"
                     },
-                    method: 'post',
+                    method: 'PUT',
                     body: `email=${email}&password=${password}`
                 }) .then(res => res.arrayBuffer())
   .then(buffer => {
@@ -111,29 +119,22 @@
          console.log(resposta)
             if (resposta.STATUS == 200) {
               
-              localStorage.setItem('id_candidate', resposta.id_candidate); 
-              localStorage.setItem('nif', resposta.nif); 
-              localStorage.setItem('phone_number', resposta.phone_number); 
-              localStorage.setItem('id_user', resposta.id_user); 
-              localStorage.setItem('email', resposta.email); 
-              localStorage.setItem('id_institution', resposta.id_institution); 
-              localStorage.setItem('name', resposta.name); 
-              localStorage.setItem('address', resposta.address); 
-              localStorage.setItem('county', resposta.county); 
-              localStorage.setItem('district', resposta.district); 
-              localStorage.setItem('post_code', resposta.post_code); 
+                Swal.fire(
+      
+      'Alterado com sucesso!',
+      'A sua palavra-passe foi alterada com sucesso.',
+      'success'
+    ).then(  function(){ 
+        window.location.replace("/" + "Front-end/frontoffice/LoginInstitution.html")
+                       })
 
 
-
-              
-              
-              window.location.replace("/" + "Front-end/" +  resposta.PATH); 
 
             }else {
               if (resposta.STATUS == 400){
                                     Swal.fire(
                       '',
-                      'O email ou password não são válidos.',
+                      'Erro',
                       'error'
                     )
                    
@@ -141,8 +142,8 @@
               }else {
                     Swal.fire(
       
-                      'Erro no Login',
-                      'Não foi possível efetuar Login. Tente novamente.',
+                      'Erro no envio',
+                      'Não foi possível efetuar o pedido. Tente novamente.',
                       'error'
                     )
               }
@@ -156,12 +157,34 @@
 })
   
           });
+
+        } else {
+            Swal.fire(
+      
+      'Palavra-Passe não coincidem!',
+      'Verifique as duas palavras-passe coincidem.',
+      'error'
+    )
+
+        }
+
 	   });
+    
 
 
 //Show password when clicking eye  icon
 function showPassword() {
   var x = document.getElementById("password");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+
+//Show password when clicking eye  icon
+function showPassword1() {
+  var x = document.getElementById("passwordConfirm");
   if (x.type === "password") {
     x.type = "text";
   } else {
