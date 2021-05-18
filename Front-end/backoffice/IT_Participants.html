@@ -211,6 +211,7 @@
                                                 <option>Estado</option>
                                                 <option>Nome</option>
                                                 <option>Data de Nascimento</option>
+                                                <option>Data da Atividade</option>
                                                 <option>Telefone do Tutor</option>
                                                 <option>Atividade</option>
 
@@ -244,7 +245,8 @@
                                                 <input name="checkboxall" type="checkbox"  id="checkboxall"></div><div class="fht-cell"></div></th>
                                                 <th >Nome</th>
                                                 <th >Data de Nascimento</th>
-                                                <th> Atividade</th>
+                                                <th>Atividade</th>
+                                                <th>Data da Atividade</th>
                                                 <th >Telefone do Tutor</th>
                                                 <th >Estado da Atividade</th>
                                             
@@ -580,6 +582,8 @@ function filter() {
       {coluna = 2;}
       else if (campo =="Atividade")
       {coluna = 3;}
+      else if (campo =="Data da Atividade")
+      {coluna = 4}
       else if (campo =="Telefone do Tutor")
       {coluna = 5;}
       else if (campo =="Estado")
