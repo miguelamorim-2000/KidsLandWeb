@@ -105,7 +105,7 @@
             collaboratorForm.district.focus()
             return false;
         }
-        
+
 
         if(zip_colab == ''){
             Swal.fire(
@@ -119,7 +119,7 @@
         } else if (zip_colab.toString().length < 8 ){
             Swal.fire(
                 '',
-                'O NIF deve conter 9 números!',
+                'O código postal deve conter 8 caracteres!',
                 'error'
             );
             collaboratorForm.post_code.focus()
@@ -128,7 +128,7 @@
         } else if (zip_colab.toString().length > 8 ){
             Swal.fire(
                 '',
-                'O NIF deve conter 9 números!',
+                'O código postal deve conter 8 caracteres!',
                 'error'
             );
             collaboratorForm.post_code.focus();
