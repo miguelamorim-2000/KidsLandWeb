@@ -488,6 +488,8 @@
 document.getElementById('filtrarPor').addEventListener('change', function() {
      
         if (select.selectedIndex == 0) {
+            nrInstitutions = 0;
+
             listInstitutions();
             document.getElementById("filterInput").value = "";
             
@@ -818,7 +820,7 @@ $( "#data_table" ).load( "PedidosOcorrencia.html #data_table" );
         
 
             
-            let id_collaborator;
+            let id_collaborator, id_user;
 function editFunction(id){
     fetch('https://kidslandproxy.herokuapp.com/http://188.82.156.135:8080/Back-end/CollaboratorUserJoinGetIdUser?id_user='+ id)
             .then(res => res.arrayBuffer())
@@ -843,6 +845,7 @@ function editFunction(id){
     document.getElementById("nif").value = resposta[0].nif;
     document.getElementById("email").value = resposta[0].email
     id_collaborator = resposta[0].id_collaborator;
+    id_user = resposta[0].id_user;
 ;
 
 
@@ -886,7 +889,7 @@ function editFunction(id){
                                     "Content-Type": "application/x-www-form-urlencoded"
                                 },
                                 method: 'PUT',
-                                body: `id_collaborator=${id_collaborator}&email=${email}&name=${name}&phone_number=${phone_number}&address=${address}&county=${county}&district=${district}&post_code=${post_code}&nif=${nif}`
+                                body: `id_collaborator=${id_collaborator}&id_user=${id_user}&email=${email}&name=${name}&phone_number=${phone_number}&address=${address}&county=${county}&district=${district}&post_code=${post_code}&nif=${nif}`
                             }).then(function (response) {Swal.fire(
               '',
               'Alteração efetuada com sucesso!',

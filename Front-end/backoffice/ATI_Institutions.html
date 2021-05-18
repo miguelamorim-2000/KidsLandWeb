@@ -264,7 +264,7 @@
                                             <th>Distrito</th>
                                             <th>Código-Postal</th>
                                             <th style="min-width:130px">Telefone</th>
-                                            <th>Estado</th>
+                                            <th style="min-width:100px">Estado</th>
                                             <th>
                                                 <i class="fas fa-ellipsis-v"></i></th>
                                         </tr>
@@ -488,6 +488,8 @@
 document.getElementById('filtrarPor').addEventListener('change', function() {
      
         if (select.selectedIndex == 0) {
+            nrInstitutions = 0;
+
             listInstitutions();
             document.getElementById("filterInput").value = "";
             

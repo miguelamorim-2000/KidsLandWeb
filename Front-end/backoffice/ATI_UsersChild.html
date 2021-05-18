@@ -465,6 +465,8 @@
 document.getElementById('filtrarPor').addEventListener('change', function() {
      
         if (select.selectedIndex == 0) {
+            nrUsers = 0;
+
             listUsers();
             document.getElementById("filterInput").value = "";
             
