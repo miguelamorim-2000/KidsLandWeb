@@ -650,7 +650,7 @@ window.addEventListener("load", function(){
             .then((out) => {
                 $.each(out, function(index, value) {
                     console.log(value)
-                    nrpendingrequests.innerText = value
+                    nrpendingrequests.innerText = value.toFixed(2)
                     if (value == undefined){
                         nrpendingrequests.innerText = "0";
 
