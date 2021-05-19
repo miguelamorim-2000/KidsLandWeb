@@ -74,6 +74,24 @@
             );
             collaboratorForm.phone_number.focus()
             return false;
+
+        } else if (phone_colab.toString().length < 9 ){
+            Swal.fire(
+                '',
+                'O numero de telemovel deve contar 9 digitos!',
+                'error'
+            );
+            collaboratorForm.phone_number.focus()
+            return false;
+
+        } else if (phone_colab.toString().length > 9 ){
+            Swal.fire(
+                '',
+                'O numero de telemovel deve contar 9 digitos!',
+                'error'
+            );
+            collaboratorForm.phone_number.focus();
+            return false;
         }
 
         if(adress_colab == ''){

@@ -1,10 +1,10 @@
     //dependencies
-    /*var cookieParser = require('cookie-parser');
+    var cookieParser = require('cookie-parser');
     var bodyParser = require('body-parser');
     var expressValidator = require('express-validator');
     var app = express();
-    */
-    /*
+  
+    
     //middleware
     app.use(bodyParser.urlencoded({
         extended: false
@@ -12,7 +12,7 @@
     app.use(validator());
     
     app.post('')
-    */
+  
  function validation(){   
      
     //candidates
@@ -49,17 +49,25 @@
                     );
                     institutionForm.nif.focus();
         return false;
-    }
-    
-   /* if (nif < 9 || nif > 9 ){
+
+    } else if (nif.toString().length < 9 ){
          Swal.fire(
                       '',
                       'Campo "NIF" incorreto! O NIF deve ter 9 digitos',
                       'error'
                     );
-                    institutionForm.nif.focus();
+        institutionForm.nif.focus();
         return false;
-    } */
+
+    } else if (nif.toString().length > 9){
+      Swal.fire(
+        '',
+        'Campo "NIF" incorreto! O NIF deve ter 9 digitos',
+        'error'
+      );
+      institutionForm.nif.focus();
+      return false;
+    }
 
     if (address == ''){
          Swal.fire(
@@ -151,7 +159,6 @@
                     );
                     institutionForm.email.focus();
         return false;
-        institutionForm.email.focus();
         
     }
 

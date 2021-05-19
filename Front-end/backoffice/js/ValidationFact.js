@@ -14,35 +14,29 @@
     app.post('')
     
  function validation(){   
-    var description =  factForm.description.value;
-    var name  =  factForm.name.value;
-    var photo = document.getElementById("editPhoto");
+    var description =  document.getElementById("descriptionFact").value;
+    var name  =  document.getElementById("nameFact").value;
+    var photo = document.getElementById("editarFotografia").value.length;
 
-
-    
-
-
-
+    if (name == ''){
+        Swal.fire('','Por favor, associe um nome ','error');
+        document.getElementById("descriptionFact").focus();
+        return false;
+    }
     
 
     if (description == ''){
-        Swal.fire('','Preencha o campo com a Descrição','error');
-        factForm.locality.focus();
+        Swal.fire('','Por favor, preencha o campo com a Descrição','error');
+        document.getElementById("nameFact").focus();
         return false;
     }
 
-    if(photo.files.length == 0){
-        Swal.fire('','Carregue uma imagem para o Facto','error');
-        factForm.locality.focus();
+    if(photo == 0){
+        Swal.fire('','Por favor, carregue uma imagem para ilustrar o respetivo Facto','error');
+        document.getElementById("editarFotografia").focus();
         return false;
     }
 
-    if (name == ''){
-        Swal.fire('','Preencha o campo com o Nome','error');
-        factForm.district.focus();
-        return false;
-    }
-    
 
     
 

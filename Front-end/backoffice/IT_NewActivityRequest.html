@@ -197,19 +197,19 @@
 
                             <div class="col-3">
                                 <div class="input-group">
-                                    <label class="label" "> Nome da Atividade: </label>
+                                    <label class="label" > Nome da Atividade: </label>
                                     <br>
                                     <br>
-                                    <input name="designation" class="input--style-4" type="text" id="nameActivity" name="name" >
+                                    <input name="nameActivity" class="input--style-4" type="text" id="nameActivity" >
                                 </div>
                             </div>
 
                             <div class="col-3">
                                 <div class="input-group">
-                                    <label class="label" ">Tipo: </label>
+                                    <label class="label" >Tipo: </label>
                                     <br>
                                     <br>
-                                    <input name="type" class="input--style-4" type="text" id="type"  >
+                                    <input name="type" class="input--style-4" type="text" id="type">
                                 </div>
                             </div>
 
@@ -232,17 +232,17 @@
                         <div class="row row-space" >
                             <div class="col-3">
                                 <div class="input-group">
-                                    <label class="label" ">Data: </label>
+                                    <label class="label" >Data: </label>
                                     <br>
                                     <br>
-                                    <input type="date" class="input--style-4" id="date_Request" class="form-control validate">                                </div>
+                                    <input type="date" name="date_Request" class="input--style-4" id="date_Request" class="form-control validate">                                </div>
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
-                                    <label class="label" ">Hora: </label>
+                                    <label class="label" >Hora: </label>
                                     <br>
                                     <br>
-                                    <input type="time" class="input--style-4" id="time" class="form-control validate">                                </div>
+                                    <input type="time" class="input--style-4" id="time" name="time" class="form-control validate">                                </div>
                             </div>
 
 
@@ -254,16 +254,16 @@
                         <div class="row row-space" >
                             <div class="col-6">
                                 <div class="input-group">
-                                    <label class="label" "> Morada: </label>
+                                    <label class="label" > Morada: </label>
                                     <br>
                                     <br>
-                                    <input name="address" class="input--style-4" type="text" id="address" >
+                                    <input class="input--style-4" type="text" name="address" id="address" >
                                 </div>
                             </div>
 
                             <div class="col-3">
                                 <div class="input-group">
-                                    <label class="label" ">Localidade: </label>
+                                    <label class="label" >Localidade: </label>
                                     <br>
                                     <br>
                                     <input name="county" class="input--style-4" type="text" id="county"  >
@@ -272,7 +272,7 @@
 
                             <div class="col-3">
                                 <div class="input-group">
-                                    <label class="label" ">Distrito: </label>
+                                    <label class="label" >Distrito: </label>
                                     <br>
                                     <br>
                                     <input name="district" class="input--style-4" type="text" id="district" >
@@ -285,7 +285,7 @@
 
                         <div class="col-3">
                             <div class="input-group">
-                                <label class="label" ">Código-Postal: </label>
+                                <label class="label" >Código-Postal: </label>
                                 <br>
                                 <br>
                                 <input name="postcode" class="input--style-4" type="text" id="postcode" >
@@ -293,30 +293,26 @@
                         </div>
                         <div class="col-3">
                             <div class="input-group">
-                                <label class="label" ">Latitude: </label>
+                                <label class="label" >Latitude: </label>
                                 <br>
                                 <br>
-                                <input name="latitude" class="input--style-4" type="text" id="latitude" >
+                                <input name="latitude" class="input--style-4" type="geolocalion" id="latitude" >
                             </div>
                         </div>
                         <div class="col-3">
                             <div class="input-group">
-                                <label class="label" ">Longitude: </label>
+                                <label class="label" >Longitude: </label>
                                 <br>
                                 <br>
                                 <input name="longitude" class="input--style-4" type="text" id="longitude" >
                             </div>
                         </div>
                         </div>
-
-
-
-                        
-                    
+                   
                         <br>
 
                         <div class="p-t-15 row justify-content-center">
-                            <button class="btn btn-primary" type="click" id="submitBtn" >Submeter</button>
+                            <button class="btn btn-primary" type="submit" onclick="return itvalidation()"  id="submitBtn" >Submeter</button>
                         </div>
                     </form>
                     
@@ -378,6 +374,9 @@
 
         <!--Clock Script-->
         <script src="js/clock.js"></script>
+
+        <!--Form Validation-->
+        <script src="js/IT_NewActivityvalidation.js"></script>
         
         <!-- dropdown more, not close on clicking inside -->
         <script>
