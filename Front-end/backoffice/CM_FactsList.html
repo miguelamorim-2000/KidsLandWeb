@@ -345,7 +345,7 @@
      <div class="row row-space">   
         <div class="md-form pb-8 col-md-8" style="margin-top: 4%">
           <label data-error="wrong" data-success="right" for="address_Location">Nome do Facto</label>
-          <input type="text" id="nameFact" class="form-control validate" >
+          <input type="text" id="nameFact" name="nameFact" class="form-control validate" >
         </div>
         <div class="md-form pb-3 col-md-2" >
             <br>
@@ -373,7 +373,7 @@
                                 <div class="col-8">
                                 <label class="label">Descrição: </label>
                                 <div class="col-md-14">
-                                    <textarea rows="5" class="form-control form-control-line" id="descriptionFact"></textarea>
+                                    <textarea rows="5" class="form-control form-control-line" id="descriptionFact" name="descriptionFact"></textarea>
                                 </div>
                             </div>
                             </div>
@@ -389,7 +389,7 @@
 
         
         <div class="text-center mb-5 mt-3">
-          <button type="submit" class="rounded-b button-color textb1" >Guardar Dados</button>
+          <button onclick="return editvalidation()" type="submit" class="rounded-b button-color textb1" >Guardar Dados</button>
         </div>
         </form>
       </div>
@@ -500,6 +500,7 @@ if (response.status== 469){
 
         <!--Clock Script-->
         <script src="js/clock.js"></script>
+        <script src="js/editfact.js"></script>
         
 
         
