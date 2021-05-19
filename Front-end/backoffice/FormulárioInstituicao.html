@@ -398,12 +398,20 @@ Câmara Municipal de Guimarães                        </h2>
         //Populate Select Dropdown with Candidates
             var select = document.getElementById("candidatesList");
             fetch('https://kidslandproxy.herokuapp.com/http://188.82.156.135:8080/Back-end/CandidateNOTInstitutionGET')
-            .then(res => res.json())
+            .then(res => res.arrayBuffer())
+  .then(buffer => {
+    let decoder = new TextDecoder("iso-8859-1");
+    let text = decoder.decode(buffer);
+    resposta = JSON.parse(text.toString());
+
+
+
+    
+  })
             .then((out) => {
-                $.each(out, function(index, value) {
-                    console.log(out);
-    select.options[select.options.length] = new Option(value.name, value.id_candidate);
- });
+                for (let i = 0; i < resposta.length; i++){
+    select.options[select.options.length] = new Option(resposta[i].name, resposta[i].id_candidate);
+                }
             }).catch(err => console.error(err));
 
         
