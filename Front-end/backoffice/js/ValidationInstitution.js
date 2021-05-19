@@ -190,6 +190,6 @@
                     );
                     institutionForm.password_confirm.focus();
         return false;
-    }
+    }else {return true};
 
 }

@@ -469,6 +469,8 @@ Administrador                      </h2>
                    const email = document.getElementById("email").value;
                    const password = document.getElementById("password").value;
                    let id_user;  
+
+                   if(validation()){
                 
                  fetch('https://kidslandproxy.herokuapp.com/http://188.82.156.135:8080/Back-end/RegisterUserInstitution', {
                     headers: {
@@ -519,7 +521,7 @@ function (){
 })
                 
  
- 
+}
 
 
 
