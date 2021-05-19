@@ -13,40 +13,25 @@ app.use(bodyParser.urlencoded);
 app.use(validator());
 
 app.post('');
-/*
-document.getElementById("editarFotografia").addEventListener("change", validateFile)
-
-function validateFile(){
-    const allowedExtensions = ['jpg','png'],
-    sizeLimit = 1000000;
-
-    const { name:filename, size: fileSize } = this.file[0];
-    
-
-    const fileExtension = fileName.split(".").pop();
 
 
-    if (!allowedExtensions.includes(fileExtension)){
-        alert ("file type not allowed");
-        this.value = null;
-    }else if(fileSize > sizeLimit){
-        alert ("file size too large")
-        this.value = null;
-    }
-}
-*/
+
 function itvalidation(){
 
     var name_act = factForm.nameActivity.value;
     var type_act = factForm.type.value;
-    var address_act = factForm.address.value;
-    var county_act = factForm.county.value;
-    var district_act = factForm.district.value;
-    var zip_act = factForm.postcode.value;
-    var latitude_act = factForm.latitude.value;
-    var longitude_act = factForm.longitude.value;
+    var address_act = document.getElementById("address").value;
+    var county_act = document.getElementById("county").value;
+    var district_act = document.getElementById("district").value;
+    var zip_act = document.getElementById("postcode").value;
+    var latitude_act = document.getElementById("latitude").value;
+    var longitude_act = document.getElementById("longitude").value;
 
-    
+    var date_act = document.getElementById("date_Request").value;
+    var time_act = document.getElementById("time").value;
+
+    var photo_act = document.getElementById("editarFotografia").value.length;
+
     if(name_act == ''){
         Swal.fire(
             '',
@@ -67,6 +52,38 @@ function itvalidation(){
         factForm.type.focus();
         return false;
 
+    }
+
+    if(photo_act == 0){
+        Swal.fire(
+            '',
+            'Por favor, insira uma foto da atividade',
+            'error'
+        );
+        document.getElementById("editarFotografia").focus();
+        return false;
+    }
+
+
+    if(date_act == ''){
+        Swal.fire(
+            '',
+            'A data da atividade tem de estar preenchida',
+            'error'
+            );
+            factForm.date_Request.focus();
+            return false;
+    }
+
+
+    if(time_act == ''){
+        Swal.fire(
+            '',
+            'A hora da atividade tem de estar preenchida',
+            'error'
+            );
+            factForm.time.focus();
+            return false;
     }
 
     if(address_act == ''){

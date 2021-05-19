@@ -296,7 +296,7 @@
                                 <label class="label" >Latitude: </label>
                                 <br>
                                 <br>
-                                <input name="latitude" class="input--style-4" type="text" id="latitude" >
+                                <input name="latitude" class="input--style-4" type="geolocalion" id="latitude" >
                             </div>
                         </div>
                         <div class="col-3">
@@ -312,7 +312,7 @@
                         <br>
 
                         <div class="p-t-15 row justify-content-center">
-                            <button class="btn btn-primary" type="submit" onclick="return itvalidation()" id="submitBtn" >Submeter</button>
+                            <button class="btn btn-primary" type="submit" onclick="return itvalidation()"  id="submitBtn" >Submeter</button>
                         </div>
                     </form>
                     
@@ -426,7 +426,7 @@
             const latitude = document.getElementById("latitude").value
             const longitude = document.getElementById("longitude").value
             const description = document.getElementById("nameActivity").value
-            const photo = document.getElementById("editarFotografia").files[0].value
+            const photo = document.getElementById("editarFotografia").files[0].name
             let id_request= 0;
 
             console.log(id_institution);
