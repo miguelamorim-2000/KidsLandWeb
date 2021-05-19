@@ -417,26 +417,27 @@ Administrador                      </h2>
   var idCandidateSelected = select.options[select.selectedIndex].value;
   if (select.selectedIndex != 0 ){
             fetch('https://kidslandproxy.herokuapp.com/http://188.82.156.135:8080/Back-end/CandidateGetId?id_candidate='+ idCandidateSelected)
-            .then(res => res.json())
+            .then(res => res.arrayBuffer())
+  .then(buffer => {
+    let decoder = new TextDecoder("iso-8859-1");
+    let text = decoder.decode(buffer);
+    resposta = JSON.parse(text.toString());
+
+
+
+    
+  })
             .then((out) => {
-                $.each(out, function(index, value) {
-                    document.getElementById("name").value = value.name;
-                    document.getElementById("county").value = value.county;
-                    document.getElementById("district").value = value.district;
-                    document.getElementById("email").value = value.email;
-                    document.getElementById("nif").value = value.nif;
-                    document.getElementById("phone_number").value = value.phone_number;
-                    document.getElementById("post_code").value = value.post_code;
-                    document.getElementById("address").value = value.address;
-
-
-
-
-
-
-
-                });
+                document.getElementById("name").value = resposta[0].name;
+                    document.getElementById("county").value = resposta[0].county;
+                    document.getElementById("district").value = resposta[0].district;
+                    document.getElementById("email").value = resposta[0].email;
+                    document.getElementById("nif").value = resposta[0].nif;
+                    document.getElementById("phone_number").value = resposta[0].phone_number;
+                    document.getElementById("post_code").value = resposta[0].post_code;
+                    document.getElementById("address").value = resposta[0].address;
             }).catch(err => console.error(err));
+    
 
   
 } else {
