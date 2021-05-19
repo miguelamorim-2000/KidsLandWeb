@@ -47,7 +47,7 @@ function provalidation(){
         );
         formProfile.phone_number.focus();
         return false;
-    }
+    } 
 
 
 
@@ -77,6 +77,8 @@ function provalidation(){
         );
         formProfile.post_code.focus();
         return false;
+    } else {
+        return true;
     }
 
 
