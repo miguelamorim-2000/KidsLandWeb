@@ -345,7 +345,7 @@
 
                 <div class="md-form pb-3 col-md-8" style="margin-top: 4%">
           <label data-error="wrong" data-success="right" for="name">Nome</label>
-          <input type="text" id="name" class="form-control validate" >
+          <input type="text" id="name" name="name" class="form-control validate" >
 
         </div> 
 
@@ -363,11 +363,11 @@
 
                 <div class="md-form pb-3 col-md-4">
           <label data-error="wrong" data-success="right" for="birth_date">Data de Nascimento</label>
-          <input type="date" id="birth_date" class="form-control validate" >
+          <input type="date" id="birth_date" name="birth_date" class="form-control validate" >
         </div>
         <div class="md-form pb-3 col-md-4">
             <label data-error="wrong" data-success="right" for="phone_number_tutor">Telefone Tutor</label>
-            <input type="telephone" id="phone_number" class="form-control validate" >
+            <input type="telephone" id="phone_number" name="phone_number" class="form-control validate" >
           </div>
 
         
@@ -398,7 +398,7 @@
 
         
         <div class="text-center mb-5 mt-3">
-          <button type="submit" class="rounded-b button-color textb1" >Guardar Dados</button>
+          <button onclick="return editvalidation()" type="submit" class="rounded-b button-color textb1" >Guardar Dados</button>
         </div>
         </form>
       </div>
@@ -443,6 +443,7 @@
 
         <!--Clock Script-->
         <script src="js/clock.js"></script>
+        <script src="js/editprofiles.js"></script>
         
 
         
