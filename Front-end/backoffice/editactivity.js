@@ -18,17 +18,17 @@ app.post('');
 
 function editvalidation(){
 
-    var name_act = document.getElementById("name_Request").value;
-    var type_act = document.getElementById("type_Request").value;
-    var address_act = document.getElementById("address_Location").value;
-    var county_act = document.getElementById("county").value;
-    var district_act = document.getElementById("district").value;
-    var zip_act = document.getElementById("post_code").value;
-    var latitude_act = document.getElementById("latitude").value;
-    var longitude_act = document.getElementById("longitude").value;
+    var name_act = editForm.name_Request.value;
+    var type_act = editForm.type_Request.value;
+    var address_act = editForm.address_Location.value;
+    var county_act = editForm.county.value;
+    var district_act = editForm.district.value;
+    var zip_act = editForm.post_code.value;
+    var latitude_act = editForm.latitude.value;
+    var longitude_act = editForm.longitude.value;
 
-    var date_act = document.getElementById("date_Request").value;
-    var time_act = document.getElementById("time").value;
+    var date_act = editForm.date_Request.value;
+    var time_act = editForm.time_Request.value;
 
     if(name_act == ''){
         Swal.fire(
@@ -50,16 +50,6 @@ function editvalidation(){
         document.getElementById("type_Request").focus();
         return false;
 
-    }
-
-    if(photo_act == 0){
-        Swal.fire(
-            '',
-            'Por favor, insira uma foto da atividade',
-            'error'
-        );
-        document.getElementById("editarFotografia").focus();
-        return false;
     }
 
 

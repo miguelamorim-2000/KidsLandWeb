@@ -324,18 +324,18 @@
         </button>
       </div>
       
-      <form id= "editForm" name="editionform">
+      <form id= "editForm" name="editForm">
       <!--Body-->
       <div class="modal-body mx-4">
         <!--Body-->
         <div class="row row-space">
         <div class="md-form pb-3 col-md-3">
           <label data-error="wrong" data-success="right" for="date_Request">Data do Pedido</label>
-          <input type="date" id="date_Request" class="form-control validate" >
+          <input type="date" id="date_Request" name="date_Request" class="form-control validate" >
         </div>
         <div class="md-form pb-3 col-md-2">
             <label data-error="wrong" data-success="right" for="date_Request">Hora:</label>
-            <input style="padding-left: 10px;" type="time" id="time_Request" class="form-control validate" >
+            <input style="padding-left: 10px;" type="time" id="     " name="time_Request" class="form-control validate" >
           </div>
                 <div class="md-form pb-3 col-md-4">
           <label data-error="wrong" data-success="right" for="designation_Location">Instituição</label>
@@ -353,11 +353,11 @@
         <div class="row row-space">
             <div class="md-form pb-3 col-md-6">
                 <label data-error="wrong" data-success="right" for="type_Request">Nome Atividade:</label>
-                <input type="text" id="name_Request" class="form-control validate">
+                <input type="text" id="name_Request" name="name_Request" class="form-control validate">
               </div> 
                     <div class="md-form pb-3 col-md-3">
           <label data-error="wrong" data-success="right" for="type_Request">Tipo de Atividade</label>
-          <input type="text" id="type_Request" class="form-control validate">
+          <input type="text" id="type_Request" name="type_Request" class="form-control validate">
         </div> 
 
         
@@ -369,11 +369,11 @@
      <div class="row row-space">   
         <div class="md-form pb-8 col-md-8">
           <label data-error="wrong" data-success="right" for="address_Location">Morada</label>
-          <input type="text" id="address_Location" class="form-control validate" >
+          <input type="text" id="address_Location" name = "address_Location" class="form-control validate" >
         </div>
                 <div class="md-form pb-3 col-md-4">
           <label data-error="wrong" data-success="right" for="address_Location">Localidade</label>
-          <input type="text" id="county" class="form-control validate" >
+          <input type="text" id="county" name="county" class="form-control validate" >
         </div>
         
         </div>
@@ -381,19 +381,19 @@
          <div class="row row-space">       
             <div class="md-form pb-3 col-md-4">
                 <label data-error="wrong" data-success="right" for="address_Location">Distrito</label>
-                <input type="text" id="district" class="form-control validate" >
+                <input type="text" id="district" name="district" class="form-control validate" >
               </div>
               <div class="md-form pb-3 col-md-4">
                 <label data-error="wrong" data-success="right" for="address_Location">Código-Postal</label>
-                <input type="text" id="post_code" class="form-control validate" >
+                <input type="text" id="post_code" name="post_code" class="form-control validate" >
               </div>
               <div class="md-form pb-3 col-md-2">
                 <label data-error="wrong" data-success="right" for="address_Location">Latitude</label>
-                <input type="text" id="latitude" class="form-control validate" >
+                <input type="text" id="latitude" name="latitude" class="form-control validate" >
               </div>
               <div class="md-form pb-3 col-md-2">
                 <label data-error="wrong" data-success="right" for="address_Location">Longitude</label>
-                <input type="text" id="longitude" class="form-control validate" >
+                <input type="text" id="longitude" name="longitude" class="form-control validate" >
               </div>
         </div>
 
@@ -402,7 +402,7 @@
 
         
         <div class="text-center mb-5 mt-3">
-          <button type="submit" id="saveData" class="rounded-b button-color textb1" onclick="return editvalidation()">Guardar Dados</button>
+          <button onclick="return editvalidation()" type="submit" id="saveData" class="rounded-b button-color textb1" >Guardar Dados</button>
         </div>
         </form>
       </div>
@@ -517,7 +517,7 @@ if (response.status== 469){
         <script src="js/clock.js"></script>
         
         <!--validation-->
-        <script src="js/editactivity.js"></script>
+        <script src="editactivity.js"></script>
         
         <!-- dropdown more, not close on clicking inside -->
         <script>
