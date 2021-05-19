@@ -130,7 +130,7 @@ function editvalidation(){
         return false;
     }
 
-    if(phone_number == ''){
+    if(phone == ''){
         Swal.fire(
             '',
             'Por favor, indique o respetivo nº telefónico',
@@ -139,7 +139,7 @@ function editvalidation(){
         document.getElementById("phone_number").focus();
         return false;
 
-    } else if (phone_number.toString().length < 9 ){
+    } else if (phone.toString().length < 9 ){
         Swal.fire(
             '',
             'O nº de telefone deve conter 9 caracteres!',
@@ -148,7 +148,7 @@ function editvalidation(){
         document.getElementById("phone_number").focus();
         return false;
 
-    } else if (phone_number.toString().length > 9 ){
+    } else if (phone.toString().length > 9 ){
         Swal.fire(
             '',
             'O nº de telefone deve conter 9 caracteres!',
