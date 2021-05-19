@@ -528,17 +528,17 @@ function (){
             
             });
             
-      //Logout function 
-    let logoutBtn = document.getElementById("logoutBtn")
+              //Logout function 
+              let logoutBtn = document.getElementById("logoutBtn")
         logoutBtn.addEventListener('click', function(e){
-                    fetch('https://kidslandproxy.herokuapp.com/http://188.82.156.135:8080/Back-end/LogoutServlet')
+                    fetch('https://kidslandproxy.herokuapp.com/http://188.82.156.135:8080/Back-end/LogoutServlet?email=' + localStorage.getItem("email"))
                     .then(res => res.json())
                     .then((out) => {
                       console.log(out)
                       
                     if (out.STATUS == 200) {
         localStorage.clear();
-        window.location.replace(out.url2)
+        window.location.replace("/" + "Front-end/" +  out.PATH); 
         
                     }else {
                       if (out.STATUS == 400){
@@ -547,7 +547,8 @@ function (){
                               'Não existe nenhuma sessão ativa',
                               'error'
                             )
-                            .then(function(){window.location.replace(out.url2)});
+                            .then(function(){        window.location.replace("/" + "Front-end/" +  out.PATH); 
+});
                         
                       }else {
                             Swal.fire(
@@ -569,27 +570,6 @@ function (){
                   });
                     
         });
-        
-        
-        
-        
-        
-        // select all rows
-            let main = document.getElementById('checkboxall');
-            let selectall = document.getElementsByName('checkbox1');
-            
-            main.onclick = () => {
-                if (main.checked == true){
-                    for(let i=0; i<selectall.length; i++){
-                        selectall[i].checked = true;
-                    }}else{
-                        for(let i=0; i<selectall.length; i++){
-                        selectall[i].checked = false;
-                    }
-                }
-                
-            
-            }
             
         </script>
   
