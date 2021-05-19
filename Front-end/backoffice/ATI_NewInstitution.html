@@ -392,42 +392,52 @@ Administrador                      </h2>
 
         
         //Populate Select Dropdown with Candidates
-            var select = document.getElementById("candidatesList");
+        var select = document.getElementById("candidatesList");
             fetch('https://kidslandproxy.herokuapp.com/http://188.82.156.135:8080/Back-end/CandidateNOTInstitutionGET')
-            .then(res => res.json())
+            .then(res => res.arrayBuffer())
+  .then(buffer => {
+    let decoder = new TextDecoder("iso-8859-1");
+    let text = decoder.decode(buffer);
+    resposta = JSON.parse(text.toString());
+
+
+
+    
+  })
             .then((out) => {
-                $.each(out, function(index, value) {
-                    console.log(out);
-    select.options[select.options.length] = new Option(value.name, value.id_candidate);
- });
+                for (let i = 0; i < resposta.length; i++){
+    select.options[select.options.length] = new Option(resposta[i].name, resposta[i].id_candidate);
+                }
             }).catch(err => console.error(err));
 
+        
         
         //Select List on change fill data
         document.getElementById('candidatesList').addEventListener('change', function() {
   var idCandidateSelected = select.options[select.selectedIndex].value;
   if (select.selectedIndex != 0 ){
             fetch('https://kidslandproxy.herokuapp.com/http://188.82.156.135:8080/Back-end/CandidateGetId?id_candidate='+ idCandidateSelected)
-            .then(res => res.json())
+            .then(res => res.arrayBuffer())
+  .then(buffer => {
+    let decoder = new TextDecoder("iso-8859-1");
+    let text = decoder.decode(buffer);
+    resposta = JSON.parse(text.toString());
+
+
+
+    
+  })
             .then((out) => {
-                $.each(out, function(index, value) {
-                    document.getElementById("name").value = value.name;
-                    document.getElementById("county").value = value.county;
-                    document.getElementById("district").value = value.district;
-                    document.getElementById("email").value = value.email;
-                    document.getElementById("nif").value = value.nif;
-                    document.getElementById("phone_number").value = value.phone_number;
-                    document.getElementById("post_code").value = value.post_code;
-                    document.getElementById("address").value = value.address;
-
-
-
-
-
-
-
-                });
+                document.getElementById("name").value = resposta[0].name;
+                    document.getElementById("county").value = resposta[0].county;
+                    document.getElementById("district").value = resposta[0].district;
+                    document.getElementById("email").value = resposta[0].email;
+                    document.getElementById("nif").value = resposta[0].nif;
+                    document.getElementById("phone_number").value = resposta[0].phone_number;
+                    document.getElementById("post_code").value = resposta[0].post_code;
+                    document.getElementById("address").value = resposta[0].address;
             }).catch(err => console.error(err));
+    
 
   
 } else {
@@ -516,17 +526,19 @@ function (){
             
             });
             
-      //Logout function 
-    let logoutBtn = document.getElementById("logoutBtn")
+    
+            
+                //Logout function 
+                let logoutBtn = document.getElementById("logoutBtn")
         logoutBtn.addEventListener('click', function(e){
-                    fetch('https://kidslandproxy.herokuapp.com/http://188.82.156.135:8080/Back-end/LogoutServlet')
+                    fetch('https://kidslandproxy.herokuapp.com/http://188.82.156.135:8080/Back-end/LogoutServlet?email=' + localStorage.getItem("email"))
                     .then(res => res.json())
                     .then((out) => {
                       console.log(out)
                       
                     if (out.STATUS == 200) {
         localStorage.clear();
-        window.location.replace(out.url2)
+        window.location.replace("/" + "Front-end/" +  out.PATH); 
         
                     }else {
                       if (out.STATUS == 400){
@@ -535,7 +547,8 @@ function (){
                               'Não existe nenhuma sessão ativa',
                               'error'
                             )
-                            .then(function(){window.location.replace(out.url2)});
+                            .then(function(){        window.location.replace("/" + "Front-end/" +  out.PATH); 
+});
                         
                       }else {
                             Swal.fire(
@@ -557,10 +570,6 @@ function (){
                   });
                     
         });
-        
-        
-        
-        
         
         // select all rows
             let main = document.getElementById('checkboxall');
