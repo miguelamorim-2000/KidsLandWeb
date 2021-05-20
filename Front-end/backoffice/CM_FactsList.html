@@ -573,7 +573,7 @@ function listFacts() {
 
     let resposta;
  
-            fetch('http://188.82.156.135:8080/Back-end/FactGet')
+            fetch('https://kidslandproxy.herokuapp.com/http://188.82.156.135:8080/Back-end/FactGet')
             .then(res => res.arrayBuffer())
   .then(buffer => {
     let decoder = new TextDecoder("iso-8859-1");
@@ -671,8 +671,8 @@ function editFunction(id){
     document.getElementById("descriptionFact").value = resposta.description;
     if(resposta.photo != null){
                         document.getElementById("iconFact").value= resposta.photo;
-                        document.getElementById("iconFact").src = "https://kidslandproxy.herokuapp.com/http://188.82.156.135:8080/Back-end/IMAGES/" + resposta.photo;
-                        console.log( "https://kidslandproxy.herokuapp.com/http://188.82.156.135:8080/Back-end/IMAGES/" + resposta.photo);
+                        document.getElementById("iconFact").src = "http://188.82.156.135:8080/Back-end/IMAGES/" + resposta.photo;
+                        console.log( "http://188.82.156.135:8080/Back-end/IMAGES/" + resposta.photo);
                     }
 
 
