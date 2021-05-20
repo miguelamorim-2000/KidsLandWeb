@@ -573,7 +573,7 @@ function listFacts() {
 
     let resposta;
  
-            fetch('https://kidslandproxy.herokuapp.com/http://188.82.156.135:8080/Back-end/FactGet')
+            fetch('http://188.82.156.135:8080/Back-end/FactGet')
             .then(res => res.arrayBuffer())
   .then(buffer => {
     let decoder = new TextDecoder("iso-8859-1");

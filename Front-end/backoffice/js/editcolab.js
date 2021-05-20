@@ -78,6 +78,15 @@ function editvalidation(){
     }
 
 
+    if(name == ''){
+        Swal.fire(
+            '',
+            'O nome tem de estar preenchido',
+            'error'
+        );
+        document.getElementById("name").focus();
+        return false;
+    }
 
     if(county == ''){
         Swal.fire(
