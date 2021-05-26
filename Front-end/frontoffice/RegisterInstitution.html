@@ -132,6 +132,17 @@ registerForm.addEventListener('submit', function(e){
          console.log(postcode)
          let teste44 = 444444
 
+         if(document.getElementById("postcode").value.length == 0){         
+
+         if(document.getElementById("district").value.length == 0){         
+
+         if(document.getElementById("county").value.length == 0){         
+
+         if(document.getElementById("address").value.length == 0){         
+         if(document.getElementById("designation").value.length == 0){
+         if(document.getElementById("email").value.length == 0){
+if(document.getElementById("telephone").value.length == 9){
+if (document.getElementById("nif").value.length == 9){
 	     
 	                      fetch('https://kidslandproxy.herokuapp.com/http://188.82.156.135:8080/Back-end/CandidatePost', {
                     headers: {
@@ -166,8 +177,8 @@ registerForm.addEventListener('submit', function(e){
               }else {
                     Swal.fire(
       
-                      'Erro no Login',
-                      'Não foi possível efetuar Login. Tente novamente.',
+                      'Erro no registo',
+                      'Não foi possível efetuar registo. Tente novamente.',
                       'error'
                     )
               }
@@ -181,6 +192,74 @@ registerForm.addEventListener('submit', function(e){
 })
   
           });
+} else {
+
+  Swal.fire(
+      
+      'Erro',
+      'O NIF deve conter 9 dígitos.',
+      'error'
+    )
+
+}
+} else {
+  Swal.fire(
+      
+      'Erro',
+      'O Telefone deve conter 9 dígitos.',
+      'error'
+    )
+
+}
+         }else {
+          Swal.fire(
+      
+      'Erro',
+      'O email deve ser preenchido.',
+      'error'
+    )
+
+         } 
+        } else {
+          Swal.fire(
+      
+      'Erro',
+      'O nome deve ser preenchido.',
+      'error'
+    )
+
+        }   
+      }else {
+        Swal.fire(
+      
+      'Erro',
+      'A morada deve ser preenchida.',
+      'error'
+    )
+
+      }} else {
+        Swal.fire(
+      
+      'Erro',
+      'A localidade deve ser preenchida.',
+      'error'
+    )
+      }
+    }
+    else {
+      Swal.fire(
+      
+      'Erro',
+      'O distrito deve ser preenchido.',
+      'error'
+    )
+
+    }} else {      Swal.fire(
+      
+      'Erro',
+      'O código-postal deve ser preenchido.',
+      'error'
+    ) }
 	   });
 
 
