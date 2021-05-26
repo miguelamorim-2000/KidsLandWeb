@@ -132,15 +132,15 @@ registerForm.addEventListener('submit', function(e){
          console.log(postcode)
          let teste44 = 444444
 
-         if(document.getElementById("postcode").value.length == 0){         
+         if(document.getElementById("postcode").value.length != 0){         
 
-         if(document.getElementById("district").value.length == 0){         
+         if(document.getElementById("district").value.length != 0){         
 
-         if(document.getElementById("county").value.length == 0){         
+         if(document.getElementById("county").value.length != 0){         
 
-         if(document.getElementById("address").value.length == 0){         
-         if(document.getElementById("designation").value.length == 0){
-         if(document.getElementById("email").value.length == 0){
+         if(document.getElementById("address").value.length != 0){         
+         if(document.getElementById("designation").value.length != 0){
+         if(document.getElementById("email").value.length != 0){
 if(document.getElementById("telephone").value.length == 9){
 if (document.getElementById("nif").value.length == 9){
 	     
@@ -215,7 +215,7 @@ if (document.getElementById("nif").value.length == 9){
           Swal.fire(
       
       'Erro',
-      'O email deve ser preenchido.',
+      'O Email deve ser preenchido.',
       'error'
     )
 
@@ -224,7 +224,7 @@ if (document.getElementById("nif").value.length == 9){
           Swal.fire(
       
       'Erro',
-      'O nome deve ser preenchido.',
+      'O Nome deve ser preenchido.',
       'error'
     )
 
@@ -233,7 +233,7 @@ if (document.getElementById("nif").value.length == 9){
         Swal.fire(
       
       'Erro',
-      'A morada deve ser preenchida.',
+      'A Morada deve ser preenchida.',
       'error'
     )
 
@@ -241,7 +241,7 @@ if (document.getElementById("nif").value.length == 9){
         Swal.fire(
       
       'Erro',
-      'A localidade deve ser preenchida.',
+      'A Localidade deve ser preenchida.',
       'error'
     )
       }
@@ -250,14 +250,14 @@ if (document.getElementById("nif").value.length == 9){
       Swal.fire(
       
       'Erro',
-      'O distrito deve ser preenchido.',
+      'O Distrito deve ser preenchido.',
       'error'
     )
 
     }} else {      Swal.fire(
       
       'Erro',
-      'O código-postal deve ser preenchido.',
+      'O Código-Postal deve ser preenchido.',
       'error'
     ) }
 	   });
