@@ -110,6 +110,16 @@
             .then((out) => {
          console.log(resposta)
             if (resposta.STATUS == 200) {
+
+              
+              if (out.id_institution == undefined){
+                Swal.fire(
+                      '',
+                      'O email ou password não são válidos.',
+                      'error'
+                    )
+
+              } else {
               
               localStorage.setItem('id_candidate', resposta.id_candidate); 
               localStorage.setItem('nif', resposta.nif); 
@@ -128,6 +138,7 @@
               
               
               window.location.replace("/" + "Front-end/" +  resposta.PATH); 
+              };
 
             }else {
               if (resposta.STATUS == 400){

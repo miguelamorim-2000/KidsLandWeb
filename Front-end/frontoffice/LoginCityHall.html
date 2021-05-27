@@ -99,8 +99,17 @@
             .then((out) => {
          console.log(out)
             if (out.STATUS == 200) {
-              
-              localStorage.setItem('id_collaborator', out.id_collaborator); 
+
+              if (out.id_collaborator == undefined){
+                Swal.fire(
+                      '',
+                      'O email ou password não são válidos.',
+                      'error'
+                    )
+
+              } else {
+                
+                localStorage.setItem('id_collaborator', out.id_collaborator); 
               localStorage.setItem('name', out.name); 
               localStorage.setItem('address', out.address); 
               localStorage.setItem('id_user', out.id_user);
@@ -111,12 +120,8 @@
               localStorage.setItem('type', out.type); 
               localStorage.setItem('email', out.email); 
               localStorage.setItem('nif', out.nif); 
-
-
-              
-              
-               window.location.replace("/" + "Front-end/" +  out.PATH)
- 
+              window.location.replace("/" + "Front-end/" +  out.PATH)}
+            
 
             }else {
               if (out.status == 400){

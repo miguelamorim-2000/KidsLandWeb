@@ -99,15 +99,25 @@
             .then((out) => {
          console.log(out)
             if (out.STATUS == 200) {
+
+
               
-  
+                
+              if (email != "admin@gmail.com"){
+                Swal.fire(
+                      '',
+                      'O email ou password não são válidos.',
+                      'error'
+                    )
+
+              } else {
 
 
               localStorage.setItem("email", email)
               localStorage.setItem("name", "admin")
               
                window.location.replace("/" + "Front-end/" +  out.PATH)
- 
+              };
 
             }else {
               if (out.STATUS == 400){
